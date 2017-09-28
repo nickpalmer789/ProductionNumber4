@@ -11,7 +11,7 @@ Chris Scarola
 # Description
 
 # Vision Statement
-
+We hope to develop an integrated platform on which one can set up their schedule, manage tasks, see their friends' schedules, and plan and collaborate with one another. 
 # Motivation
 
 # Risks
