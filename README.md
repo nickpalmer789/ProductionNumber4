@@ -13,14 +13,14 @@ Chris Scarola
 # Vision Statement
 We hope to develop an integrated platform on which one can set up their schedule, manage tasks, see their friends' schedules, and plan and collaborate with one another. 
 # Motivation
-
+We found it very difficult to schedule meetings because we are all very busy and have few overlapping free times, so we wanted to automate that process for other groups, as well as create something that integrated todo lists with one's class schedule.
 # Risks
 -Lack of experience
 -Idea may be too ambitious to accomplish within time constraints. May need to be scaled back.(PENDING VISION STATEMENT) 
 
 
 # Risk Mitigation Plan
-
+-Modular project - easy to scale back if need be
 # Version Control
 Our team will be using git. We will also be using Github to store our remote repository for collaboration. 
 
