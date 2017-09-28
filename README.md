@@ -18,9 +18,10 @@ We found it very difficult to schedule meetings because we are all very busy and
 -Lack of experience
 -Idea may be too ambitious to accomplish within time constraints. May need to be scaled back.(PENDING VISION STATEMENT) 
 
-
 # Risk Mitigation Plan
+-Many resources available online, on campus
 -Modular project - easy to scale back if need be
+
 # Version Control
 Our team will be using git. We will also be using Github to store our remote repository for collaboration. 
 
