@@ -31,6 +31,6 @@ We will be using the SCRUM methodology to manage our project and it's goals.
 We will be using Slack to collaborate together as a messaging board. We will also be using Trello as a collaboration tool that will allow us to keep track of our user story points. 
 
 # Proposed Architecture
-php
-Bootstrap
-MySQL
+php: scripting; tools for time management, database access.
+Bootstrap: front-end framework; UI, calendars, navigation etc.
+MySQL: database back-end; user information (contact info, schedule, homework and assesments). 
