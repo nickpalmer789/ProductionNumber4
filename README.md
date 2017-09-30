@@ -14,16 +14,19 @@ The goal for this project is to create an integrated platform to allows users to
 	My Goals will allow you to create and manage your goals. This will encapsulate the functionality of the to-do list as well as allowing you to manage more long-term goals such as passing classes, getting internships and jobs, or any other goal that a student could have. This will allow students, along with features such as the pomodoro timer, to manage their assignments and goals for the future.  
 	The Group View will allow students to overlay their calendars on the same view, making it readily apparent when the entire group can meet up for a face-to-face meeting. The Group View will also have other group interactions such as contact information for each member in your group, or being able to see individual group member's calendars.  
 	These basic features of our application will ultimately result in a platform which will allow users to better manage their time as a resource while developing good study habits.  
+	
 # Vision Statement
 We hope to develop an integrated platform on which one can set up their schedule, manage tasks, see their friends' schedules, and plan and collaborate with one another. 
+
 # Motivation
 We found it very difficult to schedule meetings because we are all very busy and have few overlapping free times, so we wanted to automate that process for other groups, as well as create something that integrated todo lists with one's class schedule.
+
 # Risks
--Lack of experience  
--Idea may be too ambitious to accomplish within time constraints. May need to be scaled back.(PENDING VISION STATEMENT)  
+-Lack of experience in web apps for some team members  
+-Idea may be too ambitious to accomplish within time constraints. 
 
 # Risk Mitigation Plan
--Many resources available online, on campus  
+-Many resources available online, or on campus  
 -Modular project - easy to scale back if need be  
 
 # Version Control
@@ -36,6 +39,6 @@ We will be using the SCRUM methodology to manage our project and it's goals.
 We will be using Slack to collaborate together as a messaging board. We will also be using Trello as a collaboration tool that will allow us to keep track of our user story points.   
 
 # Proposed Architecture
-php: scripting; tools for time management, database access.  
+php: (front-end/back-end) scripting; tools for time management, database access.  
 Bootstrap: front-end framework; UI, calendars, navigation etc.  
 MySQL: database back-end; user information (contact info, schedule, homework and assesments).  
