@@ -20,8 +20,11 @@ We hope to develop an integrated platform on which one can set up their schedule
 We found it very difficult to schedule meetings because we are all very busy and have few overlapping free times, so we wanted to automate that process for other groups, as well as create something that integrated todo lists with one's class schedule.
 # Risks
 -Lack of experience
+
 -Idea may be too ambitious to accomplish within time constraints. May need to be scaled back.
+
 -Spending too much time on a certain task that we believed would be the most difficult. Not paying enough attention to other tasks that we thought would take less time to complete, and then they end up taking longer than anticipated.
+
 -If we misjudge the time it takes us to work on each feature. Right now the Group View feature seems to be the most difficult to implement. It may take us much more time than we originally thought, or some other feature that we thought would take a short amount of time to implement may take us much longer than anticipated.
 
 # Risk Mitigation Plain
