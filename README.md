@@ -30,12 +30,16 @@ We found it very difficult to schedule meetings because we are all very busy and
 Our team will be using git. We will also be using Github to store our remote repository for collaboration. 
 
 # Development Method
-We will be using the SCRUM methodology to manage our project and it's goals.   
+We will be using the SCRUM methodology to manage our project and it's goals.  
+Going with the SCRUM methodology we will break down our workload into epics and user stories, and then we will utilize points poker to assign user story points to these tasks. This will allow our team to track exactly how much work is being done and at what pace.  
+Our team will also be meeting weekly for a standup meeting where we will relate what we worked on that week, what we will be working on the next week, and any impedements that we have encountered. This will allow us to stay up to date on the whole team without spending too much time in the weeds each weekly meeting. Our user story points will be tracked both in a google docs spreadsheet (for some statistics and analysis), and in a Trello board where we can move cards around.    
 
 # Collaboration Tool
-We will be using Slack to collaborate together as a messaging board. We will also be using Trello as a collaboration tool that will allow us to keep track of our user story points.   
+We will be using Slack to collaborate together as a messaging board. We will also be using Trello as a collaboration tool that will allow us to keep track of our user story points. Our team will also utilize tools such as Google docs when appropriate to keep track of historical story point data, and other copy. 
 
 # Proposed Architecture
-php: scripting; tools for time management, database access.  
-Bootstrap: front-end framework; UI, calendars, navigation etc.  
-MySQL: database back-end; user information (contact info, schedule, homework and assesments).  
+php: This will be useful for working with SQL to load data from the database onto the frontend of the application.  
+Bootstrap: Our team chose to use Bootstrap, as it is easy to pick up while still being a very powerful frontend framework.  
+JavaScript: Our team will be utilizing JavaScript to enable interactive features on the frontend of the application.  
+Apache: We will be using apache as our web server for this project, as it is easy to set up and use. 
+MySQL: Our team chose to use MySQL as it is free, and relatively easy to set up and work with.  
