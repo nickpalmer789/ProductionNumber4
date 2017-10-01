@@ -22,23 +22,31 @@ We hope to develop an integrated platform on which one can set up their schedule
 We found it very difficult to schedule meetings because we are all very busy and have few overlapping free times, so we wanted to automate that process for other groups, as well as create something that integrated todo lists with one's class schedule.
 
 # Risks
--Lack of experience in web apps for some team members  
--Idea may be too ambitious to accomplish within time constraints. 
+Lack of experience  
+	Idea may be too ambitious to accomplish within time constraints. May need to be scaled back.  
+	If we misjudge the time it takes us to work on each feature. Right now the Group View feature seems to be the most difficult to implement. It may take us much more time than we originally thought, or some other feature that we thought would take a short amount of time to implement may take us much longer than anticipated.  
+	If communication between group members is lacking or if merging conflicts arise and we accidentally break the master branch  
 
-# Risk Mitigation Plan
--Many resources available online, or on campus  
--Modular project - easy to scale back if need be  
-
+# Risk Mitigation Plain
+Resources: We have enough resources to mitigate the risk of lack of experience. If we don't get enough help from our professors/TA, then we can do our own research and utilize the experience from other members in our group  
+	Modular project: it will be easy to scale the project back if need be. We have distinguished between the features needed for the project to succeed vs. the extra features to be added if we have extra time.  
+	Good time management: Make sure we divide tasks so that not everyone is spending time on any singular item that needs to be completed. That way if we do end up with a task that is more challenging than we anticipated, we know that it is and can work on it.  
+	Good communication: We will utilize Slack and our weekly meetings to minimize miscommunication. We will be sure to make enough branches in git that we won't break the main branch.
+	
 # Version Control
 Our team will be using git. We will also be using Github to store our remote repository for collaboration. 
 
 # Development Method
-We will be using the SCRUM methodology to manage our project and it's goals.   
+We will be using the SCRUM methodology to manage our project and it's goals.  
+Going with the SCRUM methodology we will break down our workload into epics and user stories, and then we will utilize points poker to assign user story points to these tasks. This will allow our team to track exactly how much work is being done and at what pace.  
+Our team will also be meeting weekly for a standup meeting where we will relate what we worked on that week, what we will be working on the next week, and any impedements that we have encountered. This will allow us to stay up to date on the whole team without spending too much time in the weeds each weekly meeting. Our user story points will be tracked both in a google docs spreadsheet (for some statistics and analysis), and in a Trello board where we can move cards around.    
 
 # Collaboration Tool
-We will be using Slack to collaborate together as a messaging board. We will also be using Trello as a collaboration tool that will allow us to keep track of our user story points.   
+We will be using Slack to collaborate together as a messaging board. We will also be using Trello as a collaboration tool that will allow us to keep track of our user story points. Our team will also utilize tools such as Google docs when appropriate to keep track of historical story point data, and other copy. 
 
 # Proposed Architecture
-php: (front-end/back-end) scripting; tools for time management, database access.  
-Bootstrap: front-end framework; UI, calendars, navigation etc.  
-MySQL: database back-end; user information (contact info, schedule, homework and assesments).  
+php: This will be useful for working with SQL to load data from the database onto the frontend of the application.  
+Bootstrap: Our team chose to use Bootstrap, as it is easy to pick up while still being a very powerful frontend framework.  
+JavaScript: Our team will be utilizing JavaScript to enable interactive features on the frontend of the application.  
+Apache: We will be using apache as our web server for this project, as it is easy to set up and use. 
+MySQL: Our team chose to use MySQL as it is free, and relatively easy to set up and work with.  
