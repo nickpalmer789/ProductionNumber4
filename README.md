@@ -46,3 +46,5 @@ Bootstrap: Our team chose to use Bootstrap, as it is easy to pick up while still
 JavaScript: Our team will be utilizing JavaScript to enable interactive features on the frontend of the application.  
 Apache: We will be using apache as our web server for this project, as it is easy to set up and use. 
 MySQL: Our team chose to use MySQL as it is free, and relatively easy to set up and work with.  
+
+Deployment: For a free deployment option for the purposes of the class we will be using heroku or another similar service to host the application while it has little traffic.  
