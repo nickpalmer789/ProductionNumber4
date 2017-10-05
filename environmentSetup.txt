@@ -1,0 +1,101 @@
+Steps for setting up your development environment:
+1. Install apache2 and PHP7:
+	$ sudo apt-get install php libapache2-mod-php php-mcrypt
+	(Note you will have to authenticate with root permissions for this)
+
+2. Set global ServerName to suppress syntax warnings:
+	a. Perform a config test
+		$ sudo apache2ctl configtest
+		(This should produce a warning about not being able to reliably determine the server's fully quallified domain name.)
+	b. Open up the config file
+		$sudo vim /etc/apache2/apache2.conf
+	c. Add the following line at the bottom of the file
+		'ServerName localhost'
+	d. Perform another config test
+		$ sudo apache2ctl configtest
+	e. If everything is working as intended, restart Apache to implement changes
+		$ sudo systemctl restart apache2
+3. Adjust firewall to allow web traffic:  
+	a. Ensure that UFW has an application profile for Apache:
+		$ sudo ufw app list
+		Output: 
+			Available applications:
+  			Apache
+  			Apache Full
+  			Apache Secure
+  			OpenSSH
+		sudo ufw allow in "Apache Full"
+4. Test the Apache server:
+	a. Get the IP address of the Apache server
+		$ ip route get 1 | awk '{print $NF; exit}'
+	b. Check that Apache is working as intended by going to that IP address in your browser
+	c. Check that the ServerName is set correctly by typing 'localhost' into the address of your browser.
+
+5. Install sql-server:
+	a. Get the mysql-server package
+		$ sudo apt-get install mysql-server
+
+6. Make sure that the Apache server looks for index.php instead of index.html
+	a. Open up the Apache DirectoryIndex file
+		$ sudo vim /etc/apache2/mods-enabled/dir.conf
+	b. Modify the file so that index.php is at the beginning of the second line. It should look like this:
+		<IfModule mod_dir.c>
+    			DirectoryIndex index.php index.html index.cgi index.pl index.xhtml index.htm
+		</IfModule>
+	c. restart the Apache server to apply the changes
+		$ sudo systemctl restart apache2
+
+7. Test PHP processing on the Apache server:
+	a. Create a new PHP script in the "web root"
+		$ sudo vim /var/www/html/info.php
+	b. Put the following contents in the file
+		<?php
+		phpinfo();
+		?>
+	c. Save/Exit and go to localhost/info.php in your browser. You should see information about your PHP version listed in the browser. 
+	d. Remove that file that you just created, as it shows lots of info to the user.
+		$ sudo rm /var/www/html/info.php
+
+8. Serve the application from the git repository:
+	a. Enable serving from the user directory
+		$ sudo a2enmod userdir
+		$ sudo systemctl restart apache2
+	b. Enable PHP processing from within user directory
+		$ sudo vim /etc/apache2/apache2.conf
+		
+		Add the following directive: 
+			<IfModule mod_userdir.c>
+    				<Directory /home/*/public_html>
+        				php_admin_value engine On
+    				</Directory>
+			</IfModule>
+	c. Create a directory named public_html in your home directory
+		$ cd ~
+		$ mkdir public_html
+	d. Clone the repository into a directory inside public_html
+		$ cd public_html
+		$ git clone https://github.com/nickpalmer789/ProductionNumber4.git
+
+9. Make sure that the environment is working correctly:
+	a. Go to localhost/~<username> in your browser
+	b. Navigate to the git repo using the links on the page. 
+	c. Enjoy your application being served by Apache!
+
+USEFUL APACHE COMMANDS:
+1. Start apache2
+	$ sudo service apache2 start
+
+2. Stop apache2
+	$ sudo service apache2 stop
+
+3. Restart apache2
+	$ sudo service apache2 restart
+
+4. Get status of apache2 server
+	$ sudo systemctl status apache2
+
+5. Run apache2 config test
+	$ sudo apache2ctl configtest
+
+6. Get the IP address of your server
+	$ ip route get 1 | awk '{print $NF; exit}'
