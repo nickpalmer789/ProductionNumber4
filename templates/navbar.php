@@ -15,6 +15,9 @@
                 <a class="nav-link disabled" href="#">Disabled</a>
             </li>
         </ul>
-        <a class="btn btn-outline-success my-2 my-sm-0" href="../login.php" type="submit">Sign In</a>
+        <form action="../login.php" method="get">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Sign In</button>
+        </form>
+        
     </div>
 </nav>
