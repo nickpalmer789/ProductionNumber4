@@ -14,39 +14,36 @@
       include('templates/navbar.php');
     ?>
 
-        <div class="container marketing">
-            <form action="/action_page.php">
+        <div class="container-fluid">
+            <form action="/action_page.php" method="post">
                 <div class="imgcontainer">
                     <img src="assets/icons/planiticon.png" alt="Planit" class="avatar">
                     <h2>Planit Login</h2>
                 </div>
 
-                <div class="container">
-                    <label><b>Username</b></label>
-                    <input type="text" placeholder="Enter Username" name="uname" required>
+                <label for="usr"><b>Username</b></label>
+                <input type="text" class="form-control" placeholder="Enter Username" name="uname" required>
 
-                    <label><b>Password</b></label>
-                    <input type="password" placeholder="Enter Password" name="psw" required>
+                <label for="pwd"><b>Password</b></label>
+                <input type="password" class="form-control" placeholder="Enter Password" name="psw" required>
 
-                    <button class="loginBtn" type="submit">Login</button>
-                    <input type="checkbox" checked="checked"> Remember me
-                </div>
+                <button class="btn-success btn-lg btn-block" type="submit">Login</button>
+                <input type="checkbox" checked="checked"> Remember me
 
-                <div class="container" style="background-color:#f1f1f1">
-                    <button type="button" class="cancelbtn">Cancel</button>
-                    <span class="psw">Forgot <a href="#">password?</a></span>
-                </div>
+                <br>
+                <button type="button" class="btn-danger btn-lg">Cancel</button>
+                <span class="psw">Forgot <a href="#">password?</a></span>
+
             </form>
-          <?php
-            include('templates/footerCopy.php');
-          ?>
 
+            <?php
+            include('templates/footerCopy.php');
+            ?>
         </div>
-        
-        
-    <?php
-      include('templates/footerScripts.php');
-    ?>
+
+        <?php
+        include('templates/footerScripts.php');
+        ?>
 </body>
 
 </html>
