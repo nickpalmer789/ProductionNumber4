@@ -23,7 +23,7 @@
 
                 <div class="row">
                     <div class="col-12 text-center">
-                        <a class="btn btn-lg btn-success" href="#" role="button">Get Started!</a>
+                        <a class="btn btn-lg btn-success" href="get-started.php" role="button">Get Started!</a>
                     </div>
                 </div>
             </div>
