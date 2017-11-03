@@ -6,7 +6,7 @@
       include('templates/headercontent.php')
     ?>
     <!-- <link rel="stylesheet" type="text/css" href="groupViewStyle.css"> -->
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css"
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
   </head>
 
   <body>
