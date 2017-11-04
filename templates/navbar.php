@@ -5,11 +5,11 @@
   </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
+            <!--<li class="nav-item active">
                 <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
-            </li>
+            </li> -->
             <li class="nav-item">
-                <a class="nav-link" href="#">Calendar</a>
+                <a class="nav-link" href="calendar.php">Calendar</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="groupView.php">Group Calendar</a>
