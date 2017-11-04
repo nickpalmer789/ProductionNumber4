@@ -4,19 +4,6 @@
  * Copyright 2011-2017 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
- .totallyacalendar{
-  border-style: solid;
-  padding-top: 300px;
-  padding-bottom: 300px;
- }
- .whitespace {
-  padding-top: 70px;
-}
-
-.calendarspacing {
-  padding-right: 30px;
-  padding-left: 30px;
-}
 @media print {
   *,
   *::before,
