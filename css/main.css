@@ -1,0 +1,53 @@
+/* Show it's not fixed to the top */
+
+body {
+    min-height: 75rem;
+}
+
+
+/* Padding on inputs */
+
+input[type=text],
+input[type=password] {
+    padding: 12px 20px;
+    margin: 8px 0;
+}
+
+
+/* Center the avatar image inside this container */
+
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+
+
+/* Avatar image */
+
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+
+/* The "Forgot password" text */
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+.totallyacalendar {
+    border-style: solid;
+    padding-top: 300px;
+    padding-bottom: 300px;
+}
+
+.whitespace {
+    padding-top: 70px;
+}
+
+.calendarspacing {
+    padding-right: 30px;
+    padding-left: 30px;
+}
