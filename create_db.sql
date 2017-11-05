@@ -4,7 +4,7 @@ DROP TABLE IF EXISTS `calendar`;
 DROP TABLE IF EXISTS `user_settings`;
 DROP TABLE IF EXISTS `group_calendar`;
 DROP TABLE IF EXISTS `tasks`;
-DROP TABLE IF EXISTS `join_table`;
+DROP TABLE IF EXISTS `groups_join_users`;
 create table if not exists `users` (
 	`username` char(40) primary key,
 	`first_name` varchar(40) not null,
