@@ -14,10 +14,13 @@ The goal for this project is to create an integrated platform to allows users to
 	My Goals will allow you to create and manage your goals. This will encapsulate the functionality of the to-do list as well as allowing you to manage more long-term goals such as passing classes, getting internships and jobs, or any other goal that a student could have. This will allow students, along with features such as the pomodoro timer, to manage their assignments and goals for the future.  
 	The Group View will allow students to overlay their calendars on the same view, making it readily apparent when the entire group can meet up for a face-to-face meeting. The Group View will also have other group interactions such as contact information for each member in your group, or being able to see individual group member's calendars.  
 	These basic features of our application will ultimately result in a platform which will allow users to better manage their time as a resource while developing good study habits.  
+	
 # Vision Statement
 We hope to develop an integrated platform on which one can set up their schedule, manage tasks, see their friends' schedules, and plan and collaborate with one another. 
+
 # Motivation
 We found it very difficult to schedule meetings because we are all very busy and have few overlapping free times, so we wanted to automate that process for other groups, as well as create something that integrated todo lists with one's class schedule.
+
 # Risks
 Lack of experience  
 	Idea may be too ambitious to accomplish within time constraints. May need to be scaled back.  
@@ -29,6 +32,7 @@ Resources: We have enough resources to mitigate the risk of lack of experience. 
 	Modular project: it will be easy to scale the project back if need be. We have distinguished between the features needed for the project to succeed vs. the extra features to be added if we have extra time.  
 	Good time management: Make sure we divide tasks so that not everyone is spending time on any singular item that needs to be completed. That way if we do end up with a task that is more challenging than we anticipated, we know that it is and can work on it.  
 	Good communication: We will utilize Slack and our weekly meetings to minimize miscommunication. We will be sure to make enough branches in git that we won't break the main branch.
+	
 # Version Control
 Our team will be using git. We will also be using Github to store our remote repository for collaboration. 
 
