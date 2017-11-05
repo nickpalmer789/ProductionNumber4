@@ -46,7 +46,7 @@ insert into `groups` (`group_name`) values
 	('Production Number 4');
 
 
-insert into `groups_join_users` (`group_id`,`user_id`) values
+insert into `groups_join_users` (`group_id`,`username`) values
 (1,'abradolflincler'),
 (1,'klen'),
 (1,'john1'),

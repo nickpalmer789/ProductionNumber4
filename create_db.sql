@@ -57,5 +57,5 @@ create table if not exists `tasks` (
 
 create table if not exists `groups_join_users` (
 	`group_id` integer references groups(group_id),
-	`user_id` char(40) references users(username)
+	`username` char(40) references users(username)
 );
