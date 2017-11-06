@@ -2017,14 +2017,16 @@ fieldset[disabled] a.btn {
 
 .btn-secondary {
   color: #fff;
-  background-color: #868e96;
-  border-color: #868e96;
+  background-color: #28a745;
+  border-color: #28e745;
 }
 
 .btn-secondary:hover {
   color: #fff;
-  background-color: #727b84;
-  border-color: #6c757d;
+/*  background-color: #727b84;
+  border-color: #6c757d; border color darker*/
+  background-color: #47eb60;
+  border-color: #30e84c;
 }
 
 .btn-secondary:focus, .btn-secondary.focus {
@@ -2032,15 +2034,15 @@ fieldset[disabled] a.btn {
 }
 
 .btn-secondary.disabled, .btn-secondary:disabled {
-  background-color: #868e96;
-  border-color: #868e96;
+  background-color: #84e19a;
+  border-color: #84e19a;
 }
 
 .btn-secondary:active, .btn-secondary.active,
 .show > .btn-secondary.dropdown-toggle {
-  background-color: #727b84;
+  background-color: #47eb60;
   background-image: none;
-  border-color: #6c757d;
+  border-color: #30e84c;
 }
 
 .btn-success {
@@ -2540,6 +2542,8 @@ tbody.collapse.show {
 .dropup,
 .dropdown {
   position: relative;
+/*  display:inline-block;
+  float:left;*/
 }
 
 .dropdown-toggle::after {
