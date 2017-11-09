@@ -31,11 +31,11 @@
 
                             <label for="usr"><b>Username</b></label>
                             <p>&nbsp;
-                                <input type="text" class="form-control" placeholder="Enter Username" name="uname" required></p>
+                                <input type="text" class="form-control" placeholder="Enter Username" name="username" required></p>
 
                             <label for="pwd"><b>Password</b></label>
                             <p>&nbsp;
-                            <input type="password" class="form-control" placeholder="Enter Password" name="psw" required></p>
+                            <input type="password" class="form-control" placeholder="Enter Password" name="password" required></p>
                             <input type="checkbox" checked="checked"> Remember me
                             <button class="btn-success btn-lg btn-block" type="submit">Login&nbsp;</button>
 

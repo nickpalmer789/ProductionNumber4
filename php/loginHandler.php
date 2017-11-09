@@ -13,8 +13,8 @@ else
     session_start();        
     if($_SERVER["REQUEST_METHOD"] == "POST") 
     {
-        $username = mysqli_real_escape_string($db,$_POST['uname']);
-        $password = mysqli_real_escape_string($db,$_POST['psw']);
+        $username = mysqli_real_escape_string($db,$_POST['username']);
+        $password = mysqli_real_escape_string($db,$_POST['password']);
     
         $verifyQuery = "SELECT username FROM users WHERE username = '$username' AND hashed_password = '$password'";
         $result = mysqli_query($db, $verifyQuery);
