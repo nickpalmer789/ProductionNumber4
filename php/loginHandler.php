@@ -26,7 +26,7 @@ else
         {
             //Log the user in and redirect them to the dashboard
             $_SESSION["login_user"] = $username;
-            header("location: ../dashboard.php");
+            header("location: /content/dashboard.php");
         } 
         
     else 
