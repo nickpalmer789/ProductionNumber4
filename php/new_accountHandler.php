@@ -40,7 +40,7 @@
                         $_SESSION['login_user'] = $username;
 
                         //Send a new header to the client
-                        header("location: dashboard.php");
+                        header("location: ../dashboard.php");
             
                     } else {
                         //Username already taken print an error

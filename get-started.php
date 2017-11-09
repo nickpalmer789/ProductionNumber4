@@ -10,11 +10,8 @@
 
 <body>
     <?php
-
         //Include the navbar content
         include('templates/navbar.php');
-   
-	
     ?>
 
         <div class="container-fluid">
@@ -41,7 +38,7 @@
 
                 <label for="pwd"><b>Password</b></label>
                 <input type="password" class="form-control" placeholder="Confirm Password" name="confirmpassword" required>
-                <button class="btn btn-primary btn-lg btn-block" type="submit" name="login">Login</button>
+                <button class="btn btn-primary btn-lg btn-block" type="submit" name="login">Create Account</button>
             </form>
 
 
