@@ -16,26 +16,28 @@
             </li>
         </ul>
 
-        <button type="button" class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#loginModal">Sign In</button>
+        <button type="button" class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#loginModal">Log In</button>
 
         <!-- The login modal (until it gets its own file again, maybe) -->
         <div class="modal fade" id="loginModal" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-body">
-                        <form action="/action_page.php" method="post">
+                        <form action="templates/loginHandler.php" method="post">
                             <div class="imgcontainer">
                                 <img src="assets/icons/planiticon.png" alt="Planit" class="avatar">
                                 <h2>Planit Login</h2>
                             </div>
 
                             <label for="usr"><b>Username</b></label>
-                            <input type="text" class="form-control" placeholder="Enter Username" name="uname" required>
+                            <p>&nbsp;
+                                <input type="text" class="form-control" placeholder="Enter Username" name="uname" required></p>
 
                             <label for="pwd"><b>Password</b></label>
-                            <input type="password" class="form-control" placeholder="Enter Password" name="psw" required>
+                            <p>&nbsp;
+                            <input type="password" class="form-control" placeholder="Enter Password" name="psw" required></p>
                             <input type="checkbox" checked="checked"> Remember me
-                            <button class="btn-success btn-lg btn-block" type="submit">Login</button>
+                            <button class="btn-success btn-lg btn-block" type="submit">Login&nbsp;</button>
 
 
                             <br>
