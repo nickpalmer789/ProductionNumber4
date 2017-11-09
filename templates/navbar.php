@@ -23,7 +23,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-body">
-                        <form action="templates/loginHandler.php" method="post">
+                        <form action="php/loginHandler.php" method="post">
                             <div class="imgcontainer">
                                 <img src="assets/icons/planiticon.png" alt="Planit" class="avatar">
                                 <h2>Planit Login</h2>
