@@ -25,8 +25,8 @@
                         Groups
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="index.php">Group1</a>
-                        <a class="dropdown-item" href="calendar.php">Group2</a>
+                        <a class="dropdown-item" href="/index.php">Group1</a>
+                        <a class="dropdown-item" href="/content/calendar.php">Group2</a>
                         <a class="dropdown-item" href="#">Group3</a>
                     </div>
                 </div>

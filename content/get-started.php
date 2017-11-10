@@ -14,7 +14,7 @@
         include('../templates/navbar.php');
     ?>
 
-        <div class="container-fluid">
+        <div class="container">
             <form action="../php/new_accountHandler.php" method="post">
                 <div class="imgcontainer">
                     <img src="../assets/icons/planiticon.png" alt="Planit" class="img-small">
