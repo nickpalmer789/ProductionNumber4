@@ -37,7 +37,7 @@
                         <label for="pwd"><b>Password</b></label>
                         <input type="password" class="form-control" placeholder="Enter Password" name="password" required>
 
-                        <label for="pwd"><b>Password</b></label>
+                        <label for="pwd"><b>Re-enter Password</b></label>
                         <input type="password" class="form-control" placeholder="Confirm Password" name="confirmpassword" required>
                         <button class="btn btn-primary btn-lg btn-block" type="submit" name="login">Create Account</button>
                     </div>

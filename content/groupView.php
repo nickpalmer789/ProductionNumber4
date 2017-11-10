@@ -21,7 +21,7 @@
                 </div>
                 
                 <div class="col-xs-6" id="groups">
-                    <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button class="btn btn-success special-btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Groups
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
