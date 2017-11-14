@@ -13,7 +13,8 @@
     $login_session = $row['username'];
     
     //Redirect to the login page if the session is not valid
-    if(!isset($_SESSION["login_user"])) {
+    if(!isset($_SESSION["login_user"])) 
+    {
         header("location: ../index.php");
     }
 

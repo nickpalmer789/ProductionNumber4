@@ -18,7 +18,9 @@
             <div class="row">
                
                 <div class="col-xs-6">
-                    <font size="7">*Groupname* Calendar</font>
+                    <?php
+                        echo "<font size=\"7\">*Groupname* Calendar</font>";
+                    ?>
                 </div>
                 
                 <div class="col-xs-6" id="groups">

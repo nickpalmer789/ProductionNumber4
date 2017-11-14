@@ -2,12 +2,12 @@
    
 $db = mysqli_connect("localhost:3306","root","password","planit");  
             
-if($db === false) {
+if($db === false) 
+{
 //Print an error if the database can't be reached
 //TODO Add better error printing to form
     echo "<p>Cannot connect to the database!</p>";
 } 
-
 else 
 {
     session_start();        
@@ -26,6 +26,7 @@ else
         {
             //Log the user in and redirect them to the dashboard
             $_SESSION["login_user"] = $username;
+            $_SESSION["logged_in"] = TRUE;
             header("location: /content/dashboard.php");
         } 
         
