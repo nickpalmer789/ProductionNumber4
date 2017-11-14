@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-    <a class="navbar-brand" href="/index.php">Planit</a>
+    <a class="navbar-brand" href="../content/dashboard.php">Planit</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -9,16 +9,29 @@
                 <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
             </li> -->
             <li class="nav-item">
-                <a class="nav-link" href="/content/calendar.php">Calendar</a>
+                <a class="nav-link" href="../content/calendar.php">Calendar</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/content/group_calendar.php">Group Calendar</a>
+                <a class="nav-link" href="../content/group_calendar.php">Group Calendar</a>
             </li>
         </ul>
 
-        <button type="button" class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#loginModal">Log In</button>
+       <!-- Check if logged in, adjust button as needed -->
+        <?php
+            if(!isset($_SESSION["login_user"])) 
+            {
+                echo "<form action=\"../php/logout.php\" method=\"post\">";
+                echo "<button type=\"submit\" class=\"btn btn-outline-success my-2 my-sm-0\">LOG OUT</button>";
+                echo "</form>";
+            }
+            else
+            {
+                echo "<button type=\"button\" class=\"btn btn-outline-success my-2 my-sm-0\" data-toggle=\"modal\" data-target=\"#loginModal\">Log In</button>";
+            }
+        ?>
+            
 
-            <!-- The login modal (until it gets its own file again, maybe) -->
+            <!-- The login modal -->
             <div class="modal fade" id="loginModal" role="dialog">
                 <div class="modal-dialog">
                     <div class="modal-content">

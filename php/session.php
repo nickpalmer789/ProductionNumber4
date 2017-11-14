@@ -14,7 +14,7 @@
     
     //Redirect to the login page if the session is not valid
     if(!isset($_SESSION["login_user"])) {
-        header("location: index.php");
+        header("location: ../index.php");
     }
 
 ?>
