@@ -20,23 +20,24 @@
             </h1>
 
             <div class="row">
-                <div class="col-sm-8" align="center">
+                <div class="col-sm-10" align="center">
                     <div class="calendarspacing">
                         <div class="totallyacalendar">
                             <?php
-                            if(!isset($_SESSION["login_user"])) 
-                            {
-                                echo "<p>this is a <del>calendar</del> box </p>";
-                            }
-                            else
-                            {
-                                include('../php/load_calendar.php');
-                            }
+                                if(!isset($_SESSION["login_user"])) 
+                                {
+                                    echo "<p>this is a <del>calendar</del> box </p>";
+                                }
+                                else
+                                {
+                                    include('../php/load_calendar.php');
+                                }
                             ?>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-4" align="center">
+                <!-- Hides tasks for now
+                <div class="col-sm-2" align="center">
                     <table class="table">
                         <thead>
                             <tr>
@@ -81,6 +82,7 @@
                         </tbody>
                     </table>
                 </div>
+                -->
             </div>
             <?php
         include('../templates/footerCopy.php');

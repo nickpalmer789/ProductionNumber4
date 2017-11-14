@@ -66,7 +66,7 @@
 
             <div class="row">
                 <div class="col-12 text-center">
-                    <a class="btn btn-lg btn-success" href="/content/get-started.php" role="button">Get Started!</a>
+                    <a class="btn btn-lg btn-success" href="/content/new_user.php" role="button">Get Started!</a>
                 </div>
             </div>
         </div>

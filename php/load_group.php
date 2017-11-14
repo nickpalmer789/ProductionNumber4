@@ -8,7 +8,8 @@ if(mysqli_connect_errno()){
 
     
     
-$query = "SELECT * FROM calendar WHERE username = '{$_SESSION['login_user']}'";
+$query = "SELECT group_name, group_calendar.description, group_calendar.item_name, group_calendar.start_time, group_calendar.end_time FROM users JOIN groups_join_users ON users.username = groups_join_users.username JOIN groups ON groups_join_users.group_id = groups.group_id JOIN group_calendar ON groups.group_id = group_calendar.group_id WHERE users.username = '{$_SESSION['login_user']}'";
+
 $resultset = mysqli_query($connection,$query);
 if(!$resultset){
     echo ":( Something went wrong.<br><br>";
@@ -16,6 +17,7 @@ if(!$resultset){
     
 // Start table
 echo "<table class = \"table\">";
+echo "<th>Group</th>";
 echo "<th>Type</th>";
 echo "<th>Description</th>";
 echo "<th>Location</th>";
@@ -26,11 +28,11 @@ echo "<th>End</th>";
 while ($row = mysqli_fetch_array($resultset, MYSQLI_NUM)) 
 {
     echo "<tr>";
-    echo "<td>$row[3]</td>";
+    echo "<td>$row[0]</td>";
     echo "<td>$row[2]</td>";
-    echo "<td>$row[6]</td>";
+    echo "<td>$row[1]</td>";
+    echo "<td>$row[3]</td>";
     echo "<td>$row[4]</td>";
-    echo "<td>$row[5]</td>";
     echo "<td><input type=\"submit\" class=\"button\" name=\"".$row[0]."\"
 value=\"delete\"/></td>";
     echo "</tr>";

@@ -11,13 +11,14 @@
 <body>
     <?php
       //Include the navbar content
-      include('../templates/navbar.php');
+        include('../templates/navbar.php');
+        include('../php/session.php');
     ?>
         <div class="container-fluid">
             <div class="row">
                
                 <div class="col-xs-6">
-                    <font size="7">Groupname Calendar</font>
+                    <font size="7">*Groupname* Calendar</font>
                 </div>
                 
                 <div class="col-xs-6" id="groups">
@@ -33,17 +34,24 @@
                 
             </div>
             <div class="row">
-                <div class="col-sm-8">
-
+                <div class="col-sm-10">
                     <div class="calendarspacing">
                         <div class="totallyacalendar" align="center">
-                            <p>this is a <del>calendar</del> box </p>
+                            <?php
+                                if(!isset($_SESSION["login_user"])) 
+                                {
+                                    echo "<p>this is a <del>calendar</del> box </p>";
+                                }
+                                else
+                                {
+                                    include('../php/load_group.php');
+                                }
+                            ?>
                         </div>
                     </div>
-
                 </div>
+                <!-- Hide tasks for now
                 <div class="col-sm-4">
-
                     <table class="table">
                         <thead>
                             <tr>
@@ -90,6 +98,7 @@
                         </tbody>
                     </table>
                 </div>
+                -->
             </div>
 
             <?php

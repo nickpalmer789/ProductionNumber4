@@ -12,7 +12,7 @@
                 <a class="nav-link" href="/content/calendar.php">Calendar</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/content/groupView.php">Group Calendar</a>
+                <a class="nav-link" href="/content/group_calendar.php">Group Calendar</a>
             </li>
         </ul>
 
