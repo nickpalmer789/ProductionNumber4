@@ -11,7 +11,8 @@
 <body>
     <?php
       //Include the navbar content
-      include('../templates/navbar.php');
+        include('../templates/navbar.php');
+        include('../php/session.php');
     ?>
         <div class="container-fluid">
             <h1 align="left">
@@ -22,7 +23,16 @@
                 <div class="col-sm-8" align="center">
                     <div class="calendarspacing">
                         <div class="totallyacalendar">
-                            <p>this is a <del>calendar</del> box </p>
+                            <?php
+                            if(!isset($_SESSION["login_user"])) 
+                            {
+                                echo "<p>this is a <del>calendar</del> box </p>";
+                            }
+                            else
+                            {
+                                include('../php/load_calendar.php');
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>
