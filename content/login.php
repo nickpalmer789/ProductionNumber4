@@ -34,7 +34,10 @@
                         <button class="btn-success btn-lg btn-block" type="submit">Login</button>
 
                         <br>
-                        <button type="button" class="btn-danger btn-lg btn-block" data-dismiss="modal">Cancel</button>
+                    </form>
+                    
+                    <form action="../index.php">
+                        <button type="submit" class="btn-danger btn-lg btn-block">Cancel</button>
                         <span class="psw">Forgot <a href="#">password?</a></span>
                     </form>
                 </div>
@@ -44,9 +47,9 @@
             <?php
                 include('../templates/footerCopy.php');
             ?>
-            
+
         </div>
-        
+
         <?php
             include('../templates/footerScripts.php');
         ?>

@@ -22,7 +22,7 @@
                         <?php echo $row[2]; ?>
                     </td>
                     <td>
-                        <?php echo $row[4]; ?>
+                        <?php echo $row[3]; ?>
                     </td>
                 </tr>
         <?php
