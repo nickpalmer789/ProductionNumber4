@@ -35,6 +35,7 @@ else
     //Incorrect username or password. Print an error
     //TODO Add better error printing to form
     echo "<p> Incorrect username or password!</p>";
+        header("location: /content/login.php");
     }
         
     }

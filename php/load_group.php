@@ -40,5 +40,5 @@ value=\"delete\"/></td>";
     
 }
 // End table    
-echo "<table>";    
+echo "</table>";    
 ?>

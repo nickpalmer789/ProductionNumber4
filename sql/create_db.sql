@@ -9,7 +9,7 @@ create table if not exists `users` (
 	`username` char(40) primary key,
 	`first_name` varchar(40) not null,
 	`last_name` varchar(40) not null,
-	`phone_number` varchar(40) not null,
+	`phone_number` varchar(40),
 	`email` varchar(40) not null,
 	`hashed_password` varchar(40) not null,
 	`cryptosalt` varchar(40) not null,
@@ -17,12 +17,12 @@ create table if not exists `users` (
 );
 create table if not exists `user_settings`(
 	`username` char(40) primary key references users(username),
-	`friend_visible` boolean,
-	`public_visible` boolean,
-	`default_avatar_color` varchar(40),
-	`username_viewable` boolean,
-	`public_email` boolean,
-	`public_phonenumber` boolean
+	`friend_visible` boolean not null,
+	`public_visible` boolean not null,
+	`default_avatar_color` varchar(40) not null,
+	`username_viewable` boolean not null,
+	`public_email` boolean not null,
+	`public_phonenumber` boolean not null
 );
 create table if not exists `groups` (
 	`group_id` integer auto_increment primary key,
@@ -52,7 +52,8 @@ create table if not exists `tasks` (
 	`task_name` varchar(40) not null,
 	`deadline` datetime,
 	`description` varchar(140),
-	`ETA` varchar(40)
+	`ETA` varchar(40),
+    `complete` tinyint(1) not null default 0
 );
 
 create table if not exists `groups_join_users` (

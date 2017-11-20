@@ -62,7 +62,13 @@ insert into `groups_join_users` (`group_id`,`username`) values
 
 insert into `tasks` (`username`,`task_name`,`deadline`,`description`,`ETA`) values
 ('scarolac','the usual','2017-11-02 12:01:00','open the country, stop having it be closed','whenever'),
-('npalmer','forget','2017-11-02 17:30:00','forget hitlers last name','yea, he did');
+('npalmer','forget','2017-11-02 17:30:00','forget hitlers last name','yea, he did'),
+('klen','pie','2017-11-10 15:00:00','quit while im ahead','last friday'),
+('john1','test1','2017-01-01 12:00:00','testing testing 123','never'),
+('john1','test2','2017-01-01 12:00:00','testing testing 123','never'),
+('john1','test3','2017-01-01 12:00:00','testing testing 123','never'),
+('john1','test4','2017-01-01 12:00:00','testing testing 123','never'),
+('john1','test5','2017-01-01 12:00:00','testing testing 123','never');
 
 insert into `group_calendar` (`group_id`,`description`, `item_name`,`start_time`, `end_time`,`optional_location`) values
 (1,'do stuff', 'stuff', '2017-11-02 12:00:00','2017-11-02 12:01:00','EC'),
