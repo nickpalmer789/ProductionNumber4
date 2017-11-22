@@ -38,7 +38,7 @@
             <div class="row">
                 <div class="col-sm-8">
                     <div class="calendarspacing">
-                        <div class="totallyacalendar" align="center">
+                        <div class="totallyacalendar table-responsive" align="center">
                             <?php
                                 include('../php/load_group.php');
                             ?>
