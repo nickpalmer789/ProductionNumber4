@@ -12,9 +12,12 @@
             include('../php/session.php');
 	    ?>
         <div class="container-fluid">
-            <h1><font size="7">My Dashboard</font></h1>
+            <h1 class="text-center"><font size="7">Dashboard</font></h1>
+            <hr>
             <div class="row">
                 <div class="col-md-8">
+                    <!--Show tasks table-->
+                    <h3 class="text-center">My Tasks</h3>
                     <div class="table-responsive">
                         <?php
                             include('../php/load_tasks.php');
@@ -52,15 +55,27 @@
                                         <button class="btn btn-primary btn-lg btn-block" type="submit" name="createTask">Create Task</button>
                                     </form>
                                 </div>
-                                <div class="modal-footer">
-                                    
-                                </div>
                             </div>
                         </div>
                     </div>
+                    <!--End Modal-->
                 </div>
                 <div class="col-md-4">
-                    
+                    <!--Pomodoro timer -->
+                    <script src="../js/pomodoro.js"></script>
+                    <h3 class="text-center">Pomodoro Timer</h3>
+                    <br>
+                    <h1 class="text-center" id="timer-text">00:00</h1>
+                    <br>
+                    <button class="btn btn-block btn-top btn-info" id="toggleWork">Switch To Break Time</button>
+                    <button class="btn btn-block btn-top btn-success" id="pauseBtn">Pause Timer</button>
+                    <button class="btn btn-block btn-top btn-primary" id="restartBtn">Restart Timer</button>
+                    <hr>
+                    <label for="workTime">Work Time</label>
+                    <input type="text" id="workTime" min=1 max=60 value="25" class="form-control">
+                    <label for="breakTime">Break Time</label>
+                    <input type="text" id="breakTime" min=1 max=60 value="5" class="form-control">
+                    <button class="btn btn-block btn-success" id="updateBtn">Update Timer</button>
                 </div>
             </div>
 
