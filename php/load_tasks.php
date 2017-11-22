@@ -13,7 +13,7 @@
     if(!$resultset){
         echo ":( Something went wrong.<br><br>";
     }   
-        
+    //TODO Add functionality to show time of deadline        
     // Start table
     echo "<table class = \"table\">";
     echo "<tr>";
