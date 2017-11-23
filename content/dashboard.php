@@ -13,7 +13,7 @@
 		    include('../templates/navbar.php');	
             include('../php/session.php');
 	    ?>
-        <div class="container-fluid">
+        <div class="container">
             <h1 class="text-center">
                 <font size="7">Dashboard</font>
             </h1>
@@ -88,14 +88,14 @@
                     <button class="btn btn-block btn-success" id="updateBtn">Update Timer</button>
                 </div>
             </div>
-
-        </div>
-        <?php
-            include('../templates/footerCopy.php');
-        ?>
             <?php
-            include('../templates/footerScripts.php');
-        ?>
+                include('../templates/footerCopy.php');
+            ?>
+        </div>
+        
+            <?php
+                include('../templates/footerScripts.php');
+            ?>
 </body>
 
 </html>
