@@ -15,7 +15,7 @@
             <h1 class="text-center"><font size="7">Dashboard</font></h1>
             <hr>
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-9">
                     <!--Show tasks table-->
                     <h3 class="text-center">My Tasks</h3>
                     <div class="table-responsive">
@@ -60,13 +60,14 @@
                     </div>
                     <!--End Modal-->
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <!--Pomodoro timer -->
                     <script src="../js/pomodoro.js"></script>
                     <h3 class="text-center">Pomodoro Timer</h3>
                     <br>
                     <h1 class="text-center" id="timer-text">00:00</h1>
                     <br>
+                    <h5 class="text-center" id="timeIndicator">Currently on Work Time</h5>
                     <button class="btn btn-block btn-top btn-info" id="toggleWork">Switch To Break Time</button>
                     <button class="btn btn-block btn-top btn-success" id="pauseBtn">Pause Timer</button>
                     <button class="btn btn-block btn-top btn-primary" id="restartBtn">Restart Timer</button>

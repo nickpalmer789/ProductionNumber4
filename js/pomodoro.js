@@ -59,7 +59,8 @@ $(document).ready(function() {
         if(!working) {
             return;
         }
-
+        $("#timeIndicator").text("Currently on Break Time");
+        $("#toggleWork").text("Switch to Work Time");
         working = !working;
         currentTime = breakTime;
         displayTime();
@@ -71,6 +72,8 @@ $(document).ready(function() {
             return;
         }
 
+        $("#timeIndicator").text("Currently on Work Time");
+        $("#toggleWork").text("Switch to Break Time");
         working = !working;
         currentTime = workTime;
         displayTime();
