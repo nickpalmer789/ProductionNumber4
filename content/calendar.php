@@ -24,14 +24,7 @@
                     <div class="calendarspacing">
                         <div class="totallyacalendar">
                             <?php
-                                if(!isset($_SESSION["login_user"])) 
-                                {
-                                    echo "<p>this is a <del>calendar</del> box </p>";
-                                }
-                                else
-                                {
-                                    include('../php/load_calendar.php');
-                                }
+                                include('../php/load_calendar.php');
                             ?>
                         </div>
                     </div>
@@ -41,15 +34,15 @@
                         include('../php/taskHandler.php');
                     ?>
                 </div>
-                
+
             </div>
             <?php
-        include('../templates/footerCopy.php');
-      ?>
+                include('../templates/footerCopy.php');
+            ?>
         </div>
         <?php
-      include('../templates/footerScripts.php');
-    ?>
+            include('../templates/footerScripts.php');
+        ?>
 </body>
 
 </html>

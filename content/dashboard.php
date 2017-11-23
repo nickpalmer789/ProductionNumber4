@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <?php
+
+<head>
+    <?php
             //Include the header content
             include('../templates/headercontent.php')
         ?>
-    </head>
-    <body>
-	    <?php
+</head>
+
+<body>
+    <?php
 		    include('../templates/navbar.php');	
             include('../php/session.php');
 	    ?>
         <div class="container-fluid">
-            <h1 class="text-center"><font size="7">Dashboard</font></h1>
+            <h1 class="text-center">
+                <font size="7">Dashboard</font>
+            </h1>
             <hr>
             <div class="row">
                 <div class="col-md-9">
@@ -32,23 +36,23 @@
                                     <h5 class="modal-title" id="modalLabel">Create New Task</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
-                                    </button>    
+                                    </button>
                                 </div>
                                 <div class="modal-body">
                                     <!--Start form for new task-->
                                     <form action="../php/new_taskHandler.php" method="post">
                                         <label for="taskName"><b>Task Name</b></label>
                                         <input type="text" class="form-control" placeholder="Enter Task Name" name="taskName" required>
-                                        
+
                                         <label for="description"><b>Description</b></label>
                                         <input type="text" class="form-control" placeholder="Enter Task Description" name="description" required>
-                                        
+
                                         <label for="deadlineDate"><b>Deadline Date</b></label>
                                         <input type="date" class="form-control" name="deadlineDate" required>
 
                                         <label for="deadlineTime"><b>Deadline Time</b></label>
                                         <input type="time" step="1" class="form-control" name="deadlineTime" required>
-                                        
+
                                         <label for="eta"><b>ETA</b></label>
                                         <input type="text" class="form-control" name="eta" required>
 
@@ -60,7 +64,12 @@
                     </div>
                     <!--End Modal-->
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-3" align='right'>
+                    <!-- Tiny Calendar -->
+                    <?php 
+                        include('../php/tiny_calendar.php');
+                        echo "<br>";
+                    ?>
                     <!--Pomodoro timer -->
                     <script src="../js/pomodoro.js"></script>
                     <h3 class="text-center">Pomodoro Timer</h3>
@@ -84,8 +93,9 @@
         <?php
             include('../templates/footerCopy.php');
         ?>
-        <?php
+            <?php
             include('../templates/footerScripts.php');
         ?>
-    </body>
+</body>
+
 </html>
