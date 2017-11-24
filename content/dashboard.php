@@ -79,7 +79,7 @@
                     <br>
                     <h5 class="text-center" id="timeIndicator">Currently on Work Time</h5>
                     <button class="btn btn-block btn-top btn-info" id="toggleWork">Switch To Break Time</button>
-                    <button class="btn btn-block btn-top btn-success" id="pauseBtn">Pause Timer</button>
+                    <button class="btn btn-block btn-top btn-success" id="pauseBtn">Start Timer</button>
                     <button class="btn btn-block btn-top btn-primary" id="restartBtn">Restart Timer</button>
                     <hr>
                     <label for="workTime">Work Time</label>
