@@ -30,7 +30,7 @@
         echo "<td>$row[5]</td>";
         $dateString = explode(" ", $row[3]);
         echo "<td>$dateString[0]</td>";
-        echo "<td><input type=\"submit\" class=\"button\" name=\"".$row[0]."\" value=\"delete\"/></td>";
+        echo "<td><input type=\"submit\" class=\"button\" name=\"".$row[0]."\" value=\"Done!\"/></td>";
         echo "</tr>";
     }
     

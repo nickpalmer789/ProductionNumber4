@@ -4,7 +4,7 @@
     $date = getdate($time);
     $dayTotal = date('t', mktime(0,0,0,$date['mon'], 1,$date['year']));
     //Print the calendar header with the month name.
-    print '<table><tr><td colspan="7"><strong>' . $date['month'] . '</strong><strong>    ' . $date['year'] . '</strong></td></tr>';
+    print '<table style="margin: 0px auto;"><tr><td colspan="7"><strong>' . $date['month'] . '</strong><strong>    ' . $date['year'] . '</strong></td></tr>';
     for ($i = 0; $i < 6; $i++) {
         print '<tr>';
         for ($j = 1; $j <= 7; $j++) {

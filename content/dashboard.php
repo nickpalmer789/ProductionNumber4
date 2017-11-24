@@ -27,6 +27,7 @@
                             include('../php/load_tasks.php');
                         ?>
                     </div>
+                    <script src="../js/task_deleteHandler.js"></script>
                     <button class="btn btn-block btn-primary" type="button" data-toggle="modal" data-target="#taskModal">Add New Task</button>
                     <!--Start Modal-->
                     <div class="modal fade" id="taskModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
@@ -68,8 +69,8 @@
                     <!-- Tiny Calendar -->
                     <?php 
                         include('../php/tiny_calendar.php');
-                        echo "<br>";
                     ?>
+                    <hr>
                     <!--Pomodoro timer -->
                     <script src="../js/pomodoro.js"></script>
                     <h3 class="text-center">Pomodoro Timer</h3>
