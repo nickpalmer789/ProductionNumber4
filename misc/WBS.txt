@@ -1,0 +1,38 @@
+1. Have a page
+2. Have DB of users/login with MySQL
+3. Profile page (show calendar)
+4. My Calendar page (add/remove multiple ways)
+5. My Goals (Manage goals/pomodoro/todo list)
+6. Friends page (Search/view my friends)
+7. Notification panel (See notifications/friend requests)
+8. Settings panel (password change/my profile)
+9. Group View (See availability of a whole group)
+
+Extra:
+- Timezones
+- DST
+- Messaging/chat
+
+
+
+Todo:
+Database - 
+	make sure tasks has a done check box
+	calendar needs a recurring option (weekly/monthly/daily etc)
+	
+
+group_calendar - 
+	expand the if statement to allow for more db calls in one php block to build the data instead of trying to load the load_groups.php file
+	this will need to show everyones calendar based on users privacy settings
+	how are groups joined? invited for?
+
+
+logout - 
+	handle sessions better? logout is not being checked correctly but definitely logs a user out
+	this page https://www.sitepoint.com/users-php-sessions-mysql/ is useful
+
+dashboard - 
+	needs pomodoro timer, maybe tasks?
+
+login.php - 
+	working for now

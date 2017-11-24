@@ -20,77 +20,29 @@
             </h1>
 
             <div class="row">
-                <div class="col-sm-10" align="center">
+                <div class="col-sm-8" align="center">
                     <div class="calendarspacing">
                         <div class="totallyacalendar">
                             <?php
-                                if(!isset($_SESSION["login_user"])) 
-                                {
-                                    echo "<p>this is a <del>calendar</del> box </p>";
-                                }
-                                else
-                                {
-                                    include('../php/load_calendar.php');
-                                }
+                                include('../php/load_calendar.php');
                             ?>
                         </div>
                     </div>
                 </div>
-                <!-- Hides tasks for now
-                <div class="col-sm-2" align="center">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>My Tasks</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Do the project</td>
-                            </tr>
-                            <tr>
-                                <td>Make it not incomplete</td>
-                            </tr>
-                            <tr>
-                                <td>This probably won't be a table at the end</td>
-                            </tr>
-                            <tr>
-                                <td>It just looks nice</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <br>
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>Completed Tasks</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>I did the project</td>
-                            </tr>
-                            <tr>
-                                <td>I made it not incomplete</td>
-                            </tr>
-                            <tr>
-                                <td>Firetruck</td>
-                            </tr>
-                            <tr>
-                                <td>Rocks</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="col-sm-4" align="center">
+                    <?php
+                        include('../php/taskHandler.php');
+                    ?>
                 </div>
-                -->
+
             </div>
             <?php
-        include('../templates/footerCopy.php');
-      ?>
+                include('../templates/footerCopy.php');
+            ?>
         </div>
         <?php
-      include('../templates/footerScripts.php');
-    ?>
+            include('../templates/footerScripts.php');
+        ?>
 </body>
 
 </html>

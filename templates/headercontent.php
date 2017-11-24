@@ -5,7 +5,10 @@
 <link rel="icon" href="../assets/icons/favicon.ico">
 
 <title>Planit</title>
-
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
 <!-- Bootstrap core CSS -->
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet">
 
