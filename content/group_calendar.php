@@ -13,7 +13,9 @@
       //Include the navbar content
         include('../templates/navbar.php');
         include('../php/session.php');
+        
     ?>
+
         <div class="container-fluid">
             <div class="row">
                
@@ -24,14 +26,17 @@
                 </div>
                 
                 <div class="col-xs-6" id="groups">
-                    <button class="btn btn-success special-btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <?php 
+                        include ('../php/pull_groups.php');
+                    ?>
+<!--                     <button class="btn btn-success special-btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Groups
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item" href="/index.php">Group1</a>
                         <a class="dropdown-item" href="/content/calendar.php">Group2</a>
                         <a class="dropdown-item" href="#">Group3</a>
-                    </div>
+                    </div> -->
                 </div>
                 
             </div>
@@ -103,6 +108,7 @@
         <?php
             include('../templates/footerScripts.php');
         ?>
+
 </body>
 
 </html>
