@@ -21,10 +21,10 @@
 
             <div class="row">
                 <div class="col-sm-8" align="center">
-                    <div class="calendarspacing">
+                    <div id="calendar">
                         <div class="totallyacalendar">
                             <?php
-                                include('../php/load_calendar.php');
+                                //include('../php/load_calendar.php');
                             ?>
                         </div>
                     </div>
