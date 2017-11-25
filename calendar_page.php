@@ -4,49 +4,40 @@
 <head>
     <?php
       //Include the header content
-      include('../templates/headercontent.php')
+      include('templates/headercontent.php')
     ?>
+	<link href="calendar.css" type="text/css" rel="stylesheet" />
 </head>
 
 <body>
     <?php
       //Include the navbar content
-        include('../templates/navbar.php');
-        include('../php/session.php');
-        
+      include('templates/navbar.php');
     ?>
-
         <div class="container-fluid">
+            <h1 align="left">
+                <font size="7">My Calendar</font>
+            </h1>
+
             <div class="row">
-               
-<!--                 <div class="col-xs-6"> -->
-<!--                     <?php
-                        // echo "<font size=\"7\">*Groupname* Calendar</font>";
-                    ?> -->
-<!--                 </div> -->
-                
-<!--                 <div class="col-xs-6" id="groups"> -->
-                    <?php 
-                        include ('../php/load_group_2.php');
-                    ?>
-<!--                 </div> -->
-                
-            </div>
-            <div class="row">
-                <div class="col-sm-8">
+                <div class="col-sm-8" align="center">
                     <div class="calendarspacing">
-                        <div class="totallyacalendar table-responsive" align="center">
-                            <?php
-                                include('../php/load_group.php');
-                            ?>
-                        </div>
+                        <div class="totallyacalendar">
+                       		<?php
+					include 'calendar.php';
+	 
+					$calendar = new Calendar();
+ 
+					echo $calendar->show();
+				?> 
+			</div>
                     </div>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-4" align="center">
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>Group Tasks</th>
+                                <th>My Tasks</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -57,16 +48,14 @@
                                 <td>Make it not incomplete</td>
                             </tr>
                             <tr>
-                                <td>Meetings etc</td>
+                                <td>This probably won't be a table at the end</td>
                             </tr>
                             <tr>
-                                <td>Group things</td>
+                                <td>It just looks nice</td>
                             </tr>
                         </tbody>
                     </table>
-
                     <br>
-
                     <table class="table">
                         <thead>
                             <tr>
@@ -89,18 +78,14 @@
                         </tbody>
                     </table>
                 </div>
-                
             </div>
-
             <?php
-                include('../templates/footerCopy.php');
-            ?>
+        include('templates/footerCopy.php');
+      ?>
         </div>
-
         <?php
-            include('../templates/footerScripts.php');
-        ?>
-
+      include('templates/footerScripts.php');
+    ?>
 </body>
 
 </html>
