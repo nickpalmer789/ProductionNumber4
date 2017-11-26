@@ -21,14 +21,18 @@
             if(!isset($_SESSION["login_user"])) 
             //if($logged_in) 
             {
+                echo "<form action=\"../php/settings.php\" method=\"post\">";
+                echo "<button type=\"submit\" class=\"btn btn-outline-success my-2 my-sm-0\">SETTINGS</button>";
+		echo "</form>";
                 echo "<form action=\"../php/logout.php\" method=\"post\">";
-                echo "<button type=\"submit\" class=\"btn btn-outline-success my-2 my-sm-0\">LOG OUT</button>";
-                echo "</form>";
+		echo "<button type=\"submit\" class=\"btn btn-outline-success my-2 my-sm-0\">LOG OUT</button>";                
+		echo "</form>";
             }
             else
             {
                 echo "<button type=\"button\" class=\"btn btn-outline-success my-2 my-sm-0\" data-toggle=\"modal\" data-target=\"#loginModal\">Log In</button>";
             }
+
         ?>
             
 
