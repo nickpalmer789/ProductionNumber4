@@ -1,50 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
+		<link rel="stylesheet" type="text/css" href="../css/settings.css">
+
     <?php
-      //Include the header content
-      include('templates/headercontent.php')
-    ?>
+            //Include the header content
+            include('../templates/headercontent.php')
+        ?>
 </head>
 
 <body>
     <?php
-      //Include the navbar content
-      include('templates/navbar.php');
-    ?>
-        <div class="container-fluid">
-            <form action="/action_page.php" method="post">
-                <div class="imgcontainer">
-                    <img src="assets/icons/planiticon.png" alt="Planit" class="avatar">
-                    <h2>Settings</h2>
-                </div>
-
-                <label for="usr"><b>Change Password</b></label>
-                <input type="text" class="form-control" placeholder="Change Password" name="password" required>
-
-                <label for="pwd"><b>Change avatar color</b></label>
-                <input type="avatarcolor" class="form-control" placeholder="CAC" name="psw" required>
-               
-		<div class="dropdown">
-  		<button onclick="myFunction()" class="dropbtn">Dropdown</button>
-  		<div id="myDropdown" class="dropdown-content">
-    			<a href="#"></a>
-    			<a href="#"></a>
-    			<a href="#"></a>
-  		</div>
+		    include('../templates/navbar.php');	
+            include('../php/session.php');
+	    ?>
+        <div class="container">
+            <h1 class="text-center">
+                <font size="7">User Settings</font>
+            </h1>
+            <hr>
+            <div class="row">
+                <div id ="parent"class="col-xs-4">
+			<div class="child">
+				<h3>Change Username</h3>
+			</div>
+			<div class="child">
+				<h3>Change Password</a></h3>
+			</div>
+			<div class="child">
+				<h3>Visibility Settings</h3>
+			</div>
+			<div class="child">
+				<h3>Other</h3>
+			</div>
 		</div>
-		 
-		<label for="pwd"><b>Viewable to Friends</b></label><br>
-              	<input type="radio" name = "friend_preference" value="yes"> Yes &emsp;
-                <input type="radio" name = "friend_preference" value="no"> No<br>
-		
-		<label for="pwd"><b>Visible to Public</b></label><br>
-              	<input type="radio" name = "public_reference" value="yes"> Yes &emsp;
-                <input type="radio" name = "public_reference" value="no"> No<br>
-            	<label for="pwd"><b>Username Viewable</b></label><br>
-              	<input type="radio" name = "preference" value="yes"> Yes &emsp;
-                <input type="radio" name = "preference" value="no"> No<br>
-            
-            </form>
 
+		<div id="info" class="col-md-4 col-md-push-8">
+			<h3>Change Username</h3>
+	                <input type="text" class="form-control" placeholder="Enter New Username" name="newusername1" required>
+                        <input type="text" class="form-control" placeholder="Confirm New Username" name="newusername2" required>
+						
+		</div>
+</body>
+
+</html>

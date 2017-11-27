@@ -14,6 +14,10 @@
             <li class="nav-item">
                 <a class="nav-link" href="../content/group_calendar.php">Group Calendar</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../content/settings.php">Settings</a>
+            </li>
+ 
         </ul>
 
        <!-- Check if logged in, adjust button as needed -->
@@ -21,9 +25,6 @@
             if(!isset($_SESSION["login_user"])) 
             //if($logged_in) 
             {
-                echo "<form action=\"../php/settings.php\" method=\"post\">";
-                echo "<button type=\"submit\" class=\"btn btn-outline-success my-2 my-sm-0\">SETTINGS</button>";
-		echo "</form>";
                 echo "<form action=\"../php/logout.php\" method=\"post\">";
 		echo "<button type=\"submit\" class=\"btn btn-outline-success my-2 my-sm-0\">LOG OUT</button>";                
 		echo "</form>";
@@ -41,7 +42,7 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-body">
-                            <form action="/php/loginHandler.php" method="post">
+                            <form action="/php/settingsHandler.php" method="post">
                                 <div class="imgcontainer">
                                     <img src="../assets/icons/planiticon.png" alt="Planit" class="avatar">
                                     <h2>Planit Login</h2>
@@ -68,6 +69,5 @@
             </div>
             <!-- End Modal -->
 
-
-    </div>
+   </div>
 </nav>

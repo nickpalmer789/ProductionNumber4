@@ -1,0 +1,40 @@
+#parent {
+	width:20%;
+	/*border:2px solid blue;*/
+	float:left;
+	position: fixed;
+	/*display:block;*/
+/*	position: -webkit-sticky;
+	position:sticky;
+	top:0;*/
+}
+
+.child {
+	margin-top:5px;
+	margin-bottom:5px;
+	margin-right:5px;
+	padding:10px;
+	border: 2px;
+	background-color:LightGrey; /*beauty factor 1*/
+    color:white;
+	/*position:inherit;*/
+}
+#info {
+	float:right;
+	width:75%;
+	border:2px;
+	color:black; /*beauty factor 2*/
+}
+p {
+	word-wrap: break-word;
+	font-family:sans-serif;
+	/*background-color: blue; /*beauty factor 3*/
+	/*color: #ddff30; /*beauty factor 4*/
+}
+
+a {
+	/*color:#dabdab; /*beauty factor 5*/
+}
+body {
+	/*background-color: #ff0066; /*beauty factor 6*/
+}
