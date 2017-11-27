@@ -175,8 +175,8 @@
                 ?>        
                     <form action="../php/settingsHandlers/settingsHandlerEmail.php" method="post">                        
                         
-                <input type="text" class="form-control" placeholder="Enter New Email" name="newemail1">
-                               	<input type="text" class="form-control" placeholder="Confirm New Email" name="newemail2">
+                <input type="email" class="form-control" placeholder="Enter New Email" name="newemail1">
+                               	<input type="email" class="form-control" placeholder="Confirm New Email" name="newemail2">
 				<button class="btn-success btn-lg btn-block" type="submit">Update Email</button>
 
                         </form>

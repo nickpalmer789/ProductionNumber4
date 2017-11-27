@@ -24,6 +24,16 @@ else{
             } else {
                 echo "Error updating record: " . $db->error;
             }
+            
+            $sql = "UPDATE user_settings SET username = '$name' WHERE username = '{$_SESSION['login_user']}';";
+            echo $sql;
+            if ($db->query($sql) === TRUE) {
+                echo "Record updated successfully";
+                #$_SESSION['login_user'] = $name;
+            } else {
+                echo "Error updating record: " . $db->error;
+            }
+            
             header("location: /content/settings.php");
         }else{
             echo "usernames don't match!";

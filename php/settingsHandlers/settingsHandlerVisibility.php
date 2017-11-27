@@ -45,8 +45,6 @@ else{
     header("location: /content/settings.php#c3");
     
     
-    
-    
 
 }
 ?>
