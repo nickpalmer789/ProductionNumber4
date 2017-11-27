@@ -16,13 +16,13 @@
             </li>
         </ul>
 
-       <!-- Check if logged in, adjust button as needed -->
+       <!-- Check if logged in, adjust buttons as needed -->
         <?php
-            if(!isset($_SESSION["login_user"])) 
-            //if($logged_in) 
+            session_start();
+            if(isset($_SESSION["login_user"])) 
             {
                 echo "<form action=\"../php/logout.php\" method=\"post\">";
-                echo "<button type=\"submit\" class=\"btn btn-outline-success my-2 my-sm-0\">LOG OUT</button>";
+                echo "<button type=\"submit\" class=\"btn btn-outline-success my-2 my-sm-0\">" "</button>";
                 echo "</form>";
             }
             else
