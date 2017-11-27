@@ -23,9 +23,9 @@
 
 <body>
     <?php
-	   include('../php/loginHandler.php');
-	   include('../templates/navbar.php');	
         include('../php/session.php');
+        include('../templates/navbar.php');
+    
     $connection = mysqli_connect('localhost', 'root', 'password', 'planit');
 
     if(mysqli_connect_errno()){
@@ -55,11 +55,11 @@
     ?>
         <div class="container">
             <h1 class="text-center">
-                <font size="7">Settings</font>
+                <font size="7" id = "c1">Settings</font>
             </h1>
             <hr>
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-3" id = "options">
 		   <div id="parent" class="affix">
 			<div class="child">
 				<h3><a href="#c1" id="show_change_username">Change Username</a></h3>
@@ -77,7 +77,7 @@
                 </div>
                 <div id="change_everything" class="col-md-6">
 		<?php
-            echo "<h2 id=\"c1\">Change Username (";
+            echo "<h2 >Change Username (";
             echo $_SESSION['login_user'];
             echo ")</h2>";
 		?>

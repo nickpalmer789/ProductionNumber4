@@ -26,8 +26,8 @@
             //if($logged_in) 
             {
                 echo "<form action=\"../php/logout.php\" method=\"post\">";
-		echo "<button type=\"submit\" class=\"btn btn-outline-success my-2 my-sm-0\">LOG OUT</button>";                
-		echo "</form>";
+		        echo "<button type=\"submit\" class=\"btn btn-outline-success my-2 my-sm-0\">LOG OUT</button>";                
+		        echo "</form>";
             }
             else
             {

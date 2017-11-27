@@ -6,6 +6,10 @@
 	top:0;*/
 }
 
+#options{
+    background-color:white; /*beauty factor 1*/
+}
+
 .child {
 	margin-top:5px;
 	margin-bottom:5px;
