@@ -81,27 +81,29 @@
             echo $_SESSION['login_user'];
             echo ")</h2>";
 		?>
-                	<div class="col-md-12">
-				<input type="text" class="form-control" placeholder="Enter New Username" name="newusername1" required>
-                <input type="text" class="form-control" placeholder="Confirm New Username" name="newusername2" required>
-				<button class="btn-success btn-lg btn-block" type="submit">Update Username</button>
-
+            <div class="col-md-12">
+				<form action="../php/settingsHandlers/settingsHandlerUsername.php" method="post">
+                    <input type="text" class="form-control" placeholder="Enter New Username" name="newusername1">
+                    <input type="text" class="form-control" placeholder="Confirm New Username" name="newusername2">
+				    <button class="btn-success btn-lg btn-block" type="submit">Update Username</button>
+                </form>
 			</div>
 			<hr>
 			<h2 id="c2">Change Password</h2>
-                	<div class="col-md-12">
-				<input type="text" class="form-control" placeholder="Enter New Password" name="newpassword1" required>
-                               	<input type="text" class="form-control" placeholder="Confirm New Password" name="newpassword2" required>
-				<label>We need your current password in order to confirm your changes:</label>
-				<input type="text" class="form-control" placeholder="Enter Old Password" name="oldpassword" required>
-				<button class="btn-success btn-lg btn-block" type="submit">Update Password</button>
-
+            <div class="col-md-12">
+				<form action="../php/settingsHandlers/settingsHandlerPassword.php" method="post">
+				    <input type="text" class="form-control" placeholder="Enter New Password" name="newpassword1">
+                    <input type="text" class="form-control" placeholder="Confirm New Password" name="newpassword2">
+				    <label>We need your current password in order to confirm your changes:</label>
+				    <input type="text" class="form-control" placeholder="Enter Old Password" name="oldpassword">
+				    <button class="btn-success btn-lg btn-block" type="submit">Update Password</button>
+                </form>
 			</div>
 			<hr>
 			<h2 id="c3">Change Visibility Settings</h2>
                 	<div class="col-md-12">
-				<h4>Username Viewable</h4>
-					<form action="">
+				    <h4>Username Viewable</h4>
+                    <form action="../php/settingsHandlers/settingsHandlerVisibility.php" method="post">
                     
                     <?php
                         if($user[0]==TRUE){
@@ -113,61 +115,57 @@
                         }
                     ?>
                     
-  						
-					</form>
 				<br><h4>Visible to Friends</h4>
-					<form action="">
                     <?php
                         if($friend[0]==TRUE){
-                            echo "<input type=\"radio\" name=\"username_visible\" checked=\"checked\" value=\"True\">Yes &emsp;";
-  						    echo "<input type=\"radio\" name=\"username_visible\" value=\"False\">No<br>";
+                            echo "<input type=\"radio\" name=\"friend_visible\" checked=\"checked\" value=\"True\">Yes &emsp;";
+  						    echo "<input type=\"radio\" name=\"friend_visible\" value=\"False\">No<br>";
                         }else{
-                            echo "<input type=\"radio\" name=\"username_visible\" value=\"True\">Yes &emsp;";
-  						    echo "<input type=\"radio\" name=\"username_visible\" checked=\"checked\" value=\"False\">No<br>";
+                            echo "<input type=\"radio\" name=\"friend_visible\" value=\"True\">Yes &emsp;";
+  						    echo "<input type=\"radio\" name=\"friend_visible\" checked=\"checked\" value=\"False\">No<br>";
                         }
                     ?>    
-					</form>
-				<br><h4>Visible to Public</h4>
-					<form action="">
-                        
+				<br><h4>Visible to Public</h4>                        
                   <?php
                         if($public[0]==TRUE){
-                            echo "<input type=\"radio\" name=\"username_visible\" checked=\"checked\" value=\"True\">Yes &emsp;";
-  						    echo "<input type=\"radio\" name=\"username_visible\" value=\"False\">No<br>";
+                            echo "<input type=\"radio\" name=\"public_visible\" checked=\"checked\" value=\"True\">Yes &emsp;";
+  						    echo "<input type=\"radio\" name=\"public_visible\" value=\"False\">No<br>";
                         }else{
-                            echo "<input type=\"radio\" name=\"username_visible\" value=\"True\">Yes &emsp;";
-  						    echo "<input type=\"radio\" name=\"username_visible\" checked=\"checked\" value=\"False\">No<br>";
+                            echo "<input type=\"radio\" name=\"public_visible\" value=\"True\">Yes &emsp;";
+  						    echo "<input type=\"radio\" name=\"public_visible\" checked=\"checked\" value=\"False\">No<br>";
                         }
                     ?>
-					</form>
 				<br><button class="btn-success btn-lg btn-block" type="submit">Update Visibility Settings</button>
+                        </form>
 			</div>
 			<hr>
 			<h2 id="c4">Other Settings</h2>
                 	<div class="col-md-12">
-                        
+                    <form action="../php/settingsHandlers/settingsHandlerPhone.php" method="post">                        
         <?php
             echo "<h4>Update Public Phone Number (";
             echo substr($phone[0], 0, 3).'-'.substr($phone[0], 3, 3).'-'.substr($phone[0],6);
             echo ")</h4>";
 		?>
 				
-					<input type="text" class="form-control" placeholder="Enter New Phone Number" name="newphonenumber1" required>
-                               		<input type="text" class="form-control" placeholder="Confirm New Phone Number" name="newphonenumber2" required>
+					<input type="text" class="form-control" placeholder="Enter New Phone Number" name="newphone1" >
+                    <input type="text" class="form-control" placeholder="Confirm New Phone Number" name="newphone2" >
 					<button class="btn-success btn-lg btn-block" type="submit">Update Phone Number</button>
-				<br>
+                        </form>
+                        <br>
 				
                 <?php
                     echo "<h4>Update Email (";
                     echo $email[0];
                     echo ")</h4>";
                 ?>        
+                    <form action="../php/settingsHandlers/settingsHandlerEmail.php" method="post">                        
                         
-                <input type="text" class="form-control" placeholder="Enter New Email" name="newemail1" required>
-                               	<input type="text" class="form-control" placeholder="Confirm New Email" name="newemail2" required>
+                <input type="text" class="form-control" placeholder="Enter New Email" name="newemail1">
+                               	<input type="text" class="form-control" placeholder="Confirm New Email" name="newemail2">
 				<button class="btn-success btn-lg btn-block" type="submit">Update Email</button>
 
-
+                        </form>
 			</div>
 
 			
