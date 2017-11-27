@@ -17,7 +17,7 @@
     ?>
 
         <div class="container-fluid">
-            <div class="row">
+            <!-- <div class="row"> -->
                
 <!--                 <div class="col-xs-6"> -->
 <!--                     <?php
@@ -31,25 +31,25 @@
                     ?>
 <!--                 </div> -->
                 
-            </div>
-            <div class="row">
-                <div class="col-sm-8">
-                    <div class="calendarspacing">
-                        <div class="totallyacalendar table-responsive" align="center">
-                            <?php
-                                include('../php/load_group.php');
-                            ?>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
+           <!--  </div> -->
+            <!-- <div class="row"> -->
+                <!-- <div class="col-sm-8"> -->
+                    <!-- <div class="calendarspacing"> -->
+                        <!-- <div class="totallyacalendar table-responsive" align="center"> -->
+                            <!-- <?php
+                                // include('../php/load_group.php');
+                            ?> -->
+                        <!-- </div> -->
+                    <!-- </div> -->
+                <!-- </div> -->
+<!--                 <div class="col-sm-4">
                     <table class="table">
                         <thead>
                             <tr>
                                 <th>Group Tasks</th>
                             </tr>
-                        </thead>
-                        <tbody>
+                        </thead> -->
+<!--                         <tbody>
                             <tr>
                                 <td>Do the project</td>
                             </tr>
@@ -65,9 +65,9 @@
                         </tbody>
                     </table>
 
-                    <br>
+                    <br> -->
 
-                    <table class="table">
+<!--                     <table class="table">
                         <thead>
                             <tr>
                                 <th>Completed Tasks</th>
@@ -87,10 +87,10 @@
                                 <td>Rocks</td>
                             </tr>
                         </tbody>
-                    </table>
-                </div>
+                    </table> -->
+<!--                 </div> -->
                 
-            </div>
+            <!-- </div> -->
 
             <?php
                 include('../templates/footerCopy.php');

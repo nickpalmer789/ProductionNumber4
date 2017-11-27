@@ -20,24 +20,80 @@
 	}   
 	
 	    //change this later
-	$group_names = mysqli_fetch_array($resultset, MYSQLI_NUM);
-	echo "<div class=\"col-xs-6\"><font size=\"7\">$group_names[0] Calendar</font></div>";
+	//$group_names = mysqli_fetch_array($resultset, MYSQLI_NUM);
+	echo "<div class=\"row\">";
+		echo "<div class=\"col-xs-6\"><font size=\"7\">*GROUPNAME* Calendar</font></div>";
 
 
-	echo "<div class=\"col-xs-6\" id=\"groups\"><button class=\"btn btn-success special-btn dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\"> Groups </button>";
+		echo "<div class=\"col-xs-6\" id=\"groups\"><button class=\"btn btn-success special-btn dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\"> Groups </button>";
 
-	echo "<div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">";
-	while ($row = mysqli_fetch_array($resultset, MYSQLI_NUM)) 
-	{
-	    
-	    echo "<a class=\"dropdown-item\" href=\"/index.php\">$row[0]</a>";
-	    
-	}
-	echo "</div></div>";
+		echo "<div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">";
+		while ($row = mysqli_fetch_array($resultset, MYSQLI_NUM)) 
+		{
+		    
+		    echo "<a class=\"dropdown-item\" href=\"/index.php\">$row[0]</a>";
+		    
+		}
+		echo "</div></div></div>"; //ends row, button, dropdown items divs
 
-	$resultset = mysqli_query($connection,$tasks_query);
-	if(!$resultset){
-	    echo ":( Something went wrong.<br><br>";
-	} 
+		//load calendar for all groups first
+		$resultset = mysqli_query($connection,$tasks_query);
+		if(!$resultset){
+		    echo ":( Something went wrong.<br><br>";
+		} 
 
+		echo "<div class=\"row\">";
+			echo "<div class=\"col-sm-8\">";
+			echo "<div class=\"calendarspacing\">";
+			echo "<div class=\"totallyacalendar table-responsive\" align=\"center\">";
+				//load_group functions
+				// Start table
+				echo "<table class = \"table\">";
+				echo "<th>Group</th>";
+				echo "<th>Type</th>";
+				echo "<th>Description</th>";
+				echo "<th>Location</th>";
+				echo "<th>Start</th>";
+				echo "<th>End</th>";
+				// Get data
+				while ($row = mysqli_fetch_array($resultset, MYSQLI_NUM)) 
+				{
+				    echo "<tr>";
+				    echo "<td>$row[0]</td>";
+				    echo "<td>$row[2]</td>";
+				    echo "<td>$row[1]</td>";
+				    echo "<td>$row[3]</td>";
+				    echo "<td>$row[4]</td>";
+				    echo "<td><input type=\"submit\" class=\"button\" name=\"".$row[0]."\"
+				value=\"delete\"/></td>";
+				    echo "</tr>";
+				    
+				    
+				}
+				// End table    
+				echo "</table>";  
+			echo "</div> </div> </div>";
+
+			echo "<div class=\"col-sm-4\"> <table class=\"table\"> <thead>  <tr>  <th>Group Tasks</th>  </tr>  </thead>";
+				echo "<tbody>";
+					echo "<tr> <td>Do the project</td> </tr>";
+					echo "<tr>  <td>Make it not incomplete</td>  </tr>";
+					echo "<tr>  <td>Meetings etc</td>  </tr>";
+					echo "<tr>  <td>Group things</td>  </tr>";
+				echo "</tbody>";
+				echo "</table> <br>";
+
+			echo "<table class=\"table\"> ";
+				echo "<thead>  <tr>  <th>Completed Tasks</th>  </tr>  </thead>";
+				echo "<tbody>";
+					echo "<tr><td>I did the project</td></tr>";
+					echo "<tr><td>I made it not incomplete</td></tr>";
+					echo "<tr><td>Firetruck</td></tr>";
+					echo "<tr><td>Rocks</td></tr>";
+				echo "</tbody>";
+			echo "</table>";
+
+			echo "</div>";
+
+		echo " </div>";
 ?>
