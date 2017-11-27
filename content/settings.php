@@ -110,32 +110,32 @@
                     
                     <?php
                         if($user[0]==TRUE){
-                            echo "<input type=\"radio\" name=\"username_visible\" checked=\"checked\" value=\"True\">Yes &emsp;";
-  						    echo "<input type=\"radio\" name=\"username_visible\" value=\"False\">No<br>";
+                            echo "<input type=\"radio\" name=\"username_visible\" checked=\"checked\" value=\"1\">Yes &emsp;";
+  						    echo "<input type=\"radio\" name=\"username_visible\" value=\"0\">No<br>";
                         }else{
-                            echo "<input type=\"radio\" name=\"username_visible\" value=\"True\">Yes &emsp;";
-  						    echo "<input type=\"radio\" name=\"username_visible\" checked=\"checked\" value=\"False\">No<br>";
+                            echo "<input type=\"radio\" name=\"username_visible\" value=\"1\">Yes &emsp;";
+  						    echo "<input type=\"radio\" name=\"username_visible\" checked=\"checked\" value=\"0\">No<br>";
                         }
                     ?>
                     
 				<br><h4>Visible to Friends</h4>
                     <?php
                         if($friend[0]==TRUE){
-                            echo "<input type=\"radio\" name=\"friend_visible\" checked=\"checked\" value=\"True\">Yes &emsp;";
-  						    echo "<input type=\"radio\" name=\"friend_visible\" value=\"False\">No<br>";
+                            echo "<input type=\"radio\" name=\"friend_visible\" checked=\"checked\" value=\"1\">Yes &emsp;";
+  						    echo "<input type=\"radio\" name=\"friend_visible\" value=\"0\">No<br>";
                         }else{
-                            echo "<input type=\"radio\" name=\"friend_visible\" value=\"True\">Yes &emsp;";
-  						    echo "<input type=\"radio\" name=\"friend_visible\" checked=\"checked\" value=\"False\">No<br>";
+                            echo "<input type=\"radio\" name=\"friend_visible\" value=\"1\">Yes &emsp;";
+  						    echo "<input type=\"radio\" name=\"friend_visible\" checked=\"checked\" value=\"0\">No<br>";
                         }
                     ?>    
 				<br><h4>Visible to Public</h4>                        
                   <?php
                         if($public[0]==TRUE){
-                            echo "<input type=\"radio\" name=\"public_visible\" checked=\"checked\" value=\"True\">Yes &emsp;";
-  						    echo "<input type=\"radio\" name=\"public_visible\" value=\"False\">No<br>";
+                            echo "<input type=\"radio\" name=\"public_visible\" checked=\"checked\" value=\"1\">Yes &emsp;";
+  						    echo "<input type=\"radio\" name=\"public_visible\" value=\"0\">No<br>";
                         }else{
-                            echo "<input type=\"radio\" name=\"public_visible\" value=\"True\">Yes &emsp;";
-  						    echo "<input type=\"radio\" name=\"public_visible\" checked=\"checked\" value=\"False\">No<br>";
+                            echo "<input type=\"radio\" name=\"public_visible\" value=\"1\">Yes &emsp;";
+  						    echo "<input type=\"radio\" name=\"public_visible\" checked=\"checked\" value=\"0\">No<br>";
                         }
                     ?>
 				<br><button class="btn-success btn-lg btn-block" type="submit">Update Visibility Settings</button>
@@ -162,14 +162,14 @@
             echo ")</h4>";
 		?>
 				
-					<input type="text" class="form-control" placeholder="Enter New Phone Number" name="newphone1" >
-                    <input type="text" class="form-control" placeholder="Confirm New Phone Number" name="newphone2" >
+					<input type="text" class="form-control" placeholder="Enter New Phone Number" name="phone1" >
+                    <input type="text" class="form-control" placeholder="Confirm New Phone Number" name="phone2" >
 					<button class="btn-success btn-lg btn-block" type="submit">Update Phone Number</button>
                         </form>
                         <br>
 				
                 <?php
-                    echo "<h4>Update Email (";
+                    echo "<h4 id=\"c5\" >Update Email (";
                     echo $email[0];
                     echo ")</h4>";
                 ?>        
@@ -217,6 +217,7 @@
                                     <h2>Choose New Color</h2>
                                 </div>
 
+<div id="color_chooser">
 <label class="check_container">Default
 <?php
     if($avatar_color[0]=='default'){
@@ -228,7 +229,7 @@
   
   <span class="checkmark"></span>
 </label>                               
-                                
+  <hr>                              
 <label class="check_container">Red
 <?php
     if($avatar_color[0]=='red'){
@@ -239,7 +240,7 @@
 ?>
     <span class="checkmark"></span>
 </label>
-
+<hr>
 <label class="check_container" value="yellow">Yellow
 <?php
     if($avatar_color[0]=='yellow'){
@@ -250,7 +251,7 @@
 ?>
     <span class="checkmark"></span>
 </label>
-                                
+<hr>                        
 <label class="check_container" value="blue">Blue
 <?php
     if($avatar_color[0]=='blue'){
@@ -261,7 +262,7 @@
 ?>
     <span class="checkmark"></span>
 </label>
-
+<hr>
 <label class="check_container" value="green">Green
 <?php
     if($avatar_color[0]=='green'){
@@ -272,7 +273,7 @@
 ?>
     <span class="checkmark"></span>
 </label>
-
+<hr>
 <label class="check_container" value="purple">Purple
 <?php
     if($avatar_color[0]=='purple'){
@@ -283,7 +284,7 @@
 ?>
     <span class="checkmark"></span>
 </label>
-                                
+  <hr>                              
 <label class="check_container" value="orange">Orange
 <?php
     if($avatar_color[0]=='orange'){
@@ -294,7 +295,7 @@
 ?>
     <span class="checkmark"></span>
 </label>
-                                
+<hr>                      
 <label class="check_container" value="pink">Pink
 <?php
     if($avatar_color[0]=='pink'){
@@ -304,6 +305,7 @@
     }
 ?>  <span class="checkmark"></span>
 </label>  
+                                </div>
             
                                 <button class="btn-success btn-lg btn-block" type="submit">Update Color</button>
                                 <br>

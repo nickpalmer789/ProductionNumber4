@@ -1,4 +1,6 @@
 <?php
+include('../session.php');
+
 $db = mysqli_connect("localhost:3306","root","password","planit");  
             
 if($db === false) 
@@ -9,34 +11,32 @@ if($db === false)
 } 
 else{
     if(htmlspecialchars($_POST['newpassword1'])=="" and htmlspecialchars($_POST['newpassword2'])==""){
-        echo "We aren't updating password!";
+        header("location: /content/settings.php#c2");
     }else{
         if ($_POST['newpassword1']==$_POST['newpassword2']){
-            echo "Updating password...";
-        #This is obtaining the old password to ensure the one entered is correct
+            echo "passwords match";
             $query = "SELECT hashed_password FROM users WHERE username = '{$_SESSION['login_user']}'";
             $result = mysqli_query($db,$query);
             $oldpass = mysqli_fetch_row($result);
-            echo $oldpass[0];
-            
-            if(htmlspecialchars($_POST('oldpassword'))==$oldpass[0]){
-                $name=htmlspecialchars($_POST['newpassword2']);
+            if(htmlspecialchars($_POST['oldpassword'])==$oldpass[0]){
+                $name=htmlspecialchars($_POST['newpassword1']);
                 echo $name;
-                $sql = "UPDATE users SET password = '$name' WHERE username = '{$_SESSION['login_user']}';";
+                $sql = "UPDATE users SET hashed_password = '$name' WHERE username = '{$_SESSION['login_user']}';";
+                echo $sql;
                 if ($db->query($sql) === TRUE) {
                     echo "Record updated successfully";
+                    #$_SESSION['login_user'] = $name;
                 } else {
                     echo "Error updating record: " . $db->error;
                 }
-                #header("location: /content/settings.php");
+                header("location: /content/settings.php");
             }else{
-                echo "Old password did not match";
+                echo "Old password incorrect.";
             }
         }else{
-            echo "passwords don't match!";
+            echo "usernames don't match!";
         }
     }
+    
 }
 ?>
-
-

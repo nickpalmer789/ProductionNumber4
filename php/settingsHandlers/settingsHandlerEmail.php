@@ -1,4 +1,6 @@
 <?php
+include('../session.php');
+
 $db = mysqli_connect("localhost:3306","root","password","planit");  
             
 if($db === false) 
@@ -9,20 +11,22 @@ if($db === false)
 } 
 else{
     if(htmlspecialchars($_POST['newemail1'])=="" and htmlspecialchars($_POST['newemail2'])==""){
-        echo "We aren't updating email!";
+        header("location: /content/settings.php#c5");
     }else{
         if ($_POST['newemail1']==$_POST['newemail2']){
-            $name=htmlspecialchars($_POST['newphone1']);
-            echo $name;
+            $name=htmlspecialchars($_POST['newemail1']);
+            #echo $name;
             $sql = "UPDATE users SET email = '$name' WHERE username = '{$_SESSION['login_user']}';";
+            #echo $sql;
             if ($db->query($sql) === TRUE) {
                 echo "Record updated successfully";
+                #$_SESSION['login_user'] = $name;
             } else {
                 echo "Error updating record: " . $db->error;
             }
-            #header("location: /content/settings.php");
+            header("location: /content/settings.php#c5");
         }else{
-            echo "new emails don't match!";
+            echo "emails don't match!";
         }
     }
     

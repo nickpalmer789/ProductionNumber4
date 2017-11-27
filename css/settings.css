@@ -6,6 +6,13 @@
 	top:0;*/
 }
 
+#color_chooser {
+    overflow:auto;
+    height:280px;
+    width:1000px;
+        
+}
+
 #options{
     background-color:white; /*beauty factor 1*/
 }

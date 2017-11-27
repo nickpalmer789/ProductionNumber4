@@ -14,17 +14,21 @@
             <li class="nav-item">
                 <a class="nav-link" href="../content/group_calendar.php">Group Calendar</a>
             </li>
-            <li class="nav-item">
+            <!--<li class="nav-item">
                 <a class="nav-link" href="../content/settings.php">Settings</a>
-            </li>
+            </li> -->
  
         </ul>
 
        <!-- Check if logged in, adjust button as needed -->
         <?php
-            if(!isset($_SESSION["login_user"])) 
+            session_start();
+            if(isset($_SESSION["login_user"])) 
             //if($logged_in) 
             {
+                echo "<form action=\"../content/settings.php\" method=\"post\">";
+		        echo "<button type=\"submit\" class=\"btn btn-outline-success my-2 my-sm-0\">SETTINGS</button>";                
+		        echo "</form>";
                 echo "<form action=\"../php/logout.php\" method=\"post\">";
 		        echo "<button type=\"submit\" class=\"btn btn-outline-success my-2 my-sm-0\">LOG OUT</button>";                
 		        echo "</form>";
