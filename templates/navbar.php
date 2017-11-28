@@ -21,6 +21,11 @@
                 </li>
                 </ul>
                 
+                
+                <form action=\"../content/settings.php\" method=\"post\">
+                    <button type=\"submit\" class=\"btn btn-outline-danger\">SETTINGS</button>          
+		        </form>
+        
                 <form action=\"../php/logout.php\" method=\"post\">
                     <button type=\"submit\" class=\"btn btn-outline-success my-2 my-sm-0\">LOG OUT</button>
                 </form>
