@@ -41,6 +41,28 @@ else{
     }
     
 }
+
+
+$message="Congratulations!";
+            echo "<div class=\"modal fade\" id=\"settingsModal\" data-toggle=\"modal\" data-target=\"#settingsModal\" role=\"dialog\">";
+                echo "<div class=\"modal-dialog\">";
+                    echo "<div class=\"modal-content\">";
+                        echo "<div class=\"modal-body\">";
+                            #echo "<form action=\"/php/loginHandler.php\" method=\"post\">";
+                                echo "<div class=\"imgcontainer\">";
+                                    #<img src="../assets/icons/planiticon.png" alt="Planit" class="avatar">
+                                    echo "<h2>";
+                                        echo $message;
+                                    echo "</h2>";
+                                echo "</div>";
+
+                                echo "<button type=\"button\" class=\"btn-danger btn-lg btn-block\" data-dismiss=\"modal\">Ok</button>";
+                            #</form>
+                        echo "</div>";
+                    echo "</div>";
+                echo "</div>";
+            echo "</div>";
+                                    
 ?>
 
 

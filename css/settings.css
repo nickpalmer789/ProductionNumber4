@@ -6,11 +6,26 @@
 	top:0;*/
 }
 
+#img_box{
+	/*border:2px solid blue;*/
+    background-color: lightgray;
+}
+
+#email_mod{
+    padding-top: 12px;
+    padding-right: 20px;
+    padding-bottom: 12px;
+    padding-left: 20px;
+    margin-top: 8px;
+    margin-right: 0px;
+    margin-bottom: 8px;
+    margin-left: 0px;
+}
+
 #color_chooser {
     overflow:auto;
     height:280px;
     width:1000px;
-        
 }
 
 #options{
