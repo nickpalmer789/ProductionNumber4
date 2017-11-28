@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <!-- Check if logged in, adjust buttons as needed -->
-    <?php
+<?php
     session_start();
     if(isset($_SESSION["login_user"])) 
     {
