@@ -39,8 +39,9 @@
             $string .= '\', resourceId: \'f\', start: \'';
             $string .= $row[3];
             #row[1] is username
-            $string .= '\', end: \'2017-11-07T02:00:00\', ';
-            $string .= 'title: \'';
+            $string .= '\', end: \'';
+            $string .= $row[3];
+            $string .= '\', title: \'';
             #echo $row[2];
             #echo $row[3];
         }
