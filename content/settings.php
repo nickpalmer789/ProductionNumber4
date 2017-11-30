@@ -88,7 +88,7 @@
 				<form action="../php/settingsHandlers/settingsHandlerUsername.php" method="post">
                     <input type="text" class="form-control" placeholder="Enter New Username" name="newusername1">
                     <input type="text" class="form-control" placeholder="Confirm New Username" name="newusername2">
-				    <button class="btn-success btn-lg btn-block" type="submit">Update Username</button>
+				    <button class="btn-success btn-lg btn-block" type="submit" data-toggle="modal" data-target="#colorModal" >Update Username</button>
                 </form>
 			</div>
 			<hr>
@@ -105,40 +105,78 @@
 			<hr>
 			<h2 id="c3">Change Visibility Settings</h2>
                 	<div class="col-md-12">
+                        <hr>
 				    <h4>Username Viewable</h4>
-                    <form action="../php/settingsHandlers/settingsHandlerVisibility.php" method="post">
-                    
+                    <form action="../php/settingsHandlers/settingsHandlerVisibility.php" method="post">            
                     <?php
                         if($user[0]==TRUE){
-                            echo "<input type=\"radio\" name=\"username_visible\" checked=\"checked\" value=\"1\">Yes &emsp;";
-  						    echo "<input type=\"radio\" name=\"username_visible\" value=\"0\">No<br>";
+                            echo "<label class=\"check_container\" value=\"0\">Yes";
+                            echo "<input type=\"radio\" name=\"username_visible\" checked=\"checked\" value=\"1\">";
+                            echo "<span class=\"checkmark\"></span>";
+                            echo "</label>";
+                            echo "<label class=\"check_container\" value=\"0\">No";
+  						    echo "<input type=\"radio\" name=\"username_visible\" value=\"0\">";
+                            echo "<span class=\"checkmark\"></span>";
+                            echo "</label>";
                         }else{
-                            echo "<input type=\"radio\" name=\"username_visible\" value=\"1\">Yes &emsp;";
-  						    echo "<input type=\"radio\" name=\"username_visible\" checked=\"checked\" value=\"0\">No<br>";
+                            echo "<label class=\"check_container\" value=\"0\">Yes";
+                            echo "<input type=\"radio\" name=\"username_visible\" value=\"1\">";
+                            echo "<span class=\"checkmark\"></span>";
+                            echo "</label>";
+                            echo "<label class=\"check_container\" value=\"0\">No";                                
+  						    echo "<input type=\"radio\" name=\"username_visible\" checked=\"checked\" value=\"0\">";
+                            echo "<span class=\"checkmark\"></span>";
+                            echo "</label>";
                         }
                     ?>
                     
-				<br><h4>Visible to Friends</h4>
+				<hr><h4>Visible to Friends</h4>
                     <?php
                         if($friend[0]==TRUE){
-                            echo "<input type=\"radio\" name=\"friend_visible\" checked=\"checked\" value=\"1\">Yes &emsp;";
-  						    echo "<input type=\"radio\" name=\"friend_visible\" value=\"0\">No<br>";
+                            echo "<label class=\"check_container\" value=\"0\">Yes";
+                            echo "<input type=\"radio\" name=\"friend_visible\" checked=\"checked\" value=\"1\">";
+                            echo "<span class=\"checkmark\"></span>";
+                            echo "</label>";
+                            echo "<label class=\"check_container\" value=\"0\">No";
+  						    echo "<input type=\"radio\" name=\"friend_visible\" value=\"0\">";
+                            echo "<span class=\"checkmark\"></span>";
+                            echo "</label>";
                         }else{
-                            echo "<input type=\"radio\" name=\"friend_visible\" value=\"1\">Yes &emsp;";
-  						    echo "<input type=\"radio\" name=\"friend_visible\" checked=\"checked\" value=\"0\">No<br>";
+                            echo "<label class=\"check_container\" value=\"0\">Yes";
+                            echo "<input type=\"radio\" name=\"friend_visible\" value=\"1\">";
+                            echo "<span class=\"checkmark\"></span>";
+                            echo "</label>";
+                            echo "<label class=\"check_container\" value=\"0\">No";                                
+  						    echo "<input type=\"radio\" name=\"friend_visible\" checked=\"checked\" value=\"0\">";
+                            echo "<span class=\"checkmark\"></span>";
+                            echo "</label>";
                         }
-                    ?>    
-				<br><h4>Visible to Public</h4>                        
+                    ?>   
+                        
+                        
+				<hr><h4>Visible to Public</h4>                        
                   <?php
                         if($public[0]==TRUE){
-                            echo "<input type=\"radio\" name=\"public_visible\" checked=\"checked\" value=\"1\">Yes &emsp;";
-  						    echo "<input type=\"radio\" name=\"public_visible\" value=\"0\">No<br>";
+                            echo "<label class=\"check_container\" value=\"0\">Yes";
+                            echo "<input type=\"radio\" name=\"public_visible\" checked=\"checked\" value=\"1\">";
+                            echo "<span class=\"checkmark\"></span>";
+                            echo "</label>";
+                            echo "<label class=\"check_container\" value=\"0\">No";
+  						    echo "<input type=\"radio\" name=\"public_visible\" value=\"0\">";
+                            echo "<span class=\"checkmark\"></span>";
+                            echo "</label>";
                         }else{
-                            echo "<input type=\"radio\" name=\"public_visible\" value=\"1\">Yes &emsp;";
-  						    echo "<input type=\"radio\" name=\"public_visible\" checked=\"checked\" value=\"0\">No<br>";
+                            echo "<label class=\"check_container\" value=\"0\">Yes";
+                            echo "<input type=\"radio\" name=\"public_visible\" value=\"1\">";
+                            echo "<span class=\"checkmark\"></span>";
+                            echo "</label>";
+                            echo "<label class=\"check_container\" value=\"0\">No";                                
+  						    echo "<input type=\"radio\" name=\"public_visible\" checked=\"checked\" value=\"0\">";
+                            echo "<span class=\"checkmark\"></span>";
+                            echo "</label>";
                         }
-                    ?>
-				<br><button class="btn-success btn-lg btn-block" type="submit">Update Visibility Settings</button>
+                    ?> 
+				<button class="btn-success btn-lg btn-block" type="submit">Update Visibility Settings</button>
                         </form>
 			</div>
 			<hr>
@@ -175,9 +213,9 @@
                 ?>        
                     <form action="../php/settingsHandlers/settingsHandlerEmail.php" method="post">                        
                         
-                <input type="text" class="form-control" placeholder="Enter New Email" name="newemail1">
-                               	<input type="text" class="form-control" placeholder="Confirm New Email" name="newemail2">
-				<button class="btn-success btn-lg btn-block" type="submit">Update Email</button>
+                <input type="email" class="form-control" placeholder="Enter New Email" name="newemail1" id="email_mod">
+                               	<input type="email" class="form-control" placeholder="Confirm New Email" id="email_mod" name="newemail2">
+				<button class="btn-success btn-lg btn-block" type="submit" >Update Email</button>
 
                         </form>
 			</div>
@@ -186,15 +224,13 @@
 
 		</div>
                 
-        <!-- Include a bear avatar
   
-           <div class="col-md-3 ">    
+           <div class="col-md-3 " id="img_box">    
                 <div class="imgcontainer">
                             <img src="../assets/icons/bear_avatar.png" alt="Planit" class="avatar">
                 </div>
                 </div>
                 
-        -->
                 
 
             </div>
@@ -315,8 +351,39 @@
                     </div>
                 </div>
             </div>
-            <!-- End Modal -->
+
     
+    <!-- The login modal -->
+            <div class="modal fade" id="settingsModal" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <form action="/php/loginHandler.php" method="post">
+                                <div class="imgcontainer">
+                                    <img src="../assets/icons/planiticon.png" alt="Planit" class="avatar">
+                                    <h2>Planit Login</h2>
+                                </div>
+
+                                <label for="usr"><b>Username</b></label>
+
+                                <input type="text" class="form-control" placeholder="Enter Username" name="username" required>
+
+                                <label for="pwd"><b>Password</b></label>
+
+                                <input type="password" class="form-control" placeholder="Enter Password" name="password" required>
+                                <input type="checkbox" checked="checked"> Remember me
+                                <button class="btn-success btn-lg btn-block" type="submit">Login</button>
+
+
+                                <br>
+                                <button type="button" class="btn-danger btn-lg btn-block" data-dismiss="modal">Cancel</button>
+                                <span class="psw">Forgot <a href="#">password?</a></span>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Modal -->
     
 </body>
 

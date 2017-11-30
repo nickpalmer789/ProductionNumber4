@@ -45,7 +45,6 @@
     }
 ?>
 
-
         <!-- The login modal -->
         <div class="modal fade" id="loginModal" role="dialog">
             <div class="modal-dialog">
@@ -58,7 +57,6 @@
                             </div>
 
                             <label for="usr"><b>Username</b></label>
-
                             <input type="text" class="form-control" placeholder="Enter Username" name="username" required>
 
                             <label for="pwd"><b>Password</b></label>
@@ -77,7 +75,5 @@
             </div>
         </div>
         <!-- End Modal -->
-
-
 
 </nav>
