@@ -1,4 +1,11 @@
 <?php
+    $connection = mysqli_connect('localhost', 'root', 'password', 'planit');
+
+    if(mysqli_connect_errno())
+    {
+        echo "<h4>Failed to connect to MySQL:</h4>".mysqli_connect_error();
+    } 
+
 	$query = "SELECT * FROM tasks WHERE username = '{$_SESSION['login_user']}' ";
 	$res = mysqli_query($connection, $query);
 ?>
