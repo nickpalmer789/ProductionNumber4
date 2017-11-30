@@ -18,13 +18,14 @@ Extra:
 Todo:
 Database - 
 	calendar needs a recurring option (weekly/monthly/daily etc)
-	
+	tasks needs eventColor
 
 group_calendar - 
 	load_groups.php needs more coverage to set the title and dropdowns
 	this will need to show everyones calendar based on users privacy settings
 	how are groups joined? invited for?
 	get rid of group tasks section and have that be the invite area?
+    ask sophie about group stuff
 
 logout - 
 	handle sessions better? logout is not being checked correctly but definitely logs a user out
@@ -37,7 +38,8 @@ login.php -
 	working for now
 	
 calendar.php -
-	need to figure out how to add actual events to the calendar
+	melissa did this: need to figure out how to add actual events to the calendar
+    make calendar work with a schedule (database issue)
 	
 	
 Testing -
