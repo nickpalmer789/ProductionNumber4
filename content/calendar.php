@@ -6,15 +6,44 @@
       //Include the header content
       include('../templates/headercontent.php')
     ?>
+<?php
+        include('../php/session.php');
+        include('../templates/navbar.php');
+    
+    $connection = mysqli_connect('localhost', 'root', 'password', 'planit');
 
+    if(mysqli_connect_errno()){
+        echo "<h4>Failed to connect to MySQL:</h4>".mysqli_connect_error();
+    } 
+
+    $query = "SELECT * FROM tasks WHERE username = '{$_SESSION['login_user']}' ";
+	$res = mysqli_query($connection, $query);
+    $string = ""; $hello = "string is now: "; 
+    while ($row = mysqli_fetch_array($res, MYSQLI_NUM))
+    {
+        if($row[6] == 0)
+        {
+            $string .= '{ id: \'';
+            $string .= $row[0];
+            $string .= '\', resourceId: \'f\', start: \'';
+            $string .= $row[3];
+            #row[1] is username
+            $string .= '\', end: \'';
+            $string .= $row[3];
+            $string .= '\', title: \'';
+            #echo $row[2];
+            #echo $row[3];
+        }
+            $string .= $row[2];
+            $string .= '\' },';
+
+    }
+    $string = rtrim($string, ',');
+    ?>    
 </head>
 
 <body>
-    <?php
-      //Include the navbar content
-        include('../templates/navbar.php');
-        include('../php/session.php');
-    ?>
+
         <div class="container-fluid">
             <h1 align="left">
                 <font size="7">My Calendar</font>
@@ -56,60 +85,9 @@
 			editable: true,
 			eventLimit: true, // allow "more" link when too many events
 			events: [
-				{
-					title: 'All Day Event',
-					start: '2017-11-01',
-				},
-				{
-					title: 'Long Event',
-					start: '2017-11-07',
-					end: '2017-11-10'
-				},
-				{
-					id: 999,
-					title: 'Repeating Event',
-					start: '2017-11-09T16:00:00'
-				},
-				{
-					id: 999,
-					title: 'Repeating Event',
-					start: '2017-11-16T16:00:00'
-				},
-				{
-					title: 'Conference',
-					start: '2017-11-11',
-					end: '2017-11-13'
-				},
-				{
-					title: 'Meeting',
-					start: '2017-11-12T10:30:00',
-					end: '2017-11-12T12:30:00'
-				},
-				{
-					title: 'Lunch',
-					start: '2017-11-12T12:00:00'
-				},
-				{
-					title: 'Meeting',
-					start: '2017-11-12T14:30:00'
-				},
-				{
-					title: 'Happy Hour',
-					start: '2017-11-12T17:30:00'
-				},
-				{
-					title: 'Dinner',
-					start: '2017-11-12T20:00:00'
-				},
-				{
-					title: 'Birthday Party',
-					start: '2017-11-13T07:00:00'
-				},
-				{
-					title: 'Click for Google',
-					url: 'http://google.com/',
-					start: '2017-11-28'
-				}
+                <?php
+                 echo $string;   
+                ?>
 			]
 		});
 		
