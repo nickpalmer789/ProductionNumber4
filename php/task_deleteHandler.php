@@ -5,7 +5,7 @@
     if($db === false) {
         //Print an error if the databse can't be reached
         //TODO Add better error printing to form
-        echo "<o>Cannot connect to the database!</p>";
+        echo "<p>Cannot connect to the database!</p>";
     }
 
     $deleteID = $_REQUEST['id'];
@@ -15,7 +15,7 @@
     $result = mysqli_query($db, $query);
 
     if(!$result) {
-        echo "<p>Error completing query!</h4>";
+        echo "<p>Error completing query!</p>";
     }
     include("../content/dashboard.php");
 ?>

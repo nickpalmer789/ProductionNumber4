@@ -8,7 +8,6 @@
 
 <!-- Fullcalendar.io js entries -->
 <script src='../lib/moment.min.js'></script>
-<script src='../lib/jquery.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.7.0/fullcalendar.min.js'></script>
 
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
