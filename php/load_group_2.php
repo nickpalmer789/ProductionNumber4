@@ -1,5 +1,8 @@
 <?php
 	$connection = mysqli_connect('localhost:3306', 'root', 'password', 'planit');
+	echo "<script src=\"http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js\"></script>";
+	echo "<script src=\"/js/load_group_data.js\"></script>";
+	echo "<script type=\"text/javascript\"></script>";
 
 
 	if(mysqli_connect_errno()){
@@ -27,11 +30,12 @@
 
 		echo "<div class=\"col-xs-6\" id=\"groups\"><button class=\"btn btn-success special-btn dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\"> Groups </button>";
 
-		echo "<div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">";
+		echo "<div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\" id=\"groupSelect\">";
+		echo "<a class=\"dropdown-item\" href=\"/index.php\">All groups</a>";
 		while ($row = mysqli_fetch_array($resultset, MYSQLI_NUM)) 
 		{
 		    
-		    echo "<a class=\"dropdown-item\" href=\"/index.php\">$row[0]</a>";
+		    echo "<a class=\"dropdown-item\" href=\"/js/load_group_2.php\">$row[0]</a>";
 		    
 		}
 		echo "</div></div></div>"; //ends row, button, dropdown items divs
