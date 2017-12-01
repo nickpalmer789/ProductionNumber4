@@ -62,13 +62,11 @@
                             <label for="pwd"><b>Password</b></label>
 
                             <input type="password" class="form-control" placeholder="Enter Password" name="password" required>
-                            <input type="checkbox" checked="checked"> Remember me
                             <button class="btn-success btn-lg btn-block" type="submit">Login</button>
 
 
                             <br>
                             <button type="button" class="btn-danger btn-lg btn-block" data-dismiss="modal">Cancel</button>
-                            <span class="psw">Forgot <a href="#">password?</a></span>
                         </form>
                     </div>
                 </div>
