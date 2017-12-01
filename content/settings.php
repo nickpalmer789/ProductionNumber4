@@ -2,9 +2,7 @@
 <html>
 
 <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    
-	<link rel="stylesheet" type="text/css" href="../css/settings.css">
+  	<link rel="stylesheet" type="text/css" href="../css/settings.css">
 	<?php
             //Include the header content
             include('../templates/headercontent.php')

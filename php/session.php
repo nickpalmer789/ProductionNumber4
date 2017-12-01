@@ -1,7 +1,7 @@
 <?php
     session_start();
     
-    $db = mysqli_connect("localhost:3306","root","password","planit");    
+    $db = mysqli_connect("localhost","root","password","planit");    
 
     //Attempt to get the session information about the user
     $user_check = $_SESSION["login_user"];
