@@ -39,7 +39,7 @@ dashboard -
 	looks good for now, can add/delete tasks
 
 login.php - 
-	working for now
+	needs to popup error not go nowhere
 	
 calendar.php -
 	(MM_Calendar_and_Button_attempt) 
