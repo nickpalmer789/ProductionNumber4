@@ -33,9 +33,27 @@
             $string .= '\', title: \'';
             #echo $row[2];
             #echo $row[3];
-        }
+        
             $string .= $row[2];
+
+            $string .= '\', color: \'red';
             $string .= '\' },';
+        }
+        else
+        {
+            $string .= '{ id: \'';
+            $string .= $row[0];
+            $string .= '\', resourceId: \'f\', start: \'';
+            $string .= $row[3];
+            #row[1] is username
+            $string .= '\', end: \'';
+            $string .= $row[3];
+            $string .= '\', title: \'';
+            $string .= $row[2];
+
+            $string .= '\', color: \'green';
+            $string .= '\' },';
+        }
 
     }
     $string = rtrim($string, ',');
@@ -60,7 +78,7 @@
                         include('../php/taskHandler.php');
                     ?>
                 </div>
-
+                 <script src="../js/task_deleteHandler_calendar.js"></script>
             </div>
             <?php
                 include('../templates/footerCopy.php');

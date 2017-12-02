@@ -20,14 +20,17 @@
     ";
             while ($row = mysqli_fetch_array($res, MYSQLI_NUM)){
                 if($row[6] == 0){
-                echo "<tr>";
-                echo "<td>";
-                echo $row[2];
-                echo "</td>";
-                echo "<td>";
-                echo $row[3];
-                echo "</td>";
-                echo "</tr>";
+                    echo "<tr>";
+                    echo "<td>";
+                    echo $row[2];
+                    echo "</td>";
+                    echo "<td>";
+                    echo $row[3];
+                    echo "</td>";
+                    echo "<td>";
+                    echo "<input type=\"submit\" class=\"button\" name=\"".$row[0]."\" value=\"Done!\"/>";
+                    echo "</td>";
+                    echo "</tr>";
                 }
             }
 
