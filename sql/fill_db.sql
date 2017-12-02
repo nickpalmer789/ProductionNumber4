@@ -20,6 +20,11 @@ insert into `calendar` (`username`, `description`,`item_name`,`start_time`, `end
 ('mrmeeseeks','work on homework','project','2017-11-01 17:00:00','2017-11-01 20:00:00','engineering center'),
 ('abradolflincler','eat breakfast','eat','2017-10-31 08:00:00','2017-10-31 09:00:00','home'),
 ('d0lphingirl','go to work for money','work','2017-10-31 08:00:00','2017-11-01 17:00:00','workplace, obviously'),
+('john1','this is an event','homework','2017-11-01 17:00:00','2017-11-01 19:00:00','Math Library'),
+('john1','this is an event','homework','2017-11-02 17:00:00','2017-11-01 19:00:00','Math Library'),
+('john1','this is an event','homework','2017-11-03 17:00:00','2017-11-01 19:00:00','Math Library'),
+('john1','this is an event','homework','2017-11-04 17:00:00','2017-11-01 19:00:00','Math Library'),
+('john1','this is an event','homework','2017-11-05 17:00:00','2017-11-01 19:00:00','Math Library'),
 ('jackblack2','go to work for money','work','2017-11-01 17:00:00','2017-11-01 22:00:00','workplace, obviously');
 
 
@@ -64,11 +69,11 @@ insert into `tasks` (`username`,`task_name`,`deadline`,`description`,`ETA`) valu
 ('scarolac','the usual','2017-11-02 12:01:00','open the country, stop having it be closed','whenever'),
 ('npalmer','forget','2017-11-02 17:30:00','forget hitlers last name','yea, he did'),
 ('klen','pie','2017-11-10 15:00:00','quit while im ahead','last friday'),
-('john1','test1','2017-01-01 12:00:00','testing testing 123','never'),
-('john1','test2','2017-01-01 12:00:00','testing testing 123','never'),
-('john1','test3','2017-01-01 12:00:00','testing testing 123','never'),
-('john1','test4','2017-01-01 12:00:00','testing testing 123','never'),
-('john1','test5','2017-01-01 12:00:00','testing testing 123','never');
+('john1','test1','2017-12-01 12:00:00','testing testing 123','never'),
+('john1','test2','2017-12-01 12:00:00','testing testing 123','never'),
+('john1','test3','2017-12-01 12:00:00','testing testing 123','never'),
+('john1','test4','2017-12-01 12:00:00','testing testing 123','never'),
+('john1','test5','2017-12-01 12:00:00','testing testing 123','never');
 
 insert into `group_calendar` (`group_id`,`description`, `item_name`,`start_time`, `end_time`,`optional_location`) values
 (1,'do stuff', 'stuff', '2017-11-02 12:00:00','2017-11-02 12:01:00','EC'),

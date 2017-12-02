@@ -36,7 +36,7 @@ create table if not exists `calendar` (
 	`start_time` datetime not null,
 	`end_time` datetime not null,
 	`optional_location` varchar(40),
-    `repeat` varchar(7) not null
+    `repeat` varchar(7) not null default "0000000"
 );
 create table if not exists `group_calendar`(
 	`event_id` integer auto_increment primary key,
