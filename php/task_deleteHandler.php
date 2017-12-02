@@ -10,7 +10,7 @@
 
     $deleteID = $_REQUEST['id'];
 
-    $query = "DELETE FROM tasks WHERE task_id=".$deleteID;
+    $query = "UPDATE tasks SET complete=1 WHERE task_id=".$deleteID;
 
     $result = mysqli_query($db, $query);
 

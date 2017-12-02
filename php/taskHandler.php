@@ -1,8 +1,7 @@
 <?php
     $connection = mysqli_connect('localhost', 'root', 'password', 'planit');
 
-    if(mysqli_connect_errno())
-    {
+    if(mysqli_connect_errno()){
         echo "<h4>Failed to connect to MySQL:</h4>".mysqli_connect_error();
     } 
 
@@ -19,10 +18,8 @@
         </thead>
         <tbody>
     ";
-            while ($row = mysqli_fetch_array($res, MYSQLI_NUM))
-            {
-                if($row[6] == 0)
-                {
+            while ($row = mysqli_fetch_array($res, MYSQLI_NUM)){
+                if($row[6] == 0){
                 echo "<tr>";
                 echo "<td>";
                 echo $row[2];
@@ -52,10 +49,8 @@
         <tbody>
     ";  
             $alldone = True;
-            while ($row = mysqli_fetch_array($res, MYSQLI_NUM))
-            {
-                if($row[6] == 1)
-                {
+            while ($row = mysqli_fetch_array($res, MYSQLI_NUM)){
+                if($row[6] == 1){
                     $alldone = False;
                     echo "<tr>";
                     echo "<td>";
@@ -64,8 +59,7 @@
                     echo "</tr>";
                 }
             }
-                if($alldone)
-                {
+                if($alldone){
                     echo "<tr>";
                     echo "<td>";
                     echo "None, you've done NOTHING";
