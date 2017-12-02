@@ -10,7 +10,8 @@ insert into `users` (`username`, `first_name`,`last_name`,`phone_number`, `email
 ('klen','Kaelan','Patel','7204896610','kaelan.patel@colorado.edu','flowersarentcool',0000,'I won\'t get hacked'),
 ('mrmeeseeks','Mr','Meeseeks','9119996611','mrmeeseeks@colorado.edu','lookatme!',0000,'Everyone except Jerry');
 
-insert into `calendar` (`username`, `description`,`item_name`,`start_time`, `end_time`,`optional_location`) values ('mema0341','Microelectronics Homework 5.10,5.44,5.65,5.80','homework','2017-11-01 17:00:00','2017-11-01 19:00:00','SRC'),
+insert into `calendar` (`username`, `description`,`item_name`,`start_time`, `end_time`,`optional_location`) values 
+('mema0341','Microelectronics Homework 5.10,5.44,5.65,5.80','homework','2017-11-01 17:00:00','2017-11-01 19:00:00','SRC'),
 ('mema0341','do homework for energy conversion','homework','2017-11-01 17:00:00','2017-11-01 19:00:00','Math Library'),
 ('mema0341','do homework for microelectronics','homework','2017-11-01 17:00:00','2017-11-01 19:00:00','SRC'),
 ('scarolac','do homework for algorithms','homework','2017-11-01 17:00:00','2017-11-01 19:00:00','Math Library'),
@@ -75,7 +76,7 @@ insert into `tasks` (`username`,`task_name`,`deadline`,`description`,`ETA`) valu
 ('john1','test4','2017-12-01 12:00:00','testing testing 123','never'),
 ('john1','test5','2017-12-01 12:00:00','testing testing 123','never');
 
-insert into `group_calendar` (`group_id`,`description`, `item_name`,`start_time`, `end_time`,`optional_location`) values
+insert into `group_tasks` (`group_id`,`description`, `item_name`,`start_time`, `end_time`,`optional_location`) values
 (1,'do stuff', 'stuff', '2017-11-02 12:00:00','2017-11-02 12:01:00','EC'),
 (1,'eat lunch','eat','2017-11-02 12:01:00','2017-10-28 13:00:00','home'),
 (2,'4.1,4.20,4.30,4.33','homework','2017-11-01 17:00:00','2017-11-01 19:00:00','SRC'),

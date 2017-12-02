@@ -33,21 +33,48 @@ $connection = mysqli_connect('localhost', 'root', 'password', 'planit');
     $calendar = "";
     while ($row = mysqli_fetch_array($res, MYSQLI_NUM))
     {
-            $calendar .= '{ id: \'';
-            $calendar .= $row[0];
-            $calendar .= '\', start: \'';
-            $calendar .= $row[4];
-            #row[1] is username
-            $calendar .= '\', end: \'';
-            $calendar .= $row[5];
-            $calendar .= '\', title: \'';        
-            $calendar .= $row[3];
-            $calendar .= ' - ';
-            $calendar .= $row[2];
-            $calendar .= '\' },';
         
+        $start = explode(" ", $row[4]);
+        $end = explode(" ", $row[5]);
+        /*$calendar .= '{ id: \'';
+        $calendar .= $row[0];
+        $calendar .= '\', start: \'';
+        $calendar .= $start[1];
+        #row[1] is username
+        $calendar .= '\', end: \'';
+        $calendar .= $end[1];
+        $calendar .= '\', dow: \'';
+        $calendar .= implode(" ",str_split($row[7]));
+        $calendar .= '\', ranges: [{ ';
+        $calendar .= ' start: ';
+        $calendar .= 'moment($start[0], \'YYYY-MM-DD\')';
+        $calendar .= ', end: ';
+        $calendar .= 'moment($end[0], \'YYYY-MM-DD\')';
+        $calendar .= ', }]  \'';
+        $calendar .= '\', title: \'';     
+        $calendar .= $row[3];
+        $calendar .= ' - ';
+        $calendar .= $row[2];
+        $calendar .= '\' },';
+
+        */
+        $myObj->title = $row[3];
+        $myObj->id = $row[0];
+        $myObj->start = $start[1];
+        $myObj->end = $end[1];
+        $myObj->dow = explode(" ", $row[7]);
+
+        $rangeArray = array();
+        ?>
+        <script>
+        var p1 = moment( <?php $start[1] ?>, 'YYYY-MM-DD');
+        </script>
+        <?php
+        echo "<script>document.writeln(p1);</script>";
+        //$rangeObj->start = <script>document.writeln(p1);</script>;
 
     }
+
     $calendar = rtrim($calendar, ',');
 
 
