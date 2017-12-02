@@ -8,7 +8,9 @@ body {
 /* Padding on inputs */
 
 input[type=text],
-input[type=password] {
+input[type=password],
+input[type=email],
+input[type=time]{
     padding: 12px 20px;
     margin: 8px 0;
 }
@@ -49,4 +51,8 @@ span.psw {
 
 .btn-top {
     margin-top: 5px;
+}
+
+.checks {
+    margin: 5px;
 }

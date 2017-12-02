@@ -17,5 +17,5 @@
     if(!$result) {
         echo "<p>Error completing query!</p>";
     }
-    include("../content/calendar.php");
+    header("location: /content/calendar.php");
 ?>
