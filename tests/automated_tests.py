@@ -90,71 +90,28 @@ class SeleniumCBT(unittest.TestCase):
 #            self.test_result='pass'
 #            self.driver.quit()
         
-    def test_create_task(self):
-        print("Navigating to tasks...")
+    def test_create_account(self):
+        print("Testing Create Account...")
         self.driver.get('http://73.14.69.109/index.php')
         try:
             login_button = WebDriverWait(self.driver, 10).until(
                 EC.presence_of_element_located((By.ID, "login_button"))
             )
             login_button.click()
+            print("Getting username and password...")
             self.driver.find_element_by_name('username').send_keys('mema0341')
             self.driver.find_element_by_name('password').send_keys('spring2017')
+            self.driver.save_screenshot('screenshot1.png')
+            print("Success! Took screenshot1")
             self.driver.find_element_by_id('login_button_1').submit()
+            print("Checking if we redirect to Dashboard")
             self.driver.get("http://73.14.69.109/content/dashboard.php")
-            print("adding task called 'automated test task'...")
-            self.driver.save_screenshot('screenshot9.png')
-            
-            task_button = WebDriverWait(self.driver, 10).until(
-                EC.presence_of_element_located((By.ID, "new_task_button"))
-            )
-            task_button.click()
-            self.driver.save_screenshot('screenshot10.png')
-
-            self.driver.find_element_by_name('taskName').send_keys('automated test task')
-            print("added name")
-            self.driver.find_element_by_name('description').send_keys('automated description')
-            print("added description")
-            self.driver.find_element_by_name('deadlineDate').send_keys('12/02/2017')
-            print("added deadline date")
-            self.driver.find_element_by_name('deadlineTime').send_keys('11:55:00 PM')
-            print("added deadline time")
-            self.driver.find_element_by_name('eta').send_keys('3 hours')
-            print("added eta")
-            self.driver.save_screenshot('screenshot7.png')
-            self.driver.find_element_by_name('createTask').submit()
-            print("Success! Took screenshot7 and screenshot8.png")
-            self.driver.save_screenshot('screenshot8.png')
-            
+            print("Success! Took screenshot2")
+            self.driver.save_screenshot('screenshot2.png')
             print("Test complete.")
         finally:
             self.test_result='pass'
             self.driver.quit() 
-        
-#    def test_create_account(self):
-#        print("Testing Create Account...")
-#        self.driver.get('http://73.14.69.109/index.php')
-#        self.driver.save_screenshot('screenshot.png')
-#        print("Success! Took screenshot")
-#        try:
-#            login_button = WebDriverWait(self.driver, 10).until(
-#                EC.presence_of_element_located((By.ID, "login_button"))
-#            )
-#            login_button.click()
-#            print("Getting username and password...")
-#            self.driver.find_element_by_name('username').send_keys('mema0341')
-#            self.driver.find_element_by_name('password').send_keys('spring2017')
-#            self.driver.save_screenshot('screenshot1.png')
-#            print("Success! Took screenshot1")
-#            self.driver.find_element_by_id('login_button_1').submit()
-#            print("Checking if we redirect to Dashboard")
-#            self.driver.get("http://73.14.69.109/content/dashboard.php")
-#            print("Success! Took screenshot2")
-#            self.driver.save_screenshot('screenshot2.png')
-#            print("Test complete.")
-#        finally:
-#            self.test_result='pass'
-#            self.driver.quit() 
 
 
 if __name__ == '__main__':
