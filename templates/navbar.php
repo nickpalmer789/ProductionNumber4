@@ -40,8 +40,7 @@
                 </button>
                 <ul class=\"navbar-nav mr-auto\">
                 </ul>
-                <button type=\"button\" class=\"btn btn-outline-success my-2 my-sm-0\" data-toggle=\"modal\" data-target=\"#loginModal\">Log In</button>
-            </div>";
+                <button type=\"button\" class=\"btn btn-outline-success my-2 my-sm-0\" data-toggle=\"modal\" data-target=\"#loginModal\">Log In</button>";
     }
 ?>
 
