@@ -10,7 +10,7 @@
         include('../php/session.php');
         include('../templates/navbar.php');
         include('../php/load_calendar2.php'); 
-        echo $rangeObj->start;
+        //echo $rangeObj->start;
     ?>
 </head>
 
@@ -50,7 +50,7 @@
                                         <input type="text" class="form-control" placeholder="&quot;MATH 1234&quot;" name="description" required>
 
                                         <label for="startDate"><b>Start Date</b></label>
-                                        <input type="date" class="form-control" name="startDate" required>
+                                        <input id="startDate" type="date" class="form-control" name="startDate" required>
                                         
                                         <label for="repeats>"><b>Select days event repeats</b></label>
                                         <br>
@@ -64,7 +64,7 @@
                                         
                                         <br>
                                         <label for="endDate"><b>End Date</b></label>
-                                        <input type="date" class="form-control" name="endDate" required>
+                                        <input id="endDate" type="date" class="form-control" name="endDate" required>
 
                                         <label for="startTime"><b>Start Time</b></label>
                                         <input type="time" class="form-control" name="startTime" required>
@@ -74,14 +74,76 @@
 
                                         <label for="optionalLocation"><b>Location</b></label>
                                         <input type="text" class="form-control" placeholder="&quot;Humanities Building&quot;" name="optionalLocation" required>
+                                        <!-- Error message for JS form check -->
+                                        <p id="inputError" class="text-center error-msg"></p>                                        
 
-
-                                        <button class="btn btn-primary btn-lg btn-block" type="submit" name="createTask">Add Event</button>
+                                        <button disabled id="submitButton" class="btn btn-primary btn-lg btn-block disabled" type="submit" name="createTask">Add Event</button>
                                     </form>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <script>
+                        //Form checker
+                        $(document).ready(function() {
+                            //Function to check the form and enable the submit button if it is valid
+                            var checkEventForm = function() {
+                                var emptyInputs = false;
+                                
+                                //Loop over inputs on the page
+                                $('form > input').each(function() {
+                                    var thisName = $(this).attr("name");
+
+                                    //Check whether required fields are empty
+                                    if(thisName == "repeatDates[]" || thisName == "username" || thisName == "password") {
+                                        //Skip this input
+                                        return true;
+                                    } else if($(this).val() == "") {
+                                        emptyInputs = true;
+                                    }
+                                });
+
+                                //Check if a checkbox is checked
+                                var checked = $("input:checkbox").is(":checked");
+                                
+                                //Check if the events start on the same day
+                                var sameDay = false;
+                                var startDay = $("#startDate").val();
+                                var endDay = $("#endDate").val();
+                                if(startDay == endDay && startDay != "" && endDay != "") {
+                                    sameDay = true
+                                }
+
+                                //Check if start is before end
+                                var dateOrder = true;
+                                if(startDay != "" && endDay != "" && Date.parse(startDay) > Date.parse(endDay)) {
+                                    dateOrder = false;
+                                }
+
+                                if(emptyInputs || !checked || sameDay) {
+                                    if(!dateOrder) {
+                                        $("#inputError").text("Starting date must be before ending date!");
+                                    } else if(sameDay) {
+                                        $("#inputError").text("Events cannot start on the same day!");
+                                    } else {
+                                        $("#inputError").text("");
+                                    }
+                                    $('#submitButton').attr('disabled', 'disabled');
+                                } else {
+                                    $('#submitButton').removeClass('disabled');
+                                    $('#submitButton').removeAttr('disabled');
+                                }
+                            }
+
+
+                            $('form > input').change(function() {
+                                checkEventForm();
+                            });
+                            $('input:checkbox').click(function() {
+                                checkEventForm();
+                            });
+                        });
+                    </script>
                     <!--End event Modal-->
                 </div>
             </div>
@@ -118,7 +180,8 @@
                 start: moment(startArr[0], "YYYY-MM-DD"),
                 end: moment(endArr[0], "YYYY-MM-DD")
             }];
-            console.log(rangeArr);
+            
+            //Create the actual object
             currentEvent = {
                 title:arrays[i][2],
                 id:arrays[i][0],
@@ -127,9 +190,11 @@
                 dow:dowArr,
                 ranges:rangeArr
             }
+            //Add the event to the list
             eventsArr.push(currentEvent);
         }
-        console.log(eventsArr);
+
+        //Render the events on the calendar
 		$('#calendar').fullCalendar({
 			defaultDate: moment(),
 			header: {
@@ -139,14 +204,14 @@
 			},
 			defaultView: 'month',
 			eventRender: function(event, element, view){
-                console.log(event);
-				console.log(event.start.format());
+                //Check which dates should be rendered
 				return (event.ranges.filter(function(range){
-					return (event.start.isBefore(range.end) &&
-                        event.end.isAfter(range.start));
-                    return true;
+                    //Return true if the event should be rendered at the current date
+					return (event.start.isBefore(range.end) && event.end.isAfter(range.start));
+
 				}).length)>0;
 			},
+            //The generated events list
 			events:eventsArr
 		});
 
