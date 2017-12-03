@@ -60,8 +60,8 @@
 
                             <label for="pwd"><b>Password</b></label>
 
-                            <input type="password" id = "login_button_1" class="form-control" placeholder="Enter Password" name="password" required>
-                            <button class="btn-success btn-lg btn-block" type="submit">Login</button>
+                            <input type="password" class="form-control" placeholder="Enter Password" name="password" required>
+                            <button id = "login_button_1" class="btn-success btn-lg btn-block" type="submit">Login</button>
 
 
                             <br>
