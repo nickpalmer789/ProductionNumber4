@@ -23,11 +23,11 @@
                 
                 
                 <form action=\"../content/settings.php\" method=\"post\">
-                    <button type=\"submit\" class=\"btn btn-outline-danger\">SETTINGS</button>          
+                    <button type=\"submit\" name = \"settings_button\" class=\"btn btn-outline-danger\">SETTINGS</button>          
 		        </form>
         
                 <form action=\"../php/logout.php\" method=\"post\">
-                    <button type=\"submit\" class=\"btn btn-outline-success my-2 my-sm-0\">LOG OUT</button>
+                    <button type=\"submit\" name = \"logout_button\" class=\"btn btn-outline-success my-2 my-sm-0\">LOG OUT</button>
                 </form>
             </div>";
     }
@@ -40,7 +40,7 @@
                 </button>
                 <ul class=\"navbar-nav mr-auto\">
                 </ul>
-                <button type=\"button\" class=\"btn btn-outline-success my-2 my-sm-0\" data-toggle=\"modal\" data-target=\"#loginModal\">Log In</button>";
+                <button type=\"button\" id = \"login_button\" class=\"btn btn-outline-success my-2 my-sm-0\" data-toggle=\"modal\" data-target=\"#loginModal\">Log In</button>";
     }
 ?>
 
@@ -60,7 +60,7 @@
 
                             <label for="pwd"><b>Password</b></label>
 
-                            <input type="password" class="form-control" placeholder="Enter Password" name="password" required>
+                            <input type="password" id = \"login_button_1" class="form-control" placeholder="Enter Password" name="password" required>
                             <button class="btn-success btn-lg btn-block" type="submit">Login</button>
 
 
