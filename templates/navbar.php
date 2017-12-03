@@ -23,11 +23,11 @@
                 
                 
                 <form action=\"../content/settings.php\" method=\"post\">
-                    <button type=\"submit\" name = \"settings_button\" class=\"btn btn-outline-danger\">SETTINGS</button>          
+                    <button type=\"submit\" id=\"settings_button\" class=\"btn btn-outline-danger\">SETTINGS</button>          
 		        </form>
         
                 <form action=\"../php/logout.php\" method=\"post\">
-                    <button type=\"submit\" name = \"logout_button\" class=\"btn btn-outline-success my-2 my-sm-0\">LOG OUT</button>
+                    <button type=\"submit\" id=\"logout_button\" class=\"btn btn-outline-success my-2 my-sm-0\">LOG OUT</button>
                 </form>
             </div>";
     }
