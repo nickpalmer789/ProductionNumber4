@@ -8,8 +8,8 @@ import requests
 class SeleniumCBT(unittest.TestCase):
     def setUp(self):
 
-        self.username = "scarolac@colorado.edu"
-        self.authkey  = "ue6d54cff39ce185"
+        self.username = "mmantey9@gmail.com"
+        self.authkey  = "uc3530e35d02ec2c"
 
         self.api_session = requests.Session()
         self.api_session.auth = (self.username,self.authkey)
