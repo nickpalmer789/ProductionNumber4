@@ -10,7 +10,7 @@
         include('../php/session.php');
         include('../templates/navbar.php');
         include('../php/load_calendar2.php'); 
-        echo $rangeObj->start;
+        //echo $rangeObj->start;
     ?>
 </head>
 
@@ -142,6 +142,10 @@
                 console.log(event);
 				console.log(event.start.format());
 				return (event.ranges.filter(function(range){
+                    console.log("Start before end: " + event.start.isBefore(range.end));
+                    console.log("End after start:  " + event.end.isAfter(range.start));
+                    console.log(range);
+                    console.log("===================================");
 					return (event.start.isBefore(range.end) &&
                         event.end.isAfter(range.start));
                     return true;
