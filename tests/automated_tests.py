@@ -45,7 +45,7 @@ class SeleniumCBT(unittest.TestCase):
             print("Getting username and password...")
             self.driver.find_element_by_name('username').send_keys('mema0341')
             self.driver.find_element_by_name('password').send_keys('spring2017')
-            self.driver.find_element_by_id('login_button_1').click()
+            self.driver.find_element_by_id('login_button_1').submit()
             self.driver.save_screenshot('screenshot.png')
             print("Checking if we redirect to Dashboard")
             self.driver.get("http://73.14.69.109/content/dashboard.php")
