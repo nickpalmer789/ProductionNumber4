@@ -1,4 +1,8 @@
 <?php
+    $group = $_GET['id'];
+    echo $group;
+        include('../php/session.php');
+
     $connection = mysqli_connect('localhost', 'root', 'password', 'planit');
 
     if(mysqli_connect_errno()){
@@ -7,26 +11,14 @@
 
     $query = "SELECT * FROM tasks WHERE username = '{$_SESSION['login_user']}' ";
 	$res = mysqli_query($connection, $query);
-    $tasks = ""; 
-    while ($row = mysqli_fetch_array($res, MYSQLI_NUM))
-    {
-        if($row[6] == 0)
-        {
-            $tasks .= '{ start: \'';
-            $tasks .= $row[3];
-            #row[1] is username
-            $tasks .= '\', end: \'';
-            $tasks .= $row[3];
-            $tasks .= '\', title: \'';
-            $tasks .= $row[2];
-            $tasks .= ' - ';
-            $tasks .= $row[4];
-            $tasks .= '\', color: \'bisque';
-            $tasks .= '\' },';
-        }
+    $groupid = "select group_id from groups where group_name = '$group'";
+    $res1 = mysqli_query($connection, $groupid);
+    $group_id = mysqli_fetch_row($res1);
+    echo "groupid: ";
+    echo $group_id[0];
+    $query1 = "select * from group_tasks where group_id = $group_id[0]";
+	$result3 = mysqli_query($connection, $query1);
 
-    }
-    $tasks = rtrim($tasks, ',');
 
     $query = "SELECT * FROM calendar WHERE username = '{$_SESSION['login_user']}' ";
 	$res = mysqli_query($connection, $query);
