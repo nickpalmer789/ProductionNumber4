@@ -51,9 +51,9 @@ class SeleniumCBT(unittest.TestCase):
             print("check break time")
             self.driver.find_element_by_id('breakTime')
             print("Checking for Settings button")
-            self.driver.find_element_by_name('settings_button')
+            self.driver.find_element_by_id('settings_button')
             print("found settings button...")
-            self.driver.find_element_by_name('logout_button')
+            self.driver.find_element_by_id('logout_button')
             print("found logout button!")
         finally:
             self.test_result='pass'
