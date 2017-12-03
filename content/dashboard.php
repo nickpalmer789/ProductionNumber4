@@ -54,7 +54,7 @@
                                         <label for="deadlineTime"><b>Deadline Time</b></label>
                                         <input type="time" step="1" class="form-control" name="deadlineTime" required>
 
-                                        <label for="eta"><b>ETC</b></label>
+                                        <label for="eta"><b>ETA</b></label>
                                         <input type="text" class="form-control" name="eta" required>
 
                                         <button class="btn btn-primary btn-lg btn-block" type="submit" name="createTask">Create Task</button>

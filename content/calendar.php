@@ -10,6 +10,7 @@
         include('../php/session.php');
         include('../templates/navbar.php');
         include('../php/load_calendar2.php'); 
+        echo $rangeObj->start;
     ?>
 </head>
 
@@ -40,26 +41,26 @@
                                 </div>
                                 <div class="modal-body">
                                     <!--Start form for new event-->
-                                    <form action="../php/new_taskHandler.php" method="post">
-                                        <label for="taskName"><b>Type (eg. class/work/etc)</b></label>
-                                        <input type="text" class="form-control" placeholder="Enter Type" name="type" required>
+                                    <form action="../php/new_eventHandler.php" method="post">
+                                        <label for="eventType"><b>Type</b></label>
+                                        <input type="text" class="form-control" placeholder="&quot;class/work/etc&quot;" name="eventType" required>
                                         
                                        
                                         <label for="description"><b>Description</b></label>
-                                        <input type="text" class="form-control" placeholder="Enter Event Description" name="description" required>
+                                        <input type="text" class="form-control" placeholder="&quot;MATH 1234&quot;" name="description" required>
 
                                         <label for="startDate"><b>Start Date</b></label>
                                         <input type="date" class="form-control" name="startDate" required>
                                         
                                         <label for="repeats>"><b>Select days event repeats</b></label>
                                         <br>
-                                        <label class="checks">Sun</label><input type="checkbox">
-                                        <label class="checks">Mon </label><input type="checkbox">
-                                        <label class="checks">Tue</label><input type="checkbox">
-                                        <label class="checks">Wed</label><input type="checkbox">
-                                        <label class="checks">Thur</label><input type="checkbox">
-                                        <label class="checks">Fri</label><input type="checkbox">
-                                        <label class="checks">Sat</label><input type="checkbox">
+                                        <label class="checks">Sun</label><input type="checkbox"  name="repeatDates[]" value="0"/>
+                                        <label class="checks">Mon </label><input type="checkbox"  name="repeatDates[]" value="1"/>
+                                        <label class="checks">Tue</label><input type="checkbox"  name="repeatDates[]" value="2"/>
+                                        <label class="checks">Wed</label><input type="checkbox"  name="repeatDates[]" value="3"/>
+                                        <label class="checks">Thur</label><input type="checkbox"  name="repeatDates[]" value="4"/>
+                                        <label class="checks">Fri</label><input type="checkbox"  name="repeatDates[]" value="5"/>
+                                        <label class="checks">Sat</label><input type="checkbox"  name="repeatDates[]" value="6"/>
                                         
                                         <br>
                                         <label for="endDate"><b>End Date</b></label>
@@ -67,11 +68,15 @@
 
                                         <label for="startTime"><b>Start Time</b></label>
                                         <input type="time" class="form-control" name="startTime" required>
-                                        <label for="startTime"><b>End Time</b></label>
+
+                                        <label for="endTime"><b>End Time</b></label>
                                         <input type="time" class="form-control" name="endTime" required>
 
+                                        <label for="optionalLocation"><b>Location</b></label>
+                                        <input type="text" class="form-control" placeholder="&quot;Humanities Building&quot;" name="optionalLocation" required>
 
-                                        <button class="btn btn-primary btn-lg btn-block" type="submit" name="createTask">Add Task</button>
+
+                                        <button class="btn btn-primary btn-lg btn-block" type="submit" name="createTask">Add Event</button>
                                     </form>
                                 </div>
                             </div>
@@ -98,26 +103,52 @@
 <script>
     $(document).ready(function() {
 
-        $('#calendar').fullCalendar({
-            header: {
-                left: 'prev,next today',
-                center: 'title',
-                right: 'month,agendaWeek,agendaDay,listWeek'
-            },
-            defaultDate: '2017-11-12',
-            navLinks: true, // can click day/week names to navigate views
-            editable: true,
-            eventLimit: true, // allow "more" link when too many events
-            events: [
-                <?php
-                    echo $tasks;
-                    
-                if(!$tasks == "")
-                    echo ",";
-                echo $calendar;
-                ?>
-            ]
-        });
+        var arrays = <?php echo $queryJSON; ?>;
+        var eventsArr = [];
+        var currentEvent;
+        for(var i = 0; i < arrays.length; i++) {
+            var startArr = arrays[i][4].split(" ");
+            var endArr = arrays[i][5].split(" ");
+
+            //Generate the dow array from the string
+            var dowArr = arrays[i][7].split(" ").map(Number);
+            
+            //Generate the ranges array
+            var rangeArr = [{
+                start: moment(startArr[0], "YYYY-MM-DD"),
+                end: moment(endArr[0], "YYYY-MM-DD")
+            }];
+            console.log(rangeArr);
+            currentEvent = {
+                title:arrays[i][2],
+                id:arrays[i][0],
+                start:startArr[1],
+                end:endArr[1],
+                dow:dowArr,
+                ranges:rangeArr
+            }
+            eventsArr.push(currentEvent);
+        }
+        console.log(eventsArr);
+		$('#calendar').fullCalendar({
+			defaultDate: moment(),
+			header: {
+				left: 'prev,next today',
+				center: 'title',
+				right: 'month,agendaWeek,agendaDay'
+			},
+			defaultView: 'month',
+			eventRender: function(event, element, view){
+                console.log(event);
+				console.log(event.start.format());
+				return (event.ranges.filter(function(range){
+					return (event.start.isBefore(range.end) &&
+                        event.end.isAfter(range.start));
+                    return true;
+				}).length)>0;
+			},
+			events:eventsArr
+		});
 
     });
 
