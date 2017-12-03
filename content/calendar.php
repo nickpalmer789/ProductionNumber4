@@ -103,26 +103,52 @@
 <script>
     $(document).ready(function() {
 
-        $('#calendar').fullCalendar({
-            header: {
-                left: 'prev,next today',
-                center: 'title',
-                right: 'month,agendaWeek,agendaDay,listWeek'
-            },
-            defaultDate: '2017-11-12',
-            navLinks: true, // can click day/week names to navigate views
-            editable: true,
-            eventLimit: true, // allow "more" link when too many events
-            events: [
-                <?php
-                    echo $tasks;
-                        
-                    if(!$tasks == "")
-                        echo ",";
-                    echo $calendar;
-                ?>
-            ]
-        });
+        var arrays = <?php echo $queryJSON; ?>;
+        var eventsArr = [];
+        var currentEvent;
+        for(var i = 0; i < arrays.length; i++) {
+            var startArr = arrays[i][4].split(" ");
+            var endArr = arrays[i][5].split(" ");
+
+            //Generate the dow array from the string
+            var dowArr = arrays[i][7].split(" ").map(Number);
+            
+            //Generate the ranges array
+            var rangeArr = [{
+                start: moment(startArr[0], "YYYY-MM-DD"),
+                end: moment(endArr[0], "YYYY-MM-DD")
+            }];
+            console.log(rangeArr);
+            currentEvent = {
+                title:arrays[i][2],
+                id:arrays[i][0],
+                start:startArr[1],
+                end:endArr[1],
+                dow:dowArr,
+                ranges:rangeArr
+            }
+            eventsArr.push(currentEvent);
+        }
+        console.log(eventsArr);
+		$('#calendar').fullCalendar({
+			defaultDate: moment(),
+			header: {
+				left: 'prev,next today',
+				center: 'title',
+				right: 'month,agendaWeek,agendaDay'
+			},
+			defaultView: 'month',
+			eventRender: function(event, element, view){
+                console.log(event);
+				console.log(event.start.format());
+				return (event.ranges.filter(function(range){
+					return (event.start.isBefore(range.end) &&
+                        event.end.isAfter(range.start));
+                    return true;
+				}).length)>0;
+			},
+			events:eventsArr
+		});
 
     });
 
