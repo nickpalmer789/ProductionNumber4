@@ -32,10 +32,10 @@
                         <input type="email" class="form-control" placeholder="Enter Email" name="email" required>
 
                         <label for="usr"><b>Username</b></label>
-                        <input type="text" class="form-control" placeholder="Enter Username" name="username" required>
-
+                        <input type="text" class="form-control" placeholder="Enter Username" id="usname" name="username" required>
+    
                         <label for="pwd"><b>Password</b></label>
-                        <input type="password" class="form-control" placeholder="Enter Password" name="password" required>
+                        <input type="password" class="form-control" placeholder="Enter Password" id ="pass" name="password" required>
 
                         <label for="pwd"><b>Re-enter Password</b></label>
                         <input type="password" class="form-control" placeholder="Confirm Password" name="confirmpassword" required>
