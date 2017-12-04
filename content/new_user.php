@@ -33,7 +33,7 @@
 
                         <label for="usr"><b>Username</b></label>
                         <input type="text" class="form-control" placeholder="Enter Username" name="username" required>
-
+    
                         <label for="pwd"><b>Password</b></label>
                         <input type="password" class="form-control" placeholder="Enter Password" name="password" required>
 

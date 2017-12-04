@@ -46,7 +46,7 @@
                                         <input type="text" class="form-control" placeholder="Enter Task Name" name="taskName" required>
 
                                         <label for="description"><b>Description</b></label>
-                                        <input type="text" class="form-control" placeholder="Enter Task Description" name="description" required>
+                                        <input type="text" class="form-control" placeholder="Enter Task Description" name="description">
 
                                         <label for="deadlineDate"><b>Deadline Date</b></label>
                                         <input type="date" class="form-control" name="deadlineDate" required>
