@@ -1,14 +1,16 @@
 /* Show it's not fixed to the top */
 
 body {
-    min-height: 75rem;
+    /*min-height: 75rem;*/
 }
 
 
 /* Padding on inputs */
 
 input[type=text],
-input[type=password] {
+input[type=password],
+input[type=email],
+input[type=time]{
     padding: 12px 20px;
     margin: 8px 0;
 }
@@ -37,17 +39,24 @@ span.psw {
     padding-top: 16px;
 }
 
-.totallyacalendar {
-    border-style: solid;
-    padding-top: 300px;
-    padding-bottom: 300px;
-}
-
 .whitespace {
     padding-top: 70px;
 }
 
-.calendarspacing {
-    padding-right: 30px;
-    padding-left: 30px;
+
+.special-btn {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.btn-top {
+    margin-top: 5px;
+}
+
+.checks {
+    margin: 5px;
+}
+
+.error-msg {
+    color: red;
 }

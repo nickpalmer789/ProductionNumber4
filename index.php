@@ -9,6 +9,20 @@
 </head>
 
 <body>
+   <?php
+      //Include the navbar content
+        include('templates/navbar.php');
+        
+        //if logged in already, go to dashboard
+        session_start();
+        if(isset($_SESSION["login_user"])) 
+        {
+            header("location: /content/dashboard.php");
+        }
+    
+    ?>
+
+    
     <div class="jumbotron">
         <div class="container">
             <h1 class="text-center">Welcome to Planit</h1>
@@ -18,7 +32,7 @@
 
             <div class="row">
                 <div class="col-12 text-center">
-                    <a class="btn btn-lg btn-success" href="get-started.php" role="button">Get Started!</a>
+                    <a class="btn btn-lg btn-success" id="get_started_button" href="/content/new_user.php" role="button">Get Started!</a>
                 </div>
             </div>
         </div>
