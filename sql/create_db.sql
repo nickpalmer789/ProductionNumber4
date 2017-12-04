@@ -3,6 +3,7 @@ DROP TABLE IF EXISTS `groups`;
 DROP TABLE IF EXISTS `calendar`;
 DROP TABLE IF EXISTS `user_settings`;
 DROP TABLE IF EXISTS `group_calendar`;
+DROP TABLE IF EXISTS `group_tasks`;
 DROP TABLE IF EXISTS `tasks`;
 DROP TABLE IF EXISTS `groups_join_users`;
 create table if not exists `users` (
