@@ -1,3 +1,10 @@
+
+<!-- Keeping for reference, nothing uses this right now
+===========================================================================
+-->
+
+
+
 <?php
 	$connection = mysqli_connect('localhost', 'root', 'password', 'planit');
 	echo "<script src=\"http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js\"></script>";
@@ -13,7 +20,7 @@
 	    //just gets group names
 	$query = "SELECT group_name FROM (SELECT group_id FROM groups_join_users WHERE username = '{$_SESSION['login_user']}') as current_user_groups JOIN groups ON current_user_groups.group_id = groups.group_id;";
 		//$row[0] = group names, $row[1] = event description, etc; gets groups mutliple times
-	$tasks_query = "SELECT group_name, group_calendar.description, group_calendar.item_name, group_calendar.start_time, group_calendar.end_time FROM users JOIN groups_join_users ON users.username = groups_join_users.username JOIN groups ON groups_join_users.group_id = groups.group_id JOIN group_calendar ON groups.group_id = group_calendar.group_id WHERE users.username = '{$_SESSION['login_user']}';";
+	$tasks_query = "SELECT group_name, group_tasks.description, group_tasks.item_name, group_tasks.start_time, group_tasks.end_time FROM users JOIN groups_join_users ON users.username = groups_join_users.username JOIN groups ON groups_join_users.group_id = groups.group_id JOIN group_tasks ON groups.group_id = group_tasks.group_id WHERE users.username = '{$_SESSION['login_user']}';";
 
 
 

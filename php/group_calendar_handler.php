@@ -1,11 +1,17 @@
+
+   <!---- Get the group_id with the dropdown 
+===============================================================
+   -->
+
 <?php
     $group = $_GET['id'];
     echo $group;
-        include('../php/session.php');
+    include('../php/session.php');
 
     $connection = mysqli_connect('localhost', 'root', 'password', 'planit');
 
-    if(mysqli_connect_errno()){
+    if(mysqli_connect_errno())
+    {
         echo "<h4>Failed to connect to MySQL:</h4>".mysqli_connect_error();
     } 
 

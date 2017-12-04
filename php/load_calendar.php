@@ -14,29 +14,6 @@ if(!$resultset){
     echo ":( Something went wrong.<br><br>";
 }   
     
-// Start table
-echo "<table class = \"table\">";
-echo "<th>Type</th>";
-echo "<th>Description</th>";
-echo "<th>Location</th>";
-echo "<th>Start</th>";
-echo "<th>End</th>";
-    
-// Get data
-while ($row = mysqli_fetch_array($resultset, MYSQLI_NUM)) 
-{
-    echo "<tr>";
-    echo "<td>$row[3]</td>";
-    echo "<td>$row[2]</td>";
-    echo "<td>$row[6]</td>";
-    echo "<td>$row[4]</td>";
-    echo "<td>$row[5]</td>";
-    echo "<td><input type=\"submit\" class=\"button\" name=\"".$row[0]."\"
-value=\"delete\"/></td>";
-    echo "</tr>";
-    
-    
-}
-// End table    
-echo "</table>";    
+$queryJSON = json_encode($resultset->fetch_all(PDO::FETCH_ASSOC));
+
 ?>
