@@ -200,9 +200,9 @@
             header: {
                 left: 'prev,next today',
                 center: 'title',
-                right: 'month,agendaWeek,agendaDay'
+                right: 'month,agendaWeek,agendaDay,list'
             },
-            defaultView: 'month',
+            defaultView: 'agendaWeek',
             eventRender: function(event, element, view) {
                 //Check which dates should be rendered
                 return (event.ranges.filter(function(range) {

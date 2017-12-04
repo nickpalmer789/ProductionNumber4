@@ -60,3 +60,7 @@ span.psw {
 .error-msg {
     color: red;
 }
+
+.group-btn {
+    margin-bottom: 20px;
+}
