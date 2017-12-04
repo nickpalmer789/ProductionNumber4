@@ -145,7 +145,7 @@ class SeleniumCBT(unittest.TestCase):
             self.driver.save_screenshot('screenshot7.png')
             print("Switching to new user page..")
             self.driver.get('http://73.14.69.109/content/new_user.php')
-            self.driver.save_screenshot('screensho8.png')
+            self.driver.save_screenshot('screenshot8.png')
 
             print("Creating username: autobot and password:auto ...")
             self.driver.find_element_by_name('firstname').send_keys('Mr.')
@@ -154,9 +154,9 @@ class SeleniumCBT(unittest.TestCase):
             print("putting in email")
             self.driver.find_element_by_name('email').send_keys('mrautobot@colorado.edu')            
             print("putting in username")    
-            self.driver.find_element_by_name('username').send_keys('autobot')
+            self.driver.find_element_by_id('usname').send_keys('autobot')
             print("putting in password")
-            self.driver.find_element_by_name('password').send_keys('auto')
+            self.driver.find_element_by_id('pass').send_keys('auto')
             print("putting in confirm password")
             self.driver.find_element_by_name('confirmpassword').send_keys('auto')
             
