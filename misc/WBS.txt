@@ -17,18 +17,12 @@ Extra:
 
 Todo:
 Database - 
-	calendar needs a recurring option (weekly/monthly/daily etc)
-    https://github.com/tplaner/When
-    https://stackoverflow.com/questions/5183630/calendar-recurring-repeating-events-best-storage-method
-    
-	tasks need eventColor 
+	tasks need color selection maybe 
 
-group_calendar - rename to group_tasks (there is no calendar, it pulls from main calendar)
-	load_groups.php needs more coverage to set the title and dropdowns
-    (SL_GroupCalendar branch has ideas)
-	this will need to show everyones calendar based on users privacy settings
-    
-	how are groups joined? invited for?    
+group_calendar - 
+	privacy settings?
+    how are groups joined? 
+    invited for?    
     
 
 logout - 
@@ -39,15 +33,10 @@ dashboard -
 	looks good for now, can add/delete tasks
 
 login.php - 
-	needs to popup error not go nowhere
+	working
 	
 calendar.php -
-	(MM_Calendar_and_Button_attempt) 
-    need to figure out how to add actual events to the calendar and the database
-    make calendar work with a schedule (database issue)
 	make calendar entries show from groups? make them different color, schedule can be default blue
 	
 Testing -
-	How do you unit test a webpage?
-	Come up with user scenarios?
-    Nick said he would write all of these up for milestone 5
+	milestone 5 complete
