@@ -21,11 +21,6 @@ insert into `calendar` (`username`, `description`,`item_name`,`start_time`, `end
 ('mrmeeseeks','work on homework','project','2017-11-01 17:00:00','2017-11-01 20:00:00','engineering center'),
 ('abradolflincler','eat breakfast','eat','2017-10-31 08:00:00','2017-10-31 09:00:00','home'),
 ('d0lphingirl','go to work for money','work','2017-10-31 08:00:00','2017-11-01 17:00:00','workplace, obviously'),
-('john1','this is an event','homework','2017-11-01 17:00:00','2017-11-01 19:00:00','Math Library'),
-('john1','this is an event','homework','2017-11-02 17:00:00','2017-11-01 19:00:00','Math Library'),
-('john1','this is an event','homework','2017-11-03 17:00:00','2017-11-01 19:00:00','Math Library'),
-('john1','this is an event','homework','2017-11-04 17:00:00','2017-11-01 19:00:00','Math Library'),
-('john1','this is an event','homework','2017-11-05 17:00:00','2017-11-01 19:00:00','Math Library'),
 ('jackblack2','go to work for money','work','2017-11-01 17:00:00','2017-11-01 22:00:00','workplace, obviously');
 
 

@@ -56,3 +56,7 @@ span.psw {
 .checks {
     margin: 5px;
 }
+
+.error-msg {
+    color: red;
+}
