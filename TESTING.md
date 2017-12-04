@@ -37,8 +37,11 @@ Automated Tests:
 
 	python automated_tests.py
 
-The test will run two tests: the first test makes sure that when you pull the website the Title is Planit. 
-The second test attempts to log in as user mema0341 with password spring2017. It first looks for the login button, clicks it, then enters the parameters and clicks the login button again. After it logs in, it checks to see if the navbar has changed to include the settings and logout buttons. It then logs out and logs a new user in, john1. It checks that the user is successfully logged in and logs out again. Screenshots at various steps are provided.
+	The test will run four tests: 
+	-The first test makes sure that when you pull the website the Title is Planit.
+	-The second test attempts to log in as user mema0341 with password spring2017. It first looks for the login button, clicks it, then enters the parameters and clicks the login button again. After it logs in, it checks to see if the navbar has changed to include the settings and logout buttons. It then logs out and logs a new user in, john1. It checks that the user is successfully logged in and logs out again. Screenshots at various steps are provided (screenshots 0-6).
+	-The third test checks to see if you can create a new account entitled autobot. Screenshots provided (screenshots 7-10)
+	-The fourth test checks to see if you can add a new task as a user. Screenshots provided (screenshots 11-13)
 
 7. Automated Testing Complete.
 
