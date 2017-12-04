@@ -28,7 +28,7 @@ class SeleniumCBT(unittest.TestCase):
 
         self.driver.implicitly_wait(20)
 
-    def test_CBT(self):
+    def test_1(self):
         print("Testing Title of Webiste...")
         self.driver.get('http://73.14.69.109/index.php')
         self.assertEqual("Planit", self.driver.title)
@@ -37,7 +37,7 @@ class SeleniumCBT(unittest.TestCase):
         self.test_result = 'pass'
         self.driver.quit()
        
-    def test_login(self):
+    def test_accountlogin(self):
         print("Testing login...")
         self.driver.get('http://73.14.69.109/index.php')
         self.driver.save_screenshot('screenshot.png')
