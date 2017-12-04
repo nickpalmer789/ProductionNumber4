@@ -28,7 +28,7 @@
                         ?>
                     </div>
                     <script src="../js/task_deleteHandler.js"></script>
-                    <button class="btn btn-block btn-primary" type="button" data-toggle="modal" data-target="#taskModal">Add New Task</button>
+                    <button id = "new_task_button" class="btn btn-block btn-primary" type="button" data-toggle="modal" data-target="#taskModal">Add New Task</button>
                     <!--Start Modal-->
                     <div class="modal fade" id="taskModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-lg" role="dialog">
@@ -46,7 +46,7 @@
                                         <input type="text" class="form-control" placeholder="Enter Task Name" name="taskName" required>
 
                                         <label for="description"><b>Description</b></label>
-                                        <input type="text" class="form-control" placeholder="Enter Task Description" name="description" required>
+                                        <input type="text" class="form-control" placeholder="Enter Task Description" id = "describe" name="description" required>
 
                                         <label for="deadlineDate"><b>Deadline Date</b></label>
                                         <input type="date" class="form-control" name="deadlineDate" required>
@@ -54,7 +54,7 @@
                                         <label for="deadlineTime"><b>Deadline Time</b></label>
                                         <input type="time" step="1" class="form-control" name="deadlineTime" required>
 
-                                        <label for="eta"><b>ETC</b></label>
+                                        <label for="eta"><b>ETA</b></label>
                                         <input type="text" class="form-control" name="eta" required>
 
                                         <button class="btn btn-primary btn-lg btn-block" type="submit" name="createTask">Create Task</button>

@@ -36,9 +36,9 @@ create table if not exists `calendar` (
 	`start_time` datetime not null,
 	`end_time` datetime not null,
 	`optional_location` varchar(40),
-    `repeat` varchar(7) not null
+    `repeats` varchar(15) not null default "0"
 );
-create table if not exists `group_calendar`(
+create table if not exists `group_tasks`(
 	`event_id` integer auto_increment primary key,
 	`group_id` integer references groups(group_id),
 	`description` varchar(140),
