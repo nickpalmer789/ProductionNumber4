@@ -15,13 +15,13 @@ insert into `calendar` (`username`, `description`,`item_name`,`start_time`, `end
 ('mema0341','do homework for energy conversion','homework','2017-11-01 17:00:00','2017-11-01 19:00:00','Math Library'),
 ('mema0341','do homework for microelectronics','homework','2017-11-01 17:00:00','2017-11-01 19:00:00','SRC'),
 ('scarolac','do homework for algorithms','homework','2017-11-01 17:00:00','2017-11-01 19:00:00','Math Library'),
-('klen','eat lunch','homework','2017-10-31 12:00:00','2017-10-31 13:00:00','Math Library'),
+('klen','eat lunch','homework','2017-10-31 12:00:00','2017-12-31 13:00:00','Math Library'),
 ('mema0341','grade discrete math homeworks discretely','work','2017-11-01 17:00:00','2017-11-01 19:00:00','Secret Lab'),
 ('npalmer','work on homework','homework','2017-11-01 20:00:00','2017-11-04 00:00:00','engineering center'),
-('mrmeeseeks','work on homework','project','2017-11-01 17:00:00','2017-11-01 20:00:00','engineering center'),
-('abradolflincler','eat breakfast','eat','2017-10-31 08:00:00','2017-10-31 09:00:00','home'),
+('mrmeeseeks','work on homework','project','2017-11-01 17:00:00','2018-11-01 20:00:00','engineering center'),
+('abradolflincler','eat breakfast','eat','2017-10-31 08:00:00','2017-12-31 09:00:00','home'),
 ('d0lphingirl','go to work for money','work','2017-10-31 08:00:00','2017-11-01 17:00:00','workplace, obviously'),
-('jackblack2','go to work for money','work','2017-11-01 17:00:00','2017-11-01 22:00:00','workplace, obviously');
+('jackblack2','go to work for money','work','2017-11-01 17:00:00','2018-11-01 22:00:00','workplace, obviously');
 
 
 insert into `user_settings` (`username`,`friend_visible`,`public_visible`,`default_avatar_color`,`username_viewable`,`public_email`,`public_phonenumber`) values 

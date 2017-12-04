@@ -202,7 +202,7 @@
                 center: 'title',
                 right: 'month,agendaWeek,agendaDay'
             },
-            defaultView: 'month',
+            defaultView: 'agendaWeek',
             eventRender: function(event, element, view) {
                 //Check which dates should be rendered
                 return (event.ranges.filter(function(range) {
