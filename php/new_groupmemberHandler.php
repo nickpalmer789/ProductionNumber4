@@ -37,6 +37,8 @@
             echo $sql;
             if ($db->query($sql) === TRUE) {
                 echo "Record updated successfully";
+                header("location: /content/group_calendar.php");
+    
             } else {
                 echo "Error updating record: " . $db->error;
             }
