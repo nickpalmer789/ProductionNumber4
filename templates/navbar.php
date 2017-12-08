@@ -51,7 +51,7 @@
                     <div class="modal-body">
                         <form action="/php/loginHandler.php" method="post">
                             <div class="imgcontainer">
-                                <img src="../assets/icons/planiticon.png" alt="Planit" class="avatar">
+                                <img src="../assets/icons/planiticon.png" alt="Planit" class="img-small">
                                 <h2>Planit Login</h2>
                             </div>
 

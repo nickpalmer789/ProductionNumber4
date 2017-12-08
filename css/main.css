@@ -26,9 +26,8 @@ input[type=time]{
 
 /* Avatar image */
 
-img.avatar {
+img.img-small {
     width: 40%;
-    border-radius: 50%;
 }
 
 
