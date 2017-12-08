@@ -17,22 +17,26 @@ Extra:
 
 Todo:
 Database - 
-	make sure tasks has a done check box
-	calendar needs a recurring option (weekly/monthly/daily etc)
-	
+	tasks need color selection maybe 
 
 group_calendar - 
-	expand the if statement to allow for more db calls in one php block to build the data instead of trying to load the load_groups.php file
-	this will need to show everyones calendar based on users privacy settings
-	how are groups joined? invited for?
-
+	privacy settings?
+    how are groups joined? 
+    invited for?    
+    
 
 logout - 
-	handle sessions better? logout is not being checked correctly but definitely logs a user out
+	logout works enough
 	this page https://www.sitepoint.com/users-php-sessions-mysql/ is useful
 
 dashboard - 
-	needs pomodoro timer, maybe tasks?
+	looks good for now, can add/delete tasks
 
 login.php - 
-	working for now
+	working
+	
+calendar.php -
+	make calendar entries show from groups? make them different color, schedule can be default blue
+	
+Testing -
+	milestone 5 complete

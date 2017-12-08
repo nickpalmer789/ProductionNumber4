@@ -1,6 +1,6 @@
 <?php
    
-$db = mysqli_connect("localhost:3306","root","password","planit");  
+$db = mysqli_connect("localhost","root","password","planit");  
             
 if($db === false) 
 {
@@ -26,7 +26,6 @@ else
         {
             //Log the user in and redirect them to the dashboard
             $_SESSION["login_user"] = $username;
-            $_SESSION["logged_in"] = TRUE;
             header("location: /content/dashboard.php");
         } 
         

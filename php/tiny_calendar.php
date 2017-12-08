@@ -1,3 +1,4 @@
+<!-- magic code somehow makes tiny calendar -->
 <?php
     $now = getdate(time());
     $time = mktime(0,0,0, $now['mon'], 1, $now['year']);

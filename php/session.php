@@ -1,7 +1,7 @@
 <?php
     session_start();
     
-    $db = mysqli_connect("localhost:3306","root","password","planit");    
+    $db = mysqli_connect("localhost","root","password","planit");    
 
     //Attempt to get the session information about the user
     $user_check = $_SESSION["login_user"];
@@ -11,7 +11,7 @@
     $row = mysqli_fetch_array($ses_sql, MYSQLI_ASSOC);
 
     $login_session = $row['username'];
-    
+
     //Redirect to the login page if the session is not valid
     if(!isset($_SESSION["login_user"])) 
     {

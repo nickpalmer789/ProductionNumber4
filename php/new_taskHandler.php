@@ -1,5 +1,5 @@
 <?php
-    $db = mysqli_connect("localhost:3306", "root", "password", "planit");
+    $db = mysqli_connect("localhost", "root", "password", "planit");
 
     if($db === false) {
         //Print an error if the database can't be reached

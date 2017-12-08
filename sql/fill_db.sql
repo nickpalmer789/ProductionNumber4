@@ -10,17 +10,18 @@ insert into `users` (`username`, `first_name`,`last_name`,`phone_number`, `email
 ('klen','Kaelan','Patel','7204896610','kaelan.patel@colorado.edu','flowersarentcool',0000,'I won\'t get hacked'),
 ('mrmeeseeks','Mr','Meeseeks','9119996611','mrmeeseeks@colorado.edu','lookatme!',0000,'Everyone except Jerry');
 
-insert into `calendar` (`username`, `description`,`item_name`,`start_time`, `end_time`,`optional_location`) values ('mema0341','Microelectronics Homework 5.10,5.44,5.65,5.80','homework','2017-11-01 17:00:00','2017-11-01 19:00:00','SRC'),
+insert into `calendar` (`username`, `description`,`item_name`,`start_time`, `end_time`,`optional_location`) values 
+('mema0341','Microelectronics Homework 5.10,5.44,5.65,5.80','homework','2017-11-01 17:00:00','2017-11-01 19:00:00','SRC'),
 ('mema0341','do homework for energy conversion','homework','2017-11-01 17:00:00','2017-11-01 19:00:00','Math Library'),
 ('mema0341','do homework for microelectronics','homework','2017-11-01 17:00:00','2017-11-01 19:00:00','SRC'),
 ('scarolac','do homework for algorithms','homework','2017-11-01 17:00:00','2017-11-01 19:00:00','Math Library'),
-('klen','eat lunch','homework','2017-10-31 12:00:00','2017-10-31 13:00:00','Math Library'),
+('klen','eat lunch','homework','2017-10-31 12:00:00','2017-12-31 13:00:00','Math Library'),
 ('mema0341','grade discrete math homeworks discretely','work','2017-11-01 17:00:00','2017-11-01 19:00:00','Secret Lab'),
 ('npalmer','work on homework','homework','2017-11-01 20:00:00','2017-11-04 00:00:00','engineering center'),
-('mrmeeseeks','work on homework','project','2017-11-01 17:00:00','2017-11-01 20:00:00','engineering center'),
-('abradolflincler','eat breakfast','eat','2017-10-31 08:00:00','2017-10-31 09:00:00','home'),
+('mrmeeseeks','work on homework','project','2017-11-01 17:00:00','2018-11-01 20:00:00','engineering center'),
+('abradolflincler','eat breakfast','eat','2017-10-31 08:00:00','2017-12-31 09:00:00','home'),
 ('d0lphingirl','go to work for money','work','2017-10-31 08:00:00','2017-11-01 17:00:00','workplace, obviously'),
-('jackblack2','go to work for money','work','2017-11-01 17:00:00','2017-11-01 22:00:00','workplace, obviously');
+('jackblack2','go to work for money','work','2017-11-01 17:00:00','2018-11-01 22:00:00','workplace, obviously');
 
 
 insert into `user_settings` (`username`,`friend_visible`,`public_visible`,`default_avatar_color`,`username_viewable`,`public_email`,`public_phonenumber`) values 
@@ -64,13 +65,13 @@ insert into `tasks` (`username`,`task_name`,`deadline`,`description`,`ETA`) valu
 ('scarolac','the usual','2017-11-02 12:01:00','open the country, stop having it be closed','whenever'),
 ('npalmer','forget','2017-11-02 17:30:00','forget hitlers last name','yea, he did'),
 ('klen','pie','2017-11-10 15:00:00','quit while im ahead','last friday'),
-('john1','test1','2017-01-01 12:00:00','testing testing 123','never'),
-('john1','test2','2017-01-01 12:00:00','testing testing 123','never'),
-('john1','test3','2017-01-01 12:00:00','testing testing 123','never'),
-('john1','test4','2017-01-01 12:00:00','testing testing 123','never'),
-('john1','test5','2017-01-01 12:00:00','testing testing 123','never');
+('john1','test1','2017-12-01 12:00:00','testing testing 123','never'),
+('john1','test2','2017-12-01 12:00:00','testing testing 123','never'),
+('john1','test3','2017-12-01 12:00:00','testing testing 123','never'),
+('john1','test4','2017-12-01 12:00:00','testing testing 123','never'),
+('john1','test5','2017-12-01 12:00:00','testing testing 123','never');
 
-insert into `group_calendar` (`group_id`,`description`, `item_name`,`start_time`, `end_time`,`optional_location`) values
+insert into `group_tasks` (`group_id`,`description`, `item_name`,`start_time`, `end_time`,`optional_location`) values
 (1,'do stuff', 'stuff', '2017-11-02 12:00:00','2017-11-02 12:01:00','EC'),
 (1,'eat lunch','eat','2017-11-02 12:01:00','2017-10-28 13:00:00','home'),
 (2,'4.1,4.20,4.30,4.33','homework','2017-11-01 17:00:00','2017-11-01 19:00:00','SRC'),

@@ -8,7 +8,9 @@ body {
 /* Padding on inputs */
 
 input[type=text],
-input[type=password] {
+input[type=password],
+input[type=email],
+input[type=time]{
     padding: 12px 20px;
     margin: 8px 0;
 }
@@ -24,9 +26,8 @@ input[type=password] {
 
 /* Avatar image */
 
-img.avatar {
+img.img-small {
     width: 40%;
-    border-radius: 50%;
 }
 
 
@@ -37,18 +38,10 @@ span.psw {
     padding-top: 16px;
 }
 
-.totallyacalendar {
-    border-style: solid;
-}
-
 .whitespace {
     padding-top: 70px;
 }
 
-.calendarspacing {
-    padding-right: 30px;
-    padding-left: 30px;
-}
 
 .special-btn {
     margin-top: 20px;
@@ -57,4 +50,16 @@ span.psw {
 
 .btn-top {
     margin-top: 5px;
+}
+
+.checks {
+    margin: 5px;
+}
+
+.error-msg {
+    color: red;
+}
+
+.group-btn {
+    margin-bottom: 20px;
 }

@@ -1,6 +1,12 @@
+
+<!-- Not sure what this does, might work with group_calendar_handler
+=========================================================
+-->
+
+
 <?php
 // Obtain a connection object by connecting to the db
-$connection = mysqli_connect('localhost:3306', 'root', 'password', 'planit');
+$connection = mysqli_connect('localhost', 'root', 'password', 'planit');
 
 
 if(mysqli_connect_errno()){

@@ -24,14 +24,16 @@
     echo "<th>End</th>"; 
     echo "</tr>";
     while ($row = mysqli_fetch_array($resultset, MYSQLI_NUM)) {
-        echo "<tr>";
-        echo "<td>$row[2]</td>";
-        echo "<td>$row[4]</td>";
-        echo "<td>$row[5]</td>";
-        $dateString = explode(" ", $row[3]);
-        echo "<td>$dateString[0]</td>";
-        echo "<td><input type=\"submit\" class=\"button\" name=\"".$row[0]."\" value=\"Done!\"/></td>";
-        echo "</tr>";
+        if($row[6] == 0){
+            echo "<tr>";
+            echo "<td>$row[2]</td>";
+            echo "<td>$row[4]</td>";
+            echo "<td>$row[5]</td>";
+            $dateString = explode(" ", $row[3]);
+            echo "<td>$dateString[0]</td>";
+            echo "<td><input type=\"submit\" class=\"button\" name=\"".$row[0]."\" value=\"Done!\"/></td>";
+            echo "</tr>";
+        }
     }
     
     //End Table

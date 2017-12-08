@@ -28,13 +28,13 @@
                         ?>
                     </div>
                     <script src="../js/task_deleteHandler.js"></script>
-                    <button class="btn btn-block btn-primary" type="button" data-toggle="modal" data-target="#taskModal">Add New Task</button>
+                    <button id = "new_task_button" class="btn btn-block btn-primary" type="button" data-toggle="modal" data-target="#taskModal">Add New Task</button>
                     <!--Start Modal-->
                     <div class="modal fade" id="taskModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-lg" role="dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="modalLabel">Create New Task</h5>
+                                    <h5 class="modal-title" id="modalLabel">Create N<a href="../mandala/index.html">e</a>w Task</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
@@ -46,7 +46,7 @@
                                         <input type="text" class="form-control" placeholder="Enter Task Name" name="taskName" required>
 
                                         <label for="description"><b>Description</b></label>
-                                        <input type="text" class="form-control" placeholder="Enter Task Description" name="description" required>
+                                        <input type="text" class="form-control" placeholder="Enter Task Description" id = "describe" name="description" required>
 
                                         <label for="deadlineDate"><b>Deadline Date</b></label>
                                         <input type="date" class="form-control" name="deadlineDate" required>
@@ -79,7 +79,7 @@
                     <br>
                     <h5 class="text-center" id="timeIndicator">Currently on Work Time</h5>
                     <button class="btn btn-block btn-top btn-info" id="toggleWork">Switch To Break Time</button>
-                    <button class="btn btn-block btn-top btn-success" id="pauseBtn">Pause Timer</button>
+                    <button class="btn btn-block btn-top btn-success" id="pauseBtn">Start Timer</button>
                     <button class="btn btn-block btn-top btn-primary" id="restartBtn">Restart Timer</button>
                     <hr>
                     <label for="workTime">Work Time</label>
