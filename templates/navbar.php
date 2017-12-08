@@ -19,6 +19,9 @@
                 <li class=\"nav-item\">
                     <a class=\"nav-link\" href=\"../content/group_calendar.php\">Group Calendar</a>
                 </li>
+                <li class=\"nav-item\">
+                    <a class=\"nav-link\" href=\"../content/manage_groups.php\">Manage Groups</a>
+                </li>
                 </ul>
                 
                 

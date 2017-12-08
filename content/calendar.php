@@ -5,7 +5,6 @@
     <?php
         //Include the header content
         include('../templates/headercontent.php');
-    
         include('../php/session.php');
         include('../templates/navbar.php');
         include('../php/load_calendar.php'); 
@@ -147,18 +146,15 @@
             </div>
             <div class="col-sm-4" align="center">
                 <?php
-                        include('../php/taskHandler.php');
-                    ?>
+                    include('../php/taskHandler.php');
+                ?>
             </div>
             <script src="../js/task_deleteHandler_calendar.js"></script>
         </div>
-        <?php
-                include('../templates/footerCopy.php');
-            ?>
     </div>
     <?php
-            include('../templates/footerScripts.php');
-        ?>
+        include('../templates/footerScripts.php');
+    ?>
 </body>
 
 <!-- Add items to the calendar -->

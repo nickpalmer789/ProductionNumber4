@@ -2,6 +2,10 @@
     session_start();
     
     $db = mysqli_connect("localhost","root","password","planit");    
+    
+    if($db == false) {
+        exit("Unable to connect to db.");
+    }    
 
     //Attempt to get the session information about the user
     $user_check = $_SESSION["login_user"];

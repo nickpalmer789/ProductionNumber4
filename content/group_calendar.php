@@ -164,9 +164,6 @@
                 </div>
                 <script src="../js/task_deleteHandler_calendar.js"></script>
             </div>
-            <?php
-                include('../templates/footerCopy.php');
-            ?>
         </div>
         <?php
             include('../templates/footerScripts.php');
