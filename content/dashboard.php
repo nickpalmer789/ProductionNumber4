@@ -13,7 +13,7 @@
         include('../templates/navbar.php');	
         include('../php/session.php');
     ?>
-    <div class="container-fluid">
+    <div class="container">
         <h1 class="text-center">
             <font size="7">Dashboard</font>
         </h1>
