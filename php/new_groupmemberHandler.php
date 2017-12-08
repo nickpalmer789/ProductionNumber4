@@ -19,13 +19,14 @@
 	    //just gets group names
     if ($_POST['newusername1']==$_POST['newusername2']){
         $name=htmlspecialchars($_POST['newusername1']);
-        $query = "SELECT username FROM users WHERE username = '$name';";
+        $query = "SELECT * FROM users WHERE username = '$name';";
             //$row[0] = group names, $row[1] = event description, etc; gets groups mutliple time
 
-        if ($db->query($query) == TRUE) {
-            echo "Found User";
-        } else {
-            echo "Error finding user: " . $db->error;
+        $resultset = mysqli_query(db,$query);
+        if(!$resultset){
+            echo "User not found.";
+        } else{
+            echo "User found!";
         }
 
     } else{
