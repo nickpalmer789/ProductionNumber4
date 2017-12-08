@@ -1,0 +1,630 @@
+[33mcommit 739ffbb502505ee0a1682f3121a542e6ffa8cea3[m
+Author: melissamantey <melissa.mantey@colorado.edu>
+Date:   Fri Dec 1 15:23:03 2017 -0700
+
+    implemented calendarattempt, made calender
+
+[33mcommit d12febb1d4b83cbc871f0c4e4431ba6af4c8ef61[m
+Author: melissamantey <melissa.mantey@colorado.edu>
+Date:   Thu Nov 30 13:01:09 2017 -0700
+
+    update start and end time
+
+[33mcommit 38fd3d12540ac7a3093a5fa89fbe5e9de12ae5e1[m
+Author: melissamantey <melissa.mantey@colorado.edu>
+Date:   Thu Nov 30 12:47:59 2017 -0700
+
+    calendar functionality
+
+[33mcommit 9e599fe4c3bd353807a2c957a6fc479f78c05c7f[m
+Author: Chris Scarola <scarolac@colorado.edu>
+Date:   Thu Nov 30 08:42:41 2017 -0700
+
+    update index to prevent viewing while logged in
+
+[33mcommit 0140722c6138f12d19efbe761a918f00ba971944[m
+Merge: cd60c62 df9b114
+Author: Chris Scarola <scarolac@colorado.edu>
+Date:   Thu Nov 30 08:37:41 2017 -0700
+
+    updated settings with merge
+
+[33mcommit df9b11497e14e03b4f19902074ea53c2cef36605[m
+Author: melissamantey <melissa.mantey@colorado.edu>
+Date:   Tue Nov 28 10:23:48 2017 -0700
+
+    More settings changes, mostly aesthetics
+
+[33mcommit cd60c624eb81f4a3ef502aee24718aee9dfdf330[m
+Author: Chris Scarola <scarolac@colorado.edu>
+Date:   Mon Nov 27 17:33:04 2017 -0700
+
+    move script to bottom of calendar page
+
+[33mcommit 1e1c9ee26053bbde5d201003897abf4ebb785dbd[m
+Author: Chris Scarola <scarolac@colorado.edu>
+Date:   Mon Nov 27 17:22:00 2017 -0700
+
+    fix indent thing
+
+[33mcommit adfbe71e2308d39248f7dcc3528b563b91622b0b[m
+Author: Chris Scarola <scarolac@colorado.edu>
+Date:   Mon Nov 27 17:14:47 2017 -0700
+
+    Settings button restored to navbar
+
+[33mcommit 4eeb01cc1219a8925917569e078cf42893c94107[m
+Merge: 855793f 37d20b5
+Author: Chris Scarola <scarolac@colorado.edu>
+Date:   Mon Nov 27 17:07:15 2017 -0700
+
+    Merge with MM_stuff
+
+[33mcommit 855793f9dfd470fd35332c003c3daf679b338056[m
+Author: Chris Scarola <scarolac@colorado.edu>
+Date:   Mon Nov 27 17:00:31 2017 -0700
+
+    navbar restored to index with logout functioning correctly
+
+[33mcommit a83bc407bc073a2e81a5c372c4fb3916ac66f907[m
+Author: melissamantey <melissa.mantey@colorado.edu>
+Date:   Mon Nov 27 16:11:39 2017 -0700
+
+    go settings go
+
+[33mcommit b4402abfdaf9d2cc45460cd41b57f71c0f81dfb9[m
+Author: Chris Scarola <scarolac@colorado.edu>
+Date:   Mon Nov 27 16:03:09 2017 -0700
+
+    Fix navbar issue
+
+[33mcommit 37d20b5dcbda9cd035fd069b061990edbe085390[m
+Author: melissamantey <melissa.mantey@colorado.edu>
+Date:   Mon Nov 27 15:01:23 2017 -0700
+
+    Database changes now functioning
+
+[33mcommit 605b196c3f202df8ac421577a32f1a6270bbcb76[m
+Author: Chris Scarola <scarolac@colorado.edu>
+Date:   Mon Nov 27 12:44:08 2017 -0700
+
+    update idea list
+
+[33mcommit b03c6a7458b388319c0e5c885e51d7e8e6223a94[m
+Author: melissamantey <melissa.mantey@colorado.edu>
+Date:   Mon Nov 27 10:48:09 2017 -0700
+
+    added avatar functionality
+
+[33mcommit 98e216000bd5b5039134e8d74abda0edf42c3248[m
+Author: Chris Scarola <scarolac@colorado.edu>
+Date:   Mon Nov 27 10:30:07 2017 -0700
+
+    clean css file, prepare calendar pages
+
+[33mcommit bbc84c59fcc42d66fb17c10840cf0f486fe5609c[m
+Author: melissamantey <melissa.mantey@colorado.edu>
+Date:   Mon Nov 27 09:30:09 2017 -0700
+
+    More settings things
+
+[33mcommit 6f745b9ed29541544946e8603867cbf62d2f6efa[m
+Author: melissamantey <melissa.mantey@colorado.edu>
+Date:   Mon Nov 27 01:18:03 2017 -0700
+
+    Almost working, need to fix navbar issue and updating database issue
+
+[33mcommit 2896e40c08f199c0474e8d4028088b5d0b4f9dd0[m
+Author: melissamantey <melissa.mantey@colorado.edu>
+Date:   Sun Nov 26 23:34:49 2017 -0700
+
+    Working Settings Except for Changing Database
+
+[33mcommit 34151feae3e83a0cd5bf1fac7efbb3466ea010db[m
+Author: melissamantey <melissa.mantey@colorado.edu>
+Date:   Sun Nov 26 19:55:51 2017 -0700
+
+    Settings Updated
+
+[33mcommit 955aac24708717d20e46218763500f15ac8773a2[m
+Author: melissamantey <melissa.mantey@colorado.edu>
+Date:   Sun Nov 26 14:28:03 2017 -0700
+
+    Added Settings Functionality
+
+[33mcommit 18061c61e3ad44c0f825082dffbad37bbbe104c1[m
+Author: Chris <scarolac@gmail.com>
+Date:   Fri Nov 24 21:15:18 2017 -0700
+
+    calendar testing
+
+[33mcommit 1f9a6a1ea07ac7aa1a3eff472d4c08cc901b5b5e[m
+Author: Chris <scarolac@gmail.com>
+Date:   Fri Nov 24 20:05:12 2017 -0700
+
+    testing calendar ideas
+
+[33mcommit c44e6f83bbaa72b76afab75535931d1cb9c6e823[m
+Author: Nicholas Palmer <nicholas.palmer@colorado.edu>
+Date:   Thu Nov 23 21:31:14 2017 -0700
+
+    Fixed a typo.
+
+[33mcommit 88e4a3729f7328a9a80ecec11337a028423bd7ae[m
+Merge: 15b58cc bb07426
+Author: Nicholas Palmer <nicholas.palmer@colorado.edu>
+Date:   Thu Nov 23 21:28:35 2017 -0700
+
+    Merge branch 'CS_StaticLogin' into develop
+    Merging into develop to straighten out commit history. We should start a new branch now.
+
+[33mcommit bb0742612e12e492fab5d41f1911e631c9ede8ca[m
+Author: Nicholas Palmer <nicholas.palmer@colorado.edu>
+Date:   Thu Nov 23 21:27:46 2017 -0700
+
+    Added ability to delete tasks from task list.
+
+[33mcommit ab33382149b832fdf2e65fa3f97808933700cef4[m
+Author: Chris <scarolac@gmail.com>
+Date:   Thu Nov 23 00:12:45 2017 -0700
+
+    accidental tiny calendar
+
+[33mcommit a800a8814b1285270a0cbf7057e2262a49404635[m
+Author: Chris <scarolac@gmail.com>
+Date:   Thu Nov 23 00:10:06 2017 -0700
+
+    accidental tiny calendar
+
+[33mcommit d3c0f2ca85eb596ac5b8af64a99d21a47c697c11[m
+Author: Nicholas Palmer <nicholas.palmer@colorado.edu>
+Date:   Wed Nov 22 18:24:53 2017 -0700
+
+    Fixed pomodoro timer functionality.
+
+[33mcommit dedd722fce39b342493826fbb6e141f339d85a14[m
+Author: Nicholas Palmer <nicholas.palmer@colorado.edu>
+Date:   Tue Nov 21 22:11:25 2017 -0700
+
+    Added todo comments.
+
+[33mcommit c86b8849e55078c293e992580681db61a98f59ec[m
+Author: Nicholas Palmer <nicholas.palmer@colorado.edu>
+Date:   Tue Nov 21 22:09:25 2017 -0700
+
+    Added pomodoro timer functionality. More work needed.
+
+[33mcommit 19842419afb47f4d94940c9535fc1796feaf38ad[m
+Author: Nicholas Palmer <nicholas.palmer@colorado.edu>
+Date:   Tue Nov 21 17:42:11 2017 -0700
+
+    Added tasking functionality to dashboard.php.
+
+[33mcommit 22cbf4b5b968a06ae1b19de4308f583fc631b169[m
+Author: Chris <scarolac@gmail.com>
+Date:   Mon Nov 20 17:40:27 2017 -0700
+
+    update idea list
+
+[33mcommit 70e96281c772ea7b1c79878a9db57f7c5591cfa8[m
+Author: Chris <scarolac@gmail.com>
+Date:   Mon Nov 20 16:37:32 2017 -0700
+
+    adjusted login page to allow cancel, and tasks to show date/time
+
+[33mcommit 17c6b79beb1e8c4ff2552bb4089bad54764b5b2a[m
+Author: Chris <scarolac@gmail.com>
+Date:   Mon Nov 20 16:21:43 2017 -0700
+
+    updated db scripts, restored login page on failure to log in, added task loading into calendar
+
+[33mcommit f74ddc541a8d68567bfa8a9a3294d872f9da336d[m
+Author: Chris Scarola <scarolac@colorado.edu>
+Date:   Tue Nov 14 12:42:05 2017 -0700
+
+    Work on logout, update WBS to have some future ideas
+
+[33mcommit ae76694691d47269555dd62a6237afbb635aaabf[m
+Author: Chris <scarolac@gmail.com>
+Date:   Mon Nov 13 22:49:55 2017 -0700
+
+    move milestone 3 pdf
+
+[33mcommit 15b58ccae397cf5e33c528ba0b7f1fbd06fc42f9[m
+Author: Chris <scarolac@gmail.com>
+Date:   Mon Nov 13 22:47:59 2017 -0700
+
+    merge with CS things
+
+[33mcommit 632d9d659c8afa80e23036b387e5dd8f02bb835b[m
+Merge: ea94c5f c0852bf
+Author: Chris <scarolac@gmail.com>
+Date:   Mon Nov 13 22:46:30 2017 -0700
+
+    Merge branch 'develop' of https://github.com/nickpalmer789/ProductionNumber4 into develop
+
+[33mcommit ea94c5f41e8abc2c80492a9c14bb586f9732c2d1[m
+Author: Chris <scarolac@gmail.com>
+Date:   Mon Nov 13 22:45:07 2017 -0700
+
+    logout working, mostly
+
+[33mcommit 74eeec0e43d257ddfbb700de158e96e7d9e39b7a[m
+Author: Chris <scarolac@gmail.com>
+Date:   Mon Nov 13 21:24:33 2017 -0700
+
+    load_group added to functionality
+
+[33mcommit 52a58a7a9aade739ae695b534cf9aa23fed36dbe[m
+Author: Chris <scarolac@gmail.com>
+Date:   Mon Nov 13 20:33:46 2017 -0700
+
+    load_calendar functioning
+
+[33mcommit e2eb35a95526221a0c7b3551f851f1c1ee40fbcd[m
+Author: Chris Scarola <scarolac@colorado.edu>
+Date:   Fri Nov 10 15:51:36 2017 -0700
+
+    adjusted cdn, corrected some path issues
+
+[33mcommit a11c08fbe21933f4d54a54d4a0147bedaeb5cb7c[m
+Author: Chris Scarola <scarolac@colorado.edu>
+Date:   Fri Nov 10 15:09:55 2017 -0700
+
+    redirected assetes folder in navbar
+
+[33mcommit 90a6945bc05ba27cc0c5b29b6822753aeb35bcdb[m
+Author: Chris Scarola <scarolac@colorado.edu>
+Date:   Fri Nov 10 12:46:40 2017 -0700
+
+    removed css files, added cdn connection
+
+[33mcommit b72262de65f7333fb40ea0c175e09f91755ee4bd[m
+Author: Chris Scarola <scarolac@colorado.edu>
+Date:   Thu Nov 9 16:44:05 2017 -0700
+
+    restructured folders, more organized
+
+[33mcommit 91d39f38523e9dcc08dd255d2ff7dc76f75efc22[m
+Author: Chris Scarola <scarolac@colorado.edu>
+Date:   Thu Nov 9 16:07:22 2017 -0700
+
+    create/login account funcitoning, aligned folders
+
+[33mcommit 78473540a043484f6ad787a6659fb7fe56dbe370[m
+Author: Chris Scarola <scarolac@colorado.edu>
+Date:   Thu Nov 9 15:59:32 2017 -0700
+
+    moved account handling to its own file
+
+[33mcommit 4c1391741d948a30fb20dc04525d5281d5ab21b5[m
+Author: Chris Scarola <scarolac@colorado.edu>
+Date:   Thu Nov 9 15:56:28 2017 -0700
+
+    updated getting started page to match nsp page
+
+[33mcommit fe184920e9ee9543c27af646c4e6d0ced9b25939[m
+Author: Chris Scarola <scarolac@colorado.edu>
+Date:   Thu Nov 9 15:49:01 2017 -0700
+
+    moved loginhandler to php folder with session
+
+[33mcommit f52f1a64131f48d27c6f7eaa2402f2e81dac1dce[m
+Author: Chris Scarola <scarolac@colorado.edu>
+Date:   Thu Nov 9 15:45:33 2017 -0700
+
+    moved login function to loginhandler
+
+[33mcommit 055deadb8c0f917b2b9a711d94335d99b35efbf2[m
+Merge: a7a338e 61f52ab
+Author: Chris <scarolac@gmail.com>
+Date:   Sun Nov 5 17:39:11 2017 -0700
+
+    Merge branch 'master' of https://github.com/nickpalmer789/ProductionNumber4
+
+[33mcommit c0852bfce335ca1a31e2f7ad2ecec6aee04490f4[m
+Merge: 23e78ef 77682ca
+Author: Nicholas Palmer <nicholas.palmer@colorado.edu>
+Date:   Sun Nov 5 12:21:02 2017 -0700
+
+    Merge branch 'develop' of https://github.com/nickpalmer789/ProductionNumber4_3308 into develop
+
+[33mcommit 23e78ef4bfe0db6d31bde52f530dcdc1e0b3912e[m
+Author: Nicholas Palmer <nicholas.palmer@colorado.edu>
+Date:   Sun Nov 5 12:20:23 2017 -0700
+
+    Added project milestone 3 document.
+
+[33mcommit 61f52ab08e02e9f54f0d1378aa1e691c748139d6[m
+Merge: eb7769d 77682ca
+Author: Nicholas Palmer <nicholas.palmer@colorado.edu>
+Date:   Sat Nov 4 19:42:25 2017 -0600
+
+    Merging develop into master for Sprint 1 release.
+    Updates:
+    Static pages added
+    SQL scripts for DB added
+
+[33mcommit 77682ca51385d06ba8d5a184881b7da949e025e7[m
+Author: Chris <scarolac@gmail.com>
+Date:   Sat Nov 4 19:16:23 2017 -0600
+
+    change user_id to username in groups_join_users table
+
+[33mcommit 28b8b27ffd2a310f440dcdd306fccd6a18e0d984[m
+Author: Chris <scarolac@gmail.com>
+Date:   Sat Nov 4 18:32:03 2017 -0600
+
+    added ERD image
+
+[33mcommit 58f67d2e18040bfc392136e0c3a09a3673d363eb[m
+Author: Chris <scarolac@gmail.com>
+Date:   Sat Nov 4 18:26:10 2017 -0600
+
+    join table name changed
+
+[33mcommit e2e3327af5d93b921a96e0276ed8e700a423ef41[m
+Author: Chris <scarolac@gmail.com>
+Date:   Sat Nov 4 18:17:29 2017 -0600
+
+    Update database scripts to include new data, made dates work
+
+[33mcommit 6c223fa4e991a597ab030745898b8f08e22615a8[m
+Author: Chris <scarolac@gmail.com>
+Date:   Fri Nov 3 20:48:12 2017 -0600
+
+    Moved a button, converted more to bootstrap
+
+[33mcommit cb570a3011f0eba99fbfc2d7af67e5a2ade91a36[m
+Author: Chris <scarolac@gmail.com>
+Date:   Fri Nov 3 19:57:38 2017 -0600
+
+    Combined calendaer,groupview with index, moved navbar
+
+[33mcommit bf97d73a450705621a0854e61a2ef1f770a76a43[m
+Author: Chris <scarolac@gmail.com>
+Date:   Fri Nov 3 19:51:47 2017 -0600
+
+    Updated groupView with login, adjust css files
+
+[33mcommit 972c30dc7e07a1698179b77601909416ae1af46d[m
+Author: Sophie Loughlin <sloughlinm@gmail.com>
+Date:   Fri Nov 3 15:39:14 2017 -0600
+
+    minor changes to groupView
+
+[33mcommit a7a7a5cf5d90622d89ccb25a0e214732fe38dc93[m
+Author: Sophie Loughlin <sloughlinm@gmail.com>
+Date:   Fri Nov 3 15:14:57 2017 -0600
+
+    Planit links to home in navbar, adding groupview.php and relevant modifications to bootstrap.css
+
+[33mcommit d3f0e0ba76ea924ff0724d4c0dce9a64ba794340[m
+Author: Chris Scarola <scarolac@colorado.edu>
+Date:   Thu Oct 26 14:50:34 2017 -0600
+
+    Turned login into a modal, added get started temp page
+
+[33mcommit 41d9bab41c88057c4233384d8f6691a45dc67cc1[m
+Author: Chris Scarola <scarolac@colorado.edu>
+Date:   Thu Oct 26 12:26:24 2017 -0600
+
+    Updated login page to be more bootstrap
+
+[33mcommit a7a338e2172c5042ba9109837a3efb54ac40d06d[m
+Merge: 86ace31 eb7769d
+Author: Chris <scarolac@gmail.com>
+Date:   Sat Oct 21 15:49:06 2017 -0600
+
+    Merge branch 'master' of https://github.com/nickpalmer789/ProductionNumber4_3308
+
+[33mcommit eb7769d86fce8c49897ca9d4f3e34176a69038e9[m
+Author: melissamantey <melissa.mantey@colorado.edu>
+Date:   Thu Oct 19 17:50:11 2017 -0600
+
+    Add Milestone 2 pdf
+
+[33mcommit 29fb1404541631906c46a693b83b8881dd070e94[m
+Author: Chris Scarola <scarolac@colorado.edu>
+Date:   Thu Oct 19 17:18:31 2017 -0600
+
+    navbar uses <button> tag for login page
+
+[33mcommit 61d3322da8f538063df9db57e3b71897b6f77e00[m
+Author: Chris <scarolac@gmail.com>
+Date:   Sat Oct 14 11:30:03 2017 -0600
+
+    Add static login page/css file/temp planit icon
+
+[33mcommit 86ace31b70ec9b0078102147713f3e9b45ae3b7e[m
+Merge: 37a2f16 3deef15
+Author: Chris <scarolac@gmail.com>
+Date:   Thu Oct 12 22:09:34 2017 -0600
+
+    Merge branch 'develop' of https://github.com/nickpalmer789/ProductionNumber4_3308
+
+[33mcommit 3deef15cb955a189300125fa8fab48e0c2b8ab3f[m
+Author: Nicholas Palmer <nicholas.palmer@colorado.edu>
+Date:   Tue Oct 10 15:54:50 2017 -0600
+
+    Added templates and a splash page.
+
+[33mcommit 3d175005e320c6fc333273f514daa90685443da4[m
+Author: Nicholas Palmer <nicholas.palmer@colorado.edu>
+Date:   Tue Oct 10 13:59:47 2017 -0600
+
+    Switched to the new Bootstrap 4.0 beta!
+
+[33mcommit 49c73164f2522f8b742c036bb5c25ecec1f60cf3[m
+Author: Nicholas Palmer <nicholas.palmer@colorado.edu>
+Date:   Tue Oct 10 12:54:02 2017 -0600
+
+    Added files for bootstrap and index.
+
+[33mcommit 37a2f16a368839b2fcd6747a6a34ed8190ade0ca[m
+Merge: b8a77f6 cd1295b
+Author: Chris <scarolac@gmail.com>
+Date:   Fri Oct 6 18:21:21 2017 -0600
+
+    Merge branch 'master' of https://github.com/nickpalmer789/ProductionNumber4_3308
+
+[33mcommit cd1295ba52106446e2aafd83786055873b31639f[m
+Author: Palmer <nickpalmer789@gmail.com>
+Date:   Fri Oct 6 13:29:02 2017 -0600
+
+    Added Code of Conduct page
+    
+    Added a template code of conduct file as a basic setup step.
+
+[33mcommit e6238a419b90518aa4f93eb5a35e86599e14d403[m
+Author: Nicholas Palmer <nicholas.palmer@colorado.edu>
+Date:   Wed Oct 4 22:47:16 2017 -0600
+
+    Added environment setup instructions for LAMP stack.
+
+[33mcommit d206896cf65b70679a3248c75308d10654870252[m
+Author: Nicholas Palmer <nicholas.palmer@colorado.edu>
+Date:   Sun Oct 1 19:09:02 2017 -0600
+
+    Updated deployment plan.
+
+[33mcommit b8a77f624c6ee6793bd795c1a2044f7aae9dd105[m
+Merge: af29830 2dc7a54
+Author: Chris <scarolac@gmail.com>
+Date:   Sat Sep 30 22:37:02 2017 -0600
+
+    merged into previous version
+
+[33mcommit 2dc7a547080f6ec9cbd0e581f484a55e030d9cac[m
+Author: melissamantey <melissa.mantey@colorado.edu>
+Date:   Sat Sep 30 18:11:05 2017 -0600
+
+    Slightly more added to risk sections
+
+[33mcommit 2f5a4d033e69d58e19d7aab9afce72e0bffdd543[m
+Author: melissamantey <melissa.mantey@colorado.edu>
+Date:   Sat Sep 30 18:00:47 2017 -0600
+
+    Spaces
+
+[33mcommit 70dcd1eaf5b97ae1b4d7f5af9bd42cb21b3539bb[m
+Author: melissamantey <melissa.mantey@colorado.edu>
+Date:   Sat Sep 30 17:58:36 2017 -0600
+
+    Spaces
+
+[33mcommit eb376c5b415bafb2fff2f673371c1a60431a7b5b[m
+Author: melissamantey <melissa.mantey@colorado.edu>
+Date:   Sat Sep 30 17:54:58 2017 -0600
+
+    Spaces
+
+[33mcommit 8192d59cc71b5795f8fc2ecf38fe4ee4629b6cb2[m
+Author: melissamantey <melissa.mantey@colorado.edu>
+Date:   Sat Sep 30 17:52:53 2017 -0600
+
+    Spaces not showing up?
+
+[33mcommit a47d98e64dcc8715c549f651c2b8b05d50070d53[m
+Author: melissamantey <melissa.mantey@colorado.edu>
+Date:   Sat Sep 30 17:50:29 2017 -0600
+
+    Spaces not showing up?
+
+[33mcommit 4b67dd109ee0cda7ffc6aa7a743d9c1b7e2a12ae[m
+Author: melissamantey <melissa.mantey@colorado.edu>
+Date:   Sat Sep 30 17:48:26 2017 -0600
+
+    more edits to risk sections
+
+[33mcommit 9249a82f3da6e0915a932931304f6e72529facab[m
+Author: melissamantey <melissa.mantey@colorado.edu>
+Date:   Sat Sep 30 17:45:49 2017 -0600
+
+    Added to risk and risk mitigation sections
+
+[33mcommit aaab05532ae3f12f2a8ee34da5dfa9a5516b8331[m
+Merge: 04aded1 1b38398
+Author: melissamantey <melissa.mantey@colorado.edu>
+Date:   Sat Sep 30 17:34:12 2017 -0600
+
+    Fixing merge conflict
+
+[33mcommit 1b383982036e6c805ee09cf6d1cede801feb084d[m
+Author: Nicholas Palmer <nicholas.palmer@colorado.edu>
+Date:   Sat Sep 30 13:54:46 2017 -0600
+
+    Updated some sections.
+
+[33mcommit af29830c80fb2447c99d78305fe78e2e4b92d70d[m
+Author: Chris <scarolac@gmail.com>
+Date:   Fri Sep 29 18:21:13 2017 -0600
+
+    Minor adjustments to README.md
+
+[33mcommit c9a3573a917b333e874d19b59a1d9411d76964d7[m
+Author: Nicholas Palmer <nicholas.palmer@colorado.edu>
+Date:   Fri Sep 29 17:58:43 2017 -0600
+
+    Finished description section.
+
+[33mcommit 04aded1a020a92bf0b0d990513a9e2dcf24a7947[m
+Author: melissamantey <melissa.mantey@colorado.edu>
+Date:   Fri Sep 29 15:03:38 2017 -0600
+
+    Added to risk and risk mitigation sections
+
+[33mcommit df3e6a52273a90519a1a2119178dce4b38d99fb7[m
+Merge: b0bbf15 b1a143e
+Author: Kaelan Patel <kapa5087@colorado.edu>
+Date:   Thu Sep 28 20:25:00 2017 -0600
+
+    Merge https://github.com/nickpalmer789/ProductionNumber4_3308
+
+[33mcommit b0bbf159697610f866d50dc9b099417e5c1b2b70[m
+Author: Kaelan Patel <kapa5087@colorado.edu>
+Date:   Thu Sep 28 20:24:55 2017 -0600
+
+    architecture specifics
+
+[33mcommit fb3f7f05b46e2bae7cda907a3a803a226fe2fbd2[m
+Author: Kaelan Patel <kapa5087@colorado.edu>
+Date:   Thu Sep 28 19:32:53 2017 -0600
+
+    architecture discriptions
+
+[33mcommit b1a143eed629bf270f1cfc34f4ce705b85e3e186[m
+Author: Sophie Loughlin <sloughlinm@gmail.com>
+Date:   Thu Sep 28 17:56:35 2017 -0600
+
+    Added motivation
+
+[33mcommit d0d121be24fb6c68ac6a114adca3679f77a61ac9[m
+Author: Sophie Loughlin <sloughlinm@gmail.com>
+Date:   Thu Sep 28 17:39:05 2017 -0600
+
+    Added motivation
+
+[33mcommit c4ec9fc06cd6a47f0ef8e647f84748f248862c65[m
+Author: Sophie Loughlin <sloughlinm@gmail.com>
+Date:   Thu Sep 28 17:10:30 2017 -0600
+
+    Added vision statement
+
+[33mcommit 26b514344aee4a406443af2aa531e1fa3189e65d[m
+Author: Nicholas Palmer <nicholas.palmer@colorado.edu>
+Date:   Mon Sep 25 16:48:08 2017 -0600
+
+    Changed some wording.
+
+[33mcommit 4e45723211824443240230f1c68307c567ec3e16[m
+Author: Chris Scarola <scarolac@colorado.edu>
+Date:   Thu Sep 21 17:49:47 2017 -0600
+
+    Add items to README
+
+[33mcommit eb7d8af3398d5f8e76f71909f693df709e5889ec[m
+Author: Palmer <nickpalmer789@gmail.com>
+Date:   Thu Sep 21 17:09:14 2017 -0600
+
+    Initial commit
