@@ -20,7 +20,7 @@
                     <h2 class="text-center">Planit Login</h2>
                     <form action="../php/loginHandler.php" method="post">
                         <div class="imgcontainer">
-                            <img src="../assets/icons/planiticon.png" alt="Planit" class="avatar">
+                            <img src="../assets/icons/planit_logo.svg" alt="Planit" class="avatar">
                             <h2>Incorrect username or password!</h2>
                             <h3>Please try again</h3>
                         </div>
