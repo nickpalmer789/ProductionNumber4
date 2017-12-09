@@ -10,18 +10,7 @@
 
     $deleteID = $_REQUEST['id'];
 
-    $comp = "SELECT complete FROM tasks WHERE task_id=".$deleteID;
-
-    $thing = mysqli_query($db, $comp);
-
-    $row = mysqli_fetch_array($thing, MYSQLI_NUM);
-
-    if(!$row[0]){
-        $query = "UPDATE tasks SET complete=1 WHERE task_id=".$deleteID;
-    }
-    else{
-        $query = "UPDATE tasks SET complete=0 WHERE task_id=".$deleteID;
-    }
+    $query = "DELETE FROM tasks WHERE task_id=".$deleteID;
 
     $result = mysqli_query($db, $query);
 

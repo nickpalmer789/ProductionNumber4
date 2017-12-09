@@ -150,6 +150,7 @@
                 ?>
             </div>
             <script src="../js/task_deleteHandler_calendar.js"></script>
+            <script src="../js/task_deleter.js"></script>
         </div>
     </div>
     <?php
