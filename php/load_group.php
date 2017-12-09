@@ -10,11 +10,13 @@
     echo "<table class=\"table\">";
     echo "<tr>";
     echo "<th>Group Name</th>";
+    echo "<th>View Calendar</th>";
     echo "<th>Leave Group</th>";
     echo "</tr>";
     while($row = mysqli_fetch_array($resultset, MYSQLI_NUM)) {
         echo "<tr>";
         echo "<td>$row[1]</td>";
+        echo "<td><a class=\"btn btn-success\" href=\"../php/group_calendar_handler.php?group_name=$row[1]\">View Calendar</a></td>";
         echo "<td><input type=\"submit\" class=\"button\" name=\"".$row[0]."\" value=\"Leave Group\"/></td>";
         echo "</tr>";
     }

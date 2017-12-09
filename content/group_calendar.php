@@ -27,7 +27,7 @@
 
                         //Print out all other group names as links
                         while($row = mysqli_fetch_array($groupNames, MYSQLI_NUM)) {
-                            echo "<a class=\"dropdown-item\" name = \"group\" href=\"/php/group_calendar_handler.php?id=$row[0]\">$row[0]</a>";
+                            echo "<a class=\"dropdown-item\" name = \"group\" href=\"/php/group_calendar_handler.php?group_name=$row[0]\">$row[0]</a>";
                         }
                     ?>
                 </div>

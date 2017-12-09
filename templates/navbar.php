@@ -12,16 +12,15 @@
     
             <div class=\"collapse navbar-collapse\" id=\"navbarCollapse\">
                 <ul class=\"navbar-nav mr-auto\">
-           
-                <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"../content/calendar.php\">Calendar</a>
-                </li>
-                <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"../content/group_calendar.php\">Group Calendar</a>
-                </li>
-                <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"../content/manage_groups.php\">Manage Groups</a>
-                </li>
+                    <li class=\"nav-item\">
+                        <a class=\"nav-link\" href=\"../content/dashboard.php\">Dashboard</a>
+                    </li>
+                    <li class=\"nav-item\">
+                        <a class=\"nav-link\" href=\"../content/calendar.php\">Calendar</a>
+                    </li>
+                    <li class=\"nav-item\">
+                        <a class=\"nav-link\" href=\"../content/manage_groups.php\">Groups</a>
+                    </li>
                 </ul>
                 
                 
