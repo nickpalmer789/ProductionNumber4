@@ -8,12 +8,22 @@
 
         
         
-    $query = "SELECT * FROM calendar WHERE username = '{$_SESSION['login_user']}'";
-    $resultset = mysqli_query($connection,$query);
-    if(!$resultset){
+    $calendarQuery = "SELECT * FROM calendar WHERE username = '{$_SESSION['login_user']}'";
+    $calendarResult = mysqli_query($connection,$calendarQuery);
+    if(!$calendarResult){
         echo ":( Something went wrong.<br><br>";
     }   
-        
-    $queryJSON = json_encode($resultset->fetch_all(PDO::FETCH_ASSOC));
+
+    $calendaerJSON = json_encode($calendarResult->fetch_all(PDO::FETCH_ASSOC));
+
+
+    $tasksQuery = "SELECT * FROM tasks WHERE username = '{$_SESSION['login_user']}'";
+    $taskResult = mysqli_query($connection, $tasksQuery);
+    if(!$taskResult){
+        echo ":( Something went wrong.<br><br>";
+    }  
+
+    $tasksJSON = json_encode($taskResult->fetch_all(PDO::FETCH_ASSOC));
+
 
 ?>

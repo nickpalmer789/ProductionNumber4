@@ -161,7 +161,7 @@
 <script>
     $(document).ready(function() {
 
-        var arrays = <?php echo $queryJSON; ?>;
+        var arrays = <?php echo $calendaerJSON; ?>;
         var eventsArr = [];
         var currentEvent;
         for (var i = 0; i < arrays.length; i++) {
