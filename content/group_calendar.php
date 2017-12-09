@@ -23,7 +23,7 @@
                         
                         $groupNames = mysqli_query($db, $getGroupNames);
                         
-                        echo "<a class=\"dropdown-item\" name=\"group\" href=\"/content/group_calendar.php\">No Group Selected</a>";
+                        echo "<a class=\"dropdown-item\" name=\"group\" href=\"../content/manage_groups.php\">No Group</a>";
 
                         //Print out all other group names as links
                         while($row = mysqli_fetch_array($groupNames, MYSQLI_NUM)) {
