@@ -4,10 +4,13 @@
         <?php
             include('../templates/headercontent.php');
             include('../php/session.php');
-            include('../templates/navbar.php');
         ?>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/randomcolor/0.5.2/randomColor.min.js"></script>
     </head>
     <body>
+        <?php
+            include('../templates/navbar.php');
+        ?>
         <div class="container-fluid">
             <h1 align="left">
                 <font size="7">Group calendar for <?= $group ?></font>
@@ -173,16 +176,19 @@
     <!-- Add items to the calendar -->
     <script>
         $(document).ready(function() {
-            var arrays = <?php echo $queryJSON; ?>;
-            console.log(arrays);
+            var queryArr = <?php echo $queryJSON; ?>;
+
             var eventsArr = [];
             var currentEvent;
-            for (var i = 0; i < arrays.length; i++) {
-                var startArr = arrays[i][5].split(" ");
-                var endArr = arrays[i][6].split(" ");
+
+            var userMap = new Map();
+
+            for (var i = 0; i < queryArr.length; i++) {
+                var startArr = queryArr[i][5].split(" ");
+                var endArr = queryArr[i][6].split(" ");
 
                 //Generate the dow array from the string
-                var dowArr = arrays[i][8].split(" ").map(Number);
+                var dowArr = queryArr[i][8].split(" ").map(Number);
                 console.log(startArr[0]);
                 //Generate the ranges array
                 var rangeArr = [{
@@ -190,13 +196,25 @@
                     end: moment(endArr[0], "YYYY-MM-DD")
                 }];
 
+                //Generate a color for the event
+                var currentColor = "";
+                var userColorValue = userMap.get(queryArr[i][0]);
+                if(typeof userColorValue === 'undefined') {
+                    //Generate a new color for the user
+                    currentColor = randomColor();
+                    userMap.set(queryArr[i][0], currentColor);
+                } else {
+                    currentColor = userColorValue;
+                }
+
                 //Create the actual object
                 currentEvent = {
-                    title: arrays[i][0] + "->" + arrays[i][3],
-                    id: arrays[i][1],
+                    title: queryArr[i][0] + "->" + queryArr[i][3],
+                    id: queryArr[i][1],
                     start: startArr[1],
                     end: endArr[1],
                     dow: dowArr,
+                    backgroundColor: currentColor,
                     ranges: rangeArr
                 }
                 //Add the event to the list
