@@ -14,6 +14,7 @@
             <tr>
                 <th>Task</th>
                 <th>Date/time due</th>
+                <th> </th>
             </tr>
         </thead>
         <tbody>
@@ -47,6 +48,8 @@
         <thead>
             <tr>
                 <th>Task</th>
+                <th> </th>
+                <th> </th>
             </tr>
         </thead>
         <tbody>
