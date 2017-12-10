@@ -5,7 +5,6 @@
             //Include the header content
             include("../templates/headercontent.php");
         ?>
-	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     </head>
     <body>
         <?php
