@@ -47,7 +47,7 @@
                 </p>
             </div>
             <div class="col-md-5">
-                <img class="featurette-image img-fluid mx-auto" src="http://via.placeholder.com/500x500" alt="Generic placeholder image">
+                <img class="featurette-image img-responsive mx-auto" src="./assets/images/GroupCalendar1.PNG" style="height:500px" alt="Generic placeholder image">
             </div>
         </div>
 
@@ -59,7 +59,7 @@
                 <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
             </div>
             <div class="col-md-5 order-md-1">
-                <img class="featurette-image img-fluid mx-auto" src="http://via.placeholder.com/500x500" alt="Generic placeholder image">
+                <img class="featurette-image img-fluid mx-auto" src="./assets/images/new_task.png" alt="Generic placeholder image">
             </div>
         </div>
 
@@ -71,7 +71,7 @@
                 <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
             </div>
             <div class="col-md-5">
-                <img class="featurette-image img-fluid mx-auto" src="http://via.placeholder.com/500x500" alt="Generic placeholder image">
+                <img class="featurette-image img-fluid mx-auto" src="./assets/images/groups_page.png" alt="Generic placeholder image">
             </div>
         </div>
 

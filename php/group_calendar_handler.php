@@ -1,5 +1,5 @@
 <?php
-    $group = $_GET['id'];
+    $group = $_GET['group_name'];
 
     include('../php/session.php');
 
