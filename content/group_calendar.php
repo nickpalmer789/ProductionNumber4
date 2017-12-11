@@ -4,10 +4,13 @@
         <?php
             include('../templates/headercontent.php');
             include('../php/session.php');
-            include('../templates/navbar.php');
         ?>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/randomcolor/0.5.2/randomColor.min.js"></script>
     </head>
     <body>
+        <?php
+            include('../templates/navbar.php');
+        ?>
         <div class="container-fluid">
             <h1 align="left">
                 <font size="7">Group calendar for <?= $group ?></font>
@@ -23,11 +26,11 @@
                         
                         $groupNames = mysqli_query($db, $getGroupNames);
                         
-                        echo "<a class=\"dropdown-item\" name=\"group\" href=\"/content/group_calendar.php\">No Group Selected</a>";
+                        echo "<a class=\"dropdown-item\" name=\"group\" href=\"../content/manage_groups.php\">No Group</a>";
 
                         //Print out all other group names as links
                         while($row = mysqli_fetch_array($groupNames, MYSQLI_NUM)) {
-                            echo "<a class=\"dropdown-item\" name = \"group\" href=\"/php/group_calendar_handler.php?id=$row[0]\">$row[0]</a>";
+                            echo "<a class=\"dropdown-item\" name = \"group\" href=\"/php/group_calendar_handler.php?group_name=$row[0]\">$row[0]</a>";
                         }
                     ?>
                 </div>
@@ -165,6 +168,26 @@
                 <script src="../js/task_deleteHandler_calendar.js"></script>
             </div>
         </div>
+        <!-- Event information modal -->
+        <div class="modal fade" id="eventModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <!-- Elements in this div are populated upon clicking on a fullCalendar event-->
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="eventTitle"></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h6 id="eventTitleBody">Title: </h6>
+                        <h6 id="eventStartTime">Start time: </h6>
+                        <h6 id="eventEndTime">End time: </h6>
+                    </div>   
+                </div>
+            </div>
+        </div>
+        <!-- End event information modal-->
         <?php
             include('../templates/footerScripts.php');
         ?>
@@ -173,16 +196,19 @@
     <!-- Add items to the calendar -->
     <script>
         $(document).ready(function() {
-            var arrays = <?php echo $queryJSON; ?>;
-            console.log(arrays);
+            var queryArr = <?php echo $queryJSON; ?>;
+
             var eventsArr = [];
             var currentEvent;
-            for (var i = 0; i < arrays.length; i++) {
-                var startArr = arrays[i][5].split(" ");
-                var endArr = arrays[i][6].split(" ");
+
+            var userMap = new Map();
+
+            for (var i = 0; i < queryArr.length; i++) {
+                var startArr = queryArr[i][5].split(" ");
+                var endArr = queryArr[i][6].split(" ");
 
                 //Generate the dow array from the string
-                var dowArr = arrays[i][8].split(" ").map(Number);
+                var dowArr = queryArr[i][8].split(" ").map(Number);
                 console.log(startArr[0]);
                 //Generate the ranges array
                 var rangeArr = [{
@@ -190,13 +216,25 @@
                     end: moment(endArr[0], "YYYY-MM-DD")
                 }];
 
+                //Generate a color for the event
+                var currentColor = "";
+                var userColorValue = userMap.get(queryArr[i][0]);
+                if(typeof userColorValue === 'undefined') {
+                    //Generate a new color for the user
+                    currentColor = randomColor();
+                    userMap.set(queryArr[i][0], currentColor);
+                } else {
+                    currentColor = userColorValue;
+                }
+
                 //Create the actual object
                 currentEvent = {
-                    title: arrays[i][0] + "->" + arrays[i][3],
-                    id: arrays[i][1],
+                    title: queryArr[i][0] + "->" + queryArr[i][3],
+                    id: queryArr[i][1],
                     start: startArr[1],
                     end: endArr[1],
                     dow: dowArr,
+                    backgroundColor: currentColor,
                     ranges: rangeArr
                 }
                 //Add the event to the list
@@ -219,6 +257,16 @@
                         return (event.start.isBefore(range.end) && event.end.isAfter(range.start));
 
                     }).length) > 0;
+                },
+                //Create a function that triggers when an event is clicked
+                eventClick: function(calEvent, jsEvent, view) {
+                    //Fill the text in the event information modal
+                    $("#eventTitle").text(calEvent.title);
+                    $("#eventTitleBody").text("Title: " + calEvent.title);
+                    $("#eventStartTime").text("Start: " + calEvent.start.format("h:mm:ss"));
+                    $("#eventEndTime").text("End: " + calEvent.end.format("h:mm:ss"));
+                    //Show the modal programatically
+                    $("#eventModal").modal("show");
                 },
                 //The generated events list
                 events: eventsArr

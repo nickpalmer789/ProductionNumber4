@@ -39,7 +39,7 @@
                                 </div>
                                 <div class="modal-body">
                                     <!--Start form for new event-->
-                                    <form action="../php/new_eventHandler.php" method="post">
+                                    <form class="eventForm" action="../php/new_eventHandler.php" method="post">
                                         <label for="eventType"><b>Type</b></label>
                                         <input type="text" class="form-control" placeholder="&quot;class/work/etc&quot;" name="eventType" required>
                                         <label for="description"><b>Description</b></label>
@@ -88,7 +88,7 @@
                                 var emptyInputs = false;
 
                                 //Loop over inputs on the page
-                                $('form > input').each(function() {
+                                $('.eventForm > input').each(function() {
                                     var thisName = $(this).attr("name");
 
                                     //Check whether required fields are empty
@@ -153,6 +153,26 @@
             <script src="../js/task_deleter.js"></script>
         </div>
     </div>
+    <!-- Event information modal -->
+    <div class="modal fade" id="eventModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <!-- Elements in this div are populated upon clicking on a fullCalendar event-->
+                <div class="modal-header">
+                    <h5 class="modal-title" id="eventTitle"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h6 id="eventTitleBody">Title: </h6>
+                    <h6 id="eventStartTime">Start time: </h6>
+                    <h6 id="eventEndTime">End time: </h6>
+                </div>   
+            </div>
+        </div>
+    </div>
+    <!-- End event information modal-->
     <?php
         include('../templates/footerScripts.php');
     ?>
@@ -191,6 +211,7 @@
             eventsArr.push(currentEvent);
         }
 
+        console.log(eventsArr);
         //Render the events on the calendar
         $('#calendar').fullCalendar({
             defaultDate: moment(),
@@ -207,6 +228,16 @@
                     return (event.start.isBefore(range.end) && event.end.isAfter(range.start));
 
                 }).length) > 0;
+            },
+            //Create a function that triggers when an event is clicked
+            eventClick: function(calEvent, jsEvent, view) {
+                //Fill the text in the event information modal
+                $("#eventTitle").text(calEvent.title);
+                $("#eventTitleBody").text("Title: " + calEvent.title);
+                $("#eventStartTime").text("Start: " + calEvent.start.format("h:mm:ss"));
+                $("#eventEndTime").text("End: " + calEvent.end.format("h:mm:ss"));
+                //Show the modal programatically
+                $("#eventModal").modal("show");
             },
             //The generated events list
             events: eventsArr
