@@ -42,37 +42,37 @@
                 </button>
                 <ul class=\"navbar-nav mr-auto\">
                 </ul>
-                <button type=\"button\" id = \"login_button\" class=\"btn btn-outline-success my-2 my-sm-0\" data-toggle=\"modal\" data-target=\"#loginModal\">Log In</button>";
-    }
-?>
+                <button type=\"button\" id = \"login_button\" class=\"btn btn-outline-success my-2 my-sm-0\" data-toggle=\"modal\" data-target=\"#loginModal\">Log In</button>
+
 
         <!-- The login modal -->
-        <div class="modal fade" id="loginModal" role="dialog">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <form action="/php/loginHandler.php" method="post">
-                            <div class="imgcontainer">
-                                <img src="../assets/icons/planiticon.png" alt="Planit" class="img-small">
+        <div class=\"modal fade\" id=\"loginModal\" role=\"dialog\">
+            <div class=\"modal-dialog\">
+                <div class=\"modal-content\">
+                    <div class=\"modal-body\">
+                        <form action=\"/php/loginHandler.php\" method=\"post\">
+                            <div class=\"imgcontainer\">
+                                <img src=\"../assets/icons/planiticon.png\" alt=\"Planit\" class=\"img-small\">
                                 <h2>Planit Login</h2>
                             </div>
 
-                            <label for="usr"><b>Username</b></label>
-                            <input type="text" class="form-control" placeholder="Enter Username" name="username" required>
+                            <label for=\"usr\"><b>Username</b></label>
+                            <input type=\"text\" class=\"form-control\" placeholder=\"Enter Username\" name=\"username\" required>
 
-                            <label for="pwd"><b>Password</b></label>
+                            <label for=\"pwd\"><b>Password</b></label>
 
-                            <input type="password" class="form-control" placeholder="Enter Password" name="password" required>
-                            <button id = "login_button_1" class="btn-success btn-lg btn-block" type="submit">Login</button>
+                            <input type=\"password\" class=\"form-control\" placeholder=\"Enter Password\" name=\"password\" required>
+                            <button id = \"login_button_1\" class=\"btn-success btn-lg btn-block\" type=\"submit\">Login</button>
 
 
                             <br>
-                            <button type="button" class="btn-danger btn-lg btn-block" data-dismiss="modal">Cancel</button>
+                            <button type=\"button\" class=\"btn-danger btn-lg btn-block\" data-dismiss=\"modal\">Cancel</button>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- End Modal -->
-
+        <!-- End Modal -->";
+    }
+?>
 </nav>

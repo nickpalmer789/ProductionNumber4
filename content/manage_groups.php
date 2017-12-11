@@ -41,6 +41,9 @@
                     </form>
                 </div>
             </div>
+            <?php
+            include('../templates/footerCopy.php');
+          ?>
         </div>
 
         <?php

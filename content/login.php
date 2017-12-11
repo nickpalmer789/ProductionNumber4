@@ -12,19 +12,25 @@
     <?php
       //Include the navbar content
         include('../templates/navbar.php');       
+    
+        //if logged in already, go to dashboard
+        session_start();
+        if(isset($_SESSION["login_user"])) 
+        {
+            header("location: /content/dashboard.php");
+        }
     ?>
 
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-8" col>
-                    <h2 class="text-center">Planit Login</h2>
+            <h2 class="text-center">Planit Login</h2>
+            <div class="imgcontainer">
+                <img src="../assets/icons/planiticon.png" alt="Planit" class="img-small">
+                <h2>Incorrect username or password!</h2>
+                <h3>Please try again</h3>
+            </div>
+            <div class="row featurette">
+                <div class="col-md-12" col>
                     <form action="../php/loginHandler.php" method="post">
-                        <div class="imgcontainer">
-                            <img src="../assets/icons/planit_logo.svg" alt="Planit" class="avatar">
-                            <h2>Incorrect username or password!</h2>
-                            <h3>Please try again</h3>
-                        </div>
-
                         <label for="usr"><b>Username</b></label>
                         <input type="text" class="form-control" placeholder="Enter Username" name="username" required>
 
@@ -35,10 +41,9 @@
 
                         <br>
                     </form>
-                    
+
                     <form action="../index.php">
-                        <button type="submit" class="btn-danger btn-lg btn-block">Cancel</button>
-                        <span class="psw">Forgot <a href="#">password?</a></span>
+                        <button type="submit" class="btn-danger btn-lg btn-block">Cancel</button>                       
                     </form>
                 </div>
             </div>

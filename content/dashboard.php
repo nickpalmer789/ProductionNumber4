@@ -89,6 +89,9 @@
                 <button class="btn btn-block btn-success" id="updateBtn">Update Timer</button>
             </div>
         </div>
+        <?php
+            include('../templates/footerCopy.php');
+          ?>
     </div>
     
     <?php

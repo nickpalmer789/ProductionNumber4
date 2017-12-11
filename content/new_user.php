@@ -15,13 +15,14 @@
     ?>
 
         <div class="container">
-            <form action="../php/new_accountHandler.php" method="post">
-                <div class="imgcontainer">
-                    <img src="../assets/icons/planiticon.png" alt="Planit" class="img-small">
-                    <h2>Create a new account to use planit!</h2>
-                </div>
-                <div class="row featurette">
-                    <div class="col-md-12">
+            <h2 class="text-center">New User</h2>
+            <div class="imgcontainer">
+                <img src="../assets/icons/planiticon.png" alt="Planit" class="img-small">
+                <h2>Create a new account to use planit!</h2>
+            </div>
+            <div class="row featurette">
+                <div class="col-md-12">
+                    <form action="../php/new_accountHandler.php" method="post">
                         <label for="usr"><b>First Name</b></label>
                         <input type="text" class="form-control" placeholder="Enter First Name" name="firstname" required>
 
@@ -33,16 +34,17 @@
 
                         <label for="usr"><b>Username</b></label>
                         <input type="text" class="form-control" placeholder="Enter Username" id="usname" name="username" required>
-    
+
                         <label for="pwd"><b>Password</b></label>
-                        <input type="password" class="form-control" placeholder="Enter Password" id ="pass" name="password" required>
+                        <input type="password" class="form-control" placeholder="Enter Password" id="pass" name="password" required>
 
                         <label for="pwd"><b>Re-enter Password</b></label>
                         <input type="password" class="form-control" placeholder="Confirm Password" name="confirmpassword" required>
                         <button class="btn btn-primary btn-lg btn-block" type="submit" name="login">Create Account</button>
-                    </div>
+                    </form>
                 </div>
-            </form>
+            </div>
+
 
 
             <?php
