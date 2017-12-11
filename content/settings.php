@@ -72,10 +72,10 @@
                     <!-- Change password form -->
                     <h2 id="c2">Change Password</h2>
                     <form action="../php/settingsHandlers/settingsHandlerPassword.php" method="post">
-                        <input type="text" class="form-control" placeholder="Enter New Password" name="newpassword1">
-                        <input type="text" class="form-control" placeholder="Confirm New Password" name="newpassword2">
+                        <input type="password" class="form-control" placeholder="Enter New Password" name="newpassword1">
+                        <input type="password" class="form-control" placeholder="Confirm New Password" name="newpassword2">
                         <label>We need your current password in order to confirm your changes:</label>
-                        <input type="text" class="form-control" placeholder="Enter Old Password" name="oldpassword">
+                        <input type="password" class="form-control" placeholder="Enter Old Password" name="oldpassword">
                         <button class="btn-success btn-lg btn-block" type="submit">Update Password</button>
                     </form>
                     <hr>
