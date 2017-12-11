@@ -15,12 +15,10 @@
     while($row = mysqli_fetch_array($resultset, MYSQLI_NUM)) {
         echo "<tr>";
         echo "<td>$row[1]</td>";
-<<<<<<< HEAD
-        echo "<td><input type=\"submit\" class=\"button\" id = \"leave_group\" name=\"".$row[0]."\" value=\"Leave Group\"/></td>";
-=======
+
         echo "<td><a class=\"btn btn-success\" href=\"../php/group_calendar_handler.php?group_name=$row[1]\">View Calendar</a></td>";
         echo "<td><input type=\"submit\" class=\"button\" name=\"".$row[0]."\" value=\"Leave Group\"/></td>";
->>>>>>> 82e96d2242ae1a721262cd1f4f577a552ecc8d09
+
         echo "</tr>";
     }
     echo "</table>";
