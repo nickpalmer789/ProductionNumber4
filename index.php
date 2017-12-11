@@ -43,7 +43,7 @@
         <div class="row featurette">
             <div class="col-md-7">
                 <h2 class="featurette-heading align-middle">Your calendar and to-do list meet.</h2>
-                <p class="lead align-middle">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                <p class="lead align-middle">With Planit, your schedule and goals are integrated into one sleek calendar so that you can plan your week better.
                 </p>
             </div>
             <div class="col-md-5">
@@ -56,7 +56,8 @@
         <div class="row featurette">
             <div class="col-md-7 order-md-2">
                 <h2 class="featurette-heading">Track your goals. Get more done.</h2>
-                <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+                <p class="lead">Use the pomodoro timer to flexibly keep track of your progress.
+		</p>
             </div>
             <div class="col-md-5 order-md-1">
                 <img class="featurette-image img-fluid mx-auto" src="./assets/images/new_task.png" alt="Generic placeholder image">
@@ -68,7 +69,8 @@
         <div class="row featurette">
             <div class="col-md-7">
                 <h2 class="featurette-heading">Do more with your time.</h2>
-                <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+                <p class="lead">Planit is the ideal tool for scheduling tasks and events in the most efficient way possible. Try it now for free!
+		</p>
             </div>
             <div class="col-md-5">
                 <img class="featurette-image img-fluid mx-auto" src="./assets/images/groups_page.png" alt="Generic placeholder image">
