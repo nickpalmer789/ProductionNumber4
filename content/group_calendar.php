@@ -167,6 +167,9 @@
                 </div>
                 <script src="../js/task_deleteHandler_calendar.js"></script>
             </div>
+            <?php
+            include('../templates/footerCopy.php');
+          ?>
         </div>
         <!-- Event information modal -->
         <div class="modal fade" id="eventModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
