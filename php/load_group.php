@@ -6,7 +6,6 @@
     $query = "SELECT groups.group_id, group_name FROM groups JOIN groups_join_users ON groups.group_id=groups_join_users.group_id WHERE username = '$username'";
 
     $resultset = mysqli_query($db, $query);
-
     echo "<table class=\"table\">";
     echo "<tr>";
     echo "<th>Group Name</th>";
@@ -16,9 +15,14 @@
     while($row = mysqli_fetch_array($resultset, MYSQLI_NUM)) {
         echo "<tr>";
         echo "<td>$row[1]</td>";
+<<<<<<< HEAD
+        echo "<td><input type=\"submit\" class=\"button\" id = \"leave_group\" name=\"".$row[0]."\" value=\"Leave Group\"/></td>";
+=======
         echo "<td><a class=\"btn btn-success\" href=\"../php/group_calendar_handler.php?group_name=$row[1]\">View Calendar</a></td>";
         echo "<td><input type=\"submit\" class=\"button\" name=\"".$row[0]."\" value=\"Leave Group\"/></td>";
+>>>>>>> 82e96d2242ae1a721262cd1f4f577a552ecc8d09
         echo "</tr>";
     }
-    echo "</table>"
+    echo "</table>";
+    echo "<script src=\"../js/leave_group_handler.js\" type=\"text/javascript\" ></script>";
 ?>
