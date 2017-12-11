@@ -47,7 +47,7 @@
                 </p>
             </div>
             <div class="col-md-5">
-                <img class="featurette-image img-responsive mx-auto" src="./assets/images/GroupCalendar1.PNG" style="height:500px" alt="Generic placeholder image">
+                <img class="featurette-image img-fluid mx-auto" src="./assets/images/GroupCalendar1.PNG" alt="Generic placeholder image">
             </div>
         </div>
 
