@@ -1,5 +1,5 @@
 <?php
-    $fh = fopen('data.sql', 'w') of die("cannot open file");
+    $fh = fopen('data.sql', 'w') or die("cannot open file");
     $con = mysqli_connect("localhost","root","password","planit");
 
     
@@ -271,6 +271,7 @@
     fwrite($fh, "\n");
 
     // all done close file
+    echo "Data loaded, closing file";
     fclose($fh);
 ?>
 
