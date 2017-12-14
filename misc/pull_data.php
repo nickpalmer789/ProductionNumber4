@@ -1,5 +1,5 @@
 <?php
-    $fh = fopen('data.sql', 'w');
+    $fh = fopen('data.sql', 'w') of die("cannot open file");
     $con = mysqli_connect("localhost","root","password","planit");
 
     
