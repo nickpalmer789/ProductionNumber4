@@ -13,9 +13,9 @@ Chris Scarola
 -Server hours: Not available between 11pm to 7am. This is when Chris is sleeping, and so his computer will be off and no access to the server. Please do not test website then.  
 
 # Description of Repo Organization
-List of Folders in Repo:  
+*List* *of* *Directory* *in* *Repo* *and* *what* *they* *contain:*  
 -**content,** **php,** **and** **templates:** The index.php is the main page of Planit and the only file left outside of a folder. All other pages for the website are distributed into the content and php folders. The content folder holds the static pages for our website, including the dashboard, which is the main page when you log in, as well as the calendar page, group calendar page, manage groups page, settings page, and a php file for the login module. The php folder contains all of the handlers for each page. An example file you will find there is the load_tasks handler, which pulls the user's tasks from MySQL and displays them in a table on the dashboard page.
-The templates directory contains code included in most of the pages on the website, like the navbar and the header content. The code is contained in files that can be included easily in all of the website pages.
+The templates directory contains code included in most of the pages on the website, like the navbar and the header content. The code is contained in files that can be included easily in all of the website pages.  
 -**js** **and** **css:** The js and css directories contain all of the css and javascript code needed for custom styling and interactivity on the website.   
 -**sql:** The sql directory contains two files that build Planit's database, which will be described in detail in the next section.  
 -**assets:** The assets directory contains icons and images, like the Planit icon that sophy designed and the pictures included on the front page.  
