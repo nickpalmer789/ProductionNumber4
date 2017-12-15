@@ -45,9 +45,9 @@
 
 
     // Pull calendar 
-    $result = mysqli_query($con,"SELECT username, description, item_name, start_time, end_time, optional_location FROM calendar");   
+    $result = mysqli_query($con,"SELECT username, description, item_name, start_time, end_time, optional_location, repeats FROM calendar");   
     
-    fwrite($fh, "insert into `calendar` (`username`, `description`,`item_name`,`start_time`, `end_time`,`optional_location`) values\n");
+    fwrite($fh, "insert into `calendar` (`username`, `description`,`item_name`,`start_time`, `end_time`,`optional_location`,`repeats`) values\n");
     $col = mysqli_num_fields($result);  
     while ($row = mysqli_fetch_array($result, MYSQLI_NUM)) 
     {     
@@ -55,10 +55,17 @@
         
         for ($i = 0; $i < $col; $i++)
         {            
-            fwrite($fh, "'");
-            fwrite($fh, addslashes($row[$i]));
-            fwrite($fh, "'");            
-            
+            if ($i == $col - 1)
+            {
+                fwrite($fh, $row[$i]);
+            }
+            else
+            {
+                fwrite($fh, "'");
+                fwrite($fh, addslashes($row[$i]));
+                fwrite($fh, "'");          
+            }
+
             if ($i < $col - 1) 
             {
                 fwrite($fh, ", ");
