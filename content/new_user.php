@@ -14,7 +14,7 @@
         include('../templates/navbar.php');
     
         //if logged in already, go to dashboard
-        session_start();
+        //session_start();
         if(isset($_SESSION["login_user"])) 
         {
             header("location: /content/dashboard.php");

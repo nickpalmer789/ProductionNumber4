@@ -11,7 +11,8 @@
 <body>
     <?php
         include('../templates/navbar.php');	
-        include('../php/session.php');
+       // include('../php/session.php');           
+            
     ?>
     <div class="container">
         <h1 class="text-center">
@@ -24,7 +25,7 @@
                 <h3 class="text-center">My Tasks</h3>
                 <div class="table-responsive">
                     <?php
-                        include('../php/load_tasks.php');
+                        load_tasks($connection);
                     ?>
                 </div>
                 <script src="../js/task_deleteHandler.js"></script>

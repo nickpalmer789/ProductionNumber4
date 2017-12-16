@@ -1,7 +1,7 @@
 <!-- Load the group names in a table -->
 <?php
-    include("session.php");
-
+    //include("session.php");
+    
     $username = $_SESSION["login_user"];
     $query = "SELECT groups.group_id, group_name FROM groups JOIN groups_join_users ON groups.group_id=groups_join_users.group_id WHERE username = '$username'";
 

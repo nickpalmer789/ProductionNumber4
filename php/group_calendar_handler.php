@@ -1,7 +1,7 @@
 <?php
     $group = $_GET['group_name'];
 
-    include('../php/session.php');
+    //include('../php/session.php');
 
     if(mysqli_connect_errno())
     {

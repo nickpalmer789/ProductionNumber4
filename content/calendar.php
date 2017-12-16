@@ -5,7 +5,7 @@
     <?php
         //Include the header content
         include('../templates/headercontent.php');
-        include('../php/session.php');
+        //include('../php/session.php');
         include('../templates/navbar.php');
         include('../php/load_calendar.php'); 
         //echo $rangeObj->start;

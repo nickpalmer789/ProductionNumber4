@@ -11,7 +11,7 @@
 <body>
     <?php
             include("../templates/navbar.php");
-            include("../php/session.php");
+            //include("../php/session.php");
         ?>
         <div class="container">
             <h1 class="text-center">
@@ -24,7 +24,7 @@
                     <div class="table-responsive">
                         <!-- Load the current user's groups -->
                         <?php 
-                            include("../php/load_group.php");
+                            load_group($connection);
                         ?>
                     </div>
                 </div>

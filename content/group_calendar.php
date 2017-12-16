@@ -3,7 +3,7 @@
     <head>
         <?php
             include('../templates/headercontent.php');
-            include('../php/session.php');
+            //include('../php/session.php');
         ?>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/randomcolor/0.5.2/randomColor.min.js"></script>
     </head>
