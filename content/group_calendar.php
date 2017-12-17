@@ -10,6 +10,8 @@
     <body>
         <?php
             include('../templates/navbar.php');
+        
+            $group = $_GET['group_name'];            
         ?>
         <div class="container-fluid">
             <h1 align="left">
@@ -21,17 +23,7 @@
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <?php
-                        //Get the group names
-                        $getGroupNames = "SELECT group_name FROM (SELECT group_id FROM groups_join_users WHERE username = '{$_SESSION['login_user']}') as current_user_groups JOIN groups ON current_user_groups.group_id = groups.group_id";
-                        
-                        $groupNames = mysqli_query($db, $getGroupNames);
-                        
-                        echo "<a class=\"dropdown-item\" name=\"group\" href=\"../content/manage_groups.php\">No Group</a>";
-
-                        //Print out all other group names as links
-                        while($row = mysqli_fetch_array($groupNames, MYSQLI_NUM)) {
-                            echo "<a class=\"dropdown-item\" name = \"group\" href=\"/php/group_calendar_handler.php?group_name=$row[0]\">$row[0]</a>";
-                        }
+                        build_group_dropdown($connection);
                     ?>
                 </div>
             </div>
@@ -199,7 +191,7 @@
     <!-- Add items to the calendar -->
     <script>
         $(document).ready(function() {
-            var queryArr = <?php echo $queryJSON; ?>;
+            var queryArr = <?php echo group_handler($connection, $group); ?>;
 
             var eventsArr = [];
             var currentEvent;

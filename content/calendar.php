@@ -6,14 +6,22 @@
         //Include the header content
         include('../templates/headercontent.php');
         //include('../php/session.php');
-        include('../templates/navbar.php');
-        include('../php/load_calendar.php'); 
+        
+        //include('../php/load_calendar.php'); 
         //echo $rangeObj->start;
     ?>
 </head>
 
 <body>
-
+    <?php
+        include('../templates/navbar.php');
+    
+        //magic again, i guess, i dont know
+        if (isset($_POST["create_event"])) {
+            add_event($connection);
+        }
+    ?>
+    
     <div class="container-fluid">
         <h1 align="left">
             <font size="7">My Calendar</font>
@@ -39,7 +47,7 @@
                                 </div>
                                 <div class="modal-body">
                                     <!--Start form for new event-->
-                                    <form class="eventForm" action="../php/new_eventHandler.php" method="post">
+                                    <form class="eventForm" action="" method="post">
                                         <label for="eventType"><b>Type</b></label>
                                         <input type="text" class="form-control" placeholder="&quot;class/work/etc&quot;" name="eventType" required>
                                         <label for="description"><b>Description</b></label>
@@ -72,7 +80,7 @@
                                         <!-- Error message for JS form check -->
                                         <p id="inputError" class="text-center error-msg"></p>
 
-                                        <button disabled id="submitButton" class="btn btn-primary btn-lg btn-block disabled" type="submit" name="createTask">Add Event</button>
+                                        <button disabled id="submitButton" class="btn btn-primary btn-lg btn-block disabled" type="submit" name="create_event">Add Event</button>
                                     </form>
                                 </div>
                             </div>
@@ -146,7 +154,7 @@
             </div>
             <div class="col-sm-4" align="center">
                 <?php
-                    include('../php/taskHandler.php');
+                    load_tasks_small($connection);
                 ?>
             </div>
             <script src="../js/task_deleteHandler_calendar.js"></script>
@@ -185,7 +193,7 @@
 <script>
     $(document).ready(function() {
 
-        var arrays = <?php echo $calendaerJSON; ?>;
+        var arrays = <?php echo load_calendar($connection); ?>;
         var eventsArr = [];
         var currentEvent;
         for (var i = 0; i < arrays.length; i++) {

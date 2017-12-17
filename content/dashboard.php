@@ -25,6 +25,10 @@
                 <h3 class="text-center">My Tasks</h3>
                 <div class="table-responsive">
                     <?php
+                        if (isset($_POST["createTask"])) {  
+                            add_task($connection);
+                        }
+                    
                         load_tasks($connection);
                     ?>
                 </div>
@@ -35,14 +39,14 @@
                     <div class="modal-dialog modal-lg" role="dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="modalLabel">Create N<a href="../mandala/index.html">e</a>w Task</h5>
+                                <h5 class="modal-title" id="modalLabel">Create N<a style="color: inherit;" href="../mandala/index.html">e</a>w Task</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
                             <div class="modal-body">
                                 <!--Start form for new task-->
-                                <form action="../php/new_taskHandler.php" method="post">
+                                <form action="" method="post">
                                     <label for="taskName"><b>Task Name</b></label>
                                     <input type="text" class="form-control" placeholder="Enter Task Name" name="taskName" required>
 
@@ -60,6 +64,7 @@
 
                                     <button class="btn btn-primary btn-lg btn-block" type="submit" name="createTask">Create Task</button>
                                 </form>
+                                
                             </div>
                         </div>
                     </div>
@@ -69,7 +74,7 @@
             <div class="col-md-3" align='right'>
                 <!-- Tiny Calendar -->
                 <?php 
-                    include('../php/tiny_calendar.php');
+                    tiny_calendar();
                 ?>
                 <hr>
                 <!--Pomodoro timer -->
@@ -92,12 +97,11 @@
         </div>
         <?php
             include('../templates/footerCopy.php');
-          ?>
+        ?>
     </div>
     
     <?php
         include('../templates/footerScripts.php');
     ?>
 </body>
-
 </html>
