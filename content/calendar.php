@@ -157,8 +157,8 @@
                     load_tasks_small($connection);
                 ?>
             </div>
-            <script src="../js/task_deleteHandler_calendar.js"></script>
-            <script src="../js/task_deleter.js"></script>
+            <script src="../js/calendar_complete_task.js"></script>
+            <script src="../js/calendar_delete_task.js"></script>
         </div>
         <?php
             include('../templates/footerCopy.php');
@@ -218,6 +218,7 @@
                 dow: dowArr,
                 ranges: rangeArr
             }
+            
             //console.log(currentEvent);
             //Add the event to the list
             eventsArr.push(currentEvent);
@@ -228,22 +229,23 @@
         var dowArr = [];
         var currentTask;
         for (var i = 0; i < arrays.length; i++) {
-            //create a 30 min block of time
-            var endTime = moment.utc(arrays[i][3]).add(30,'m').format("HH:mm:ss");
-            
-            //split date and time
-            var deadlineArr = arrays[i][3].split(" ");
-                        
-            //create arbitrary next day to allow the repeat function to grab the event
-            //FIX, TODO, FIND, whatever, this need to change if the renderer changes
-            //to include the last day like it should
-            var rangeArr = [{
-                start: moment(deadlineArr[0], "YYYY-MM-DD"),
-                end: moment(deadlineArr[0], "YYYY-MM-DD").add(1,'d').toDate()
-            }];
-            
-            //Create the actual object, as long as task is not complete
             if(arrays[i][6] == 0) {
+                //create a 30 min block of time
+                var endTime = moment.utc(arrays[i][3]).add(30,'m').format("HH:mm:ss");
+
+                //split date and time
+                var deadlineArr = arrays[i][3].split(" ");
+
+                //create arbitrary next day to allow the repeat function to grab the event
+                //FIX, TODO, FIND, whatever, this need to change if the renderer changes
+                //to include the last day like it should
+                var rangeArr = [{
+                    start: moment(deadlineArr[0], "YYYY-MM-DD"),
+                    end: moment(deadlineArr[0], "YYYY-MM-DD").add(1,'d').toDate()
+                }];
+            
+                //Create the actual object, as long as task is not complete
+            
                 currentTask = {
                     title: arrays[i][2] + " - " + arrays[i][4],
                     id: arrays[i][0],
@@ -252,10 +254,12 @@
                     ranges: rangeArr,
                     backgroundColor: "bisque"
                 }
+                
+                //Add the task to the array
+                eventsArr.push(currentTask);
             }
             
-            //Add the task to the array
-            eventsArr.push(currentTask);
+            
         }
         
 

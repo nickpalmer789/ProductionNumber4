@@ -159,7 +159,7 @@
             <tbody>";
         
         while ($row = mysqli_fetch_array($res, MYSQLI_NUM)){
-            if($row[6] == 0){
+            if($row[7] == 0){
                 echo 
                     "<tr>
                          <td>$row[2]</td>
@@ -188,7 +188,7 @@
         
         $alldone = True;
         while ($row = mysqli_fetch_array($res, MYSQLI_NUM)) {
-            if($row[6] != 0) {
+            if($row[7] != 0) {
                 $alldone = False;
                 echo 
                     "<tr>
@@ -233,7 +233,7 @@
         }
         echo 
             "</table>
-            <script src=\"../js/leave_group_handler.js\" type=\"text/javascript\" ></script>";
+            <script src=\"../js/leave_group.js\" type=\"text/javascript\" ></script>";
         
         
     }
@@ -283,9 +283,17 @@
             echo ":( Something went wrong.<br><br>";
         }  
 
-        $tasksJSON = json_encode($taskResult->fetch_all(PDO::FETCH_ASSOC));
-        return $tasksJSON;
+        return json_encode($taskResult->fetch_all(PDO::FETCH_ASSOC));
     }
 
+    function show_group_tasks(&$db, &$group) {
+        $tasksQuery = "SELECT * FROM group_tasks WHERE group_id = (SELECT group_id FROM groups WHERE group_name='$group')";
+        $taskResult = mysqli_query($db, $tasksQuery);
+        if(!$taskResult){
+            echo ":( Something went wrong.<br><br>";
+        }  
+
+        return json_encode($taskResult->fetch_all(PDO::FETCH_ASSOC));
+    }
     
 ?>

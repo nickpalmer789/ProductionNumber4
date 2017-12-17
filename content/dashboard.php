@@ -32,7 +32,7 @@
                         load_tasks($connection);
                     ?>
                 </div>
-                <script src="../js/task_deleteHandler.js"></script>
+                <script src="../js/dashboard_complete_task.js"></script>
                 <button id = "new_task_button" class="btn btn-block btn-primary" type="button" data-toggle="modal" data-target="#taskModal">Add New Task</button>
                 <!--Start Modal-->
                 <div class="modal fade" id="taskModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">

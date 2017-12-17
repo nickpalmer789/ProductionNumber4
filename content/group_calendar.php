@@ -157,7 +157,8 @@
                             load_group_tasks($connection,$group);
                         ?>
                 </div>
-                <script src="../js/task_deleteHandler_calendar.js"></script>
+                <script src="../js/group_complete_task.js"></script>
+                <script src="../js/group_delete_task.js"></script>    
             </div>
             <?php
             include('../templates/footerCopy.php');
@@ -235,6 +236,46 @@
                 //Add the event to the list
                 eventsArr.push(currentEvent);
             }
+            
+            
+            //Add tasks (like 1 time things) to the calendar
+            var arrays = <?php echo show_group_tasks($connection, $group); ?>;
+            var dowArr = [];
+            var currentTask;
+            for (var i = 0; i < arrays.length; i++) {
+                if(arrays[i][7] == 0) {
+                    //create a 30 min block of time
+                    var endTime = moment.utc(arrays[i][3]).add(30,'m').format("HH:mm:ss");
+
+                    //split date and time
+                    var deadlineArr = arrays[i][3].split(" ");
+
+                    //create arbitrary next day to allow the repeat function to grab the event
+                    //FIX, TODO, FIND, whatever, this need to change if the renderer changes
+                    //to include the last day like it should
+                    var rangeArr = [{
+                        start: moment(deadlineArr[0], "YYYY-MM-DD"),
+                        end: moment(deadlineArr[0], "YYYY-MM-DD").add(1,'d').toDate()
+                    }];
+
+                    //Create the actual object, as long as task is not complete
+                
+                    currentTask = {
+                        title: arrays[i][2] + " - " + arrays[i][4],
+                        id: arrays[i][0],
+                        start: deadlineArr[1],
+                        end: endTime,
+                        ranges: rangeArr,
+                        backgroundColor: "bisque"
+                    }
+                    //Add the task to the array
+                    eventsArr.push(currentTask);
+                }
+            
+                
+            }
+            
+            
             console.log(eventsArr);
             //Render the events on the calendar
             $('#calendar').fullCalendar({
