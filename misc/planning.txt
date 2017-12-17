@@ -6,7 +6,7 @@
 6. Friends page (Search/view my friends)                    # could be easy, similar to manage groups page
 7. Notification panel (See notifications/friend requests)   # no idea
 8. Settings panel (password change/my profile)              # Working, may need to move elements
-9. Group View (See availability of a whole group)           # need to add/show group specific tasks
+9. Group View (See availability of a whole group)           # tasks are working
 
 Extra:
 - Timezones
@@ -14,6 +14,7 @@ Extra:
 - Messaging/chat
 - Integrate with Trendzy (find events nearby to add to calendar
 - Integrate with SkiU (find people to Ski with dirver/passenger type setup)
+- be the best social network (what makes a good one? news, communication about said news, events that all can see, a map that shows them and how people can connect. What makes facebook over bearing? What makes google+ fail? What if both could be solved?)
 
 
 Todo:
@@ -41,32 +42,3 @@ calendar.php -
 	
 Testing -
 	milestone 5 complete
-
-# Js for tasks onto calendaer
-var arrays = <?php echo show_tasks($connection); ?>;
-var tasksArr = [];
-var currentTask;
-for (var i = 0; i < arrays.length; i++) {
-    var deadlineArr = arrays[i][3].split(" ");
-
-    //Create the actual object
-    currentTask = {
-        title: arrays[i][2],
-        id: arrays[i][0],
-        start: arrays[i][3],
-        end: deadlineArr,
-        dow: dowArr,
-        ranges: rangeArr
-    }
-    //Add the event to the list
-    tasksArr.push(currentTask);
-}
-
-
-$tasksQuery = "SELECT * FROM tasks WHERE username = '{$_SESSION['login_user']}'";
-$taskResult = mysqli_query($connection, $tasksQuery);
-$tasksJSON = json_encode($taskResult->fetch_all(PDO::FETCH_ASSOC));
-
-
-
-var newDateObj = moment(oldDateObj).add(30, 'm').toDate();
