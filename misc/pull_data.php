@@ -237,9 +237,9 @@
     fwrite($fh, "\n");
 
     // Pull group_tasks
-    $result = mysqli_query($con,"SELECT group_id, description, item_name, start_time, end_time, optional_location FROM group_tasks");   
+    $result = mysqli_query($con,"SELECT group_id, task_name, deadline, description, optional_location, ETA, complete FROM group_tasks");   
     
-    fwrite($fh, "insert into `group_tasks` (`group_id`,`description`, `item_name`,`start_time`, `end_time`,`optional_location`) values\n");
+    fwrite($fh, "insert into `group_tasks` (`group_id`,`task_name`, `deadline`,`description`, `optional_location`,`ETA`,`complete`) values\n");
 
     $col = mysqli_num_fields($result);
     while ($row = mysqli_fetch_array($result, MYSQLI_NUM)) 

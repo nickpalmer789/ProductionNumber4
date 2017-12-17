@@ -192,7 +192,7 @@
 <!-- Add items to the calendar -->
 <script>
     $(document).ready(function() {
-
+        //Add event items (like a schedule) to the calendar
         var arrays = <?php echo load_calendar($connection); ?>;
         var eventsArr = [];
         var currentEvent;
@@ -211,30 +211,49 @@
 
             //Create the actual object
             currentEvent = {
-                title: arrays[i][2],
+                title: arrays[i][3] + " - " + arrays[i][2],
                 id: arrays[i][0],
                 start: startArr[1],
                 end: endArr[1],
                 dow: dowArr,
                 ranges: rangeArr
             }
-            console.log(currentEvent);
+            //console.log(currentEvent);
             //Add the event to the list
             eventsArr.push(currentEvent);
         }
         
+        //Add tasks (like 1 time things) to the calendar
         var arrays = <?php echo show_tasks($connection); ?>;
+        var dowArr = [];
         var currentTask;
         for (var i = 0; i < arrays.length; i++) {
+            //create a 30 min block of time
+            var endTime = moment.utc(arrays[i][3]).add(30,'m').format("HH:mm:ss");
+            
+            //split date and time
             var deadlineArr = arrays[i][3].split(" ");
-
-            //Create the actual object
-            currentTask = {
-                title: arrays[i][2],
-                id: arrays[i][0],
-                start: arrays[i][3],
+                        
+            //create arbitrary next day to allow the repeat function to grab the event
+            //FIX, TODO, FIND, whatever, this need to change if the renderer changes
+            //to include the last day like it should
+            var rangeArr = [{
+                start: moment(deadlineArr[0], "YYYY-MM-DD"),
+                end: moment(deadlineArr[0], "YYYY-MM-DD").add(1,'d').toDate()
+            }];
+            
+            //Create the actual object, as long as task is not complete
+            if(arrays[i][6] == 0) {
+                currentTask = {
+                    title: arrays[i][2] + " - " + arrays[i][4],
+                    id: arrays[i][0],
+                    start: deadlineArr[1],
+                    end: endTime,
+                    ranges: rangeArr,
+                    backgroundColor: "bisque"
+                }
             }
-            console.log(currentTask);
+            
             //Add the task to the array
             eventsArr.push(currentTask);
         }
@@ -245,6 +264,7 @@
         $('#calendar').fullCalendar({
             defaultDate: moment(),
             defaultTimedEventDuration: '00:30:00', 
+            allDaySlot: false,
             header: {
                 left: 'prev,next today',
                 center: 'title',

@@ -41,12 +41,13 @@ create table if not exists `calendar` (
 );
 create table if not exists `group_tasks`(
 	`event_id` integer auto_increment primary key,
-	`group_id` integer references groups(group_id),
-	`description` varchar(140),
-	`item_name` varchar(40) not null,
-	`start_time` datetime not null,
-	`end_time` datetime not null,
-	`optional_location` varchar(40)
+	`group_id` integer references groups(group_id),	
+	`task_name` varchar(40) not null,
+    `deadline` datetime,
+    `description` varchar(140),
+	`optional_location` varchar(40),
+	`ETA` varchar(40),
+    `complete` tinyint(1) not null default 0
 );
 create table if not exists `tasks` (
 	`task_id` integer auto_increment primary key,
