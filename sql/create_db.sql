@@ -40,7 +40,7 @@ create table if not exists `calendar` (
     `repeats` varchar(15) not null default "0"
 );
 create table if not exists `group_tasks`(
-	`event_id` integer auto_increment primary key,
+	`task_id` integer auto_increment primary key,
 	`group_id` integer references groups(group_id),	
 	`task_name` varchar(40) not null,
     `deadline` datetime,

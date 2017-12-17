@@ -55,16 +55,11 @@
         
         for ($i = 0; $i < $col; $i++)
         {            
-            if ($i == $col - 1)
-            {
-                fwrite($fh, $row[$i]);
-            }
-            else
-            {
-                fwrite($fh, "'");
-                fwrite($fh, addslashes($row[$i]));
-                fwrite($fh, "'");          
-            }
+                        
+            fwrite($fh, "'");
+            fwrite($fh, addslashes($row[$i]));
+            fwrite($fh, "'");          
+
 
             if ($i < $col - 1) 
             {

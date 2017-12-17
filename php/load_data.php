@@ -140,6 +140,76 @@
             </table>";
 }
 
+    function load_group_tasks(&$db, &$group) {
+        $query = "SELECT * FROM group_tasks WHERE group_id = (SELECT group_id FROM groups WHERE group_name='$group')";
+        
+        $res = mysqli_query($db, $query);
+        if(!$res) {
+            echo ":( Something went wrong.<br><br>";
+        }
+        echo 
+            "<p> Group Tasks </p>
+            <table class=\"table\">
+                <thead>
+                <tr>
+                    <th>Task</th>
+                    <th>Date/time due</th>
+                </tr>
+                </thead>
+            <tbody>";
+        
+        while ($row = mysqli_fetch_array($res, MYSQLI_NUM)){
+            if($row[6] == 0){
+                echo 
+                    "<tr>
+                         <td>$row[2]</td>
+                         <td>$row[3]</td>
+                         <td><input type=\"submit\" class=\"button\" name=\"".$row[0]."\" value=\"Done!\"/></td>
+                     </tr>";
+            }
+        }
+
+        echo 
+            "</tbody>
+            </table>
+            <br>";
+        
+        mysqli_data_seek($res, 0);
+        
+        echo 
+            "<p> Completed Tasks </p>
+            <table class=\"table\">
+                <thead>
+                    <tr>
+                        <th>Task</th>
+                    </tr>
+                </thead>
+                <tbody>";
+        
+        $alldone = True;
+        while ($row = mysqli_fetch_array($res, MYSQLI_NUM)) {
+            if($row[6] != 0) {
+                $alldone = False;
+                echo 
+                    "<tr>
+                        <td>$row[2]</td>
+                        <td><input type=\"submit\" class=\"del\" name=\"".$row[0]."\" value=\"Delete\"/></td>
+                        <td><input type=\"submit\" class=\"button\" name=\"".$row[0]."\" value=\"Not Done\"/></td>
+                    </tr>";
+            }
+        }
+        if($alldone){
+            echo 
+                "<tr>
+                    <td>None, you guys done NOTHING</td>
+                </tr>";
+        }
+        
+        echo 
+            "   </tbody>
+            </table>";
+}
+
     function load_group(&$db) {
         
         $username = $_SESSION["login_user"];
