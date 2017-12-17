@@ -5,7 +5,7 @@ $(document).ready(function() {
         var ajaxurl = '/php/group_complete_task.php';
         var data = {'id': clickBtnName};
         $.post(ajaxurl, data, function(response) {
-            location.reload();
+            window.location = window.location.href;
         });
     });
 

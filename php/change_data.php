@@ -109,6 +109,38 @@
         }
     }
 
+    function add_group_task(&$db, &$group) {
+        $taskName = mysqli_real_escape_string($db, $_POST['taskName']);
+
+        $description = mysqli_real_escape_string($db, $_POST['description']);
+
+        $deadlineDate = mysqli_real_escape_string($db, $_POST['deadlineDate']);
+
+        $deadlineTime = mysqli_real_escape_string($db, $_POST['deadlineTime']);
+
+        $eta = mysqli_real_escape_string($db, $_POST['eta']);
+        
+        $loc = mysqli_real_escape_string($db, $_POST['loc']);
+
+        $date = $deadlineDate . " " . $deadlineTime;
+        $date = preg_replace('#(\d{2})/(\d{2})/(\d{4})\s(.*)#', '$3-$2-$1 $4', $date);
+        
+        //gross workaround to get the group id
+        $group_id = mysqli_fetch_array(mysqli_query($db, "SELECT group_id FROM groups WHERE group_name='$group'"), MYSQLI_NUM);
+
+        //Insert the new task into the database
+        $taskQuery = "INSERT INTO group_tasks(group_id, task_name, deadline, description, optional_location, ETA) VALUES ($group_id[0], '$taskName', '$date', '$description', '$loc', '$eta')";
+        $insertResult = mysqli_query($db, $taskQuery);
+
+        if(!$insertResult) {
+            echo $insertResult;
+        } 
+        else {
+            $_POST = array();
+            //header("location: ../content/dashboard.php");
+        }
+    }
+
     function add_event(&$db) {
         $eventType = mysqli_real_escape_string($db, $_POST['eventType']);
 
