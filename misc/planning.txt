@@ -43,7 +43,7 @@ Testing -
 	milestone 5 complete
 
 # Js for tasks onto calendaer
-var arrays = <?php echo $tasksJSON; ?>;
+var arrays = <?php echo show_tasks($connection); ?>;
 var tasksArr = [];
 var currentTask;
 for (var i = 0; i < arrays.length; i++) {

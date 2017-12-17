@@ -218,14 +218,33 @@
                 dow: dowArr,
                 ranges: rangeArr
             }
+            console.log(currentEvent);
             //Add the event to the list
             eventsArr.push(currentEvent);
         }
+        
+        var arrays = <?php echo show_tasks($connection); ?>;
+        var currentTask;
+        for (var i = 0; i < arrays.length; i++) {
+            var deadlineArr = arrays[i][3].split(" ");
+
+            //Create the actual object
+            currentTask = {
+                title: arrays[i][2],
+                id: arrays[i][0],
+                start: arrays[i][3],
+            }
+            console.log(currentTask);
+            //Add the task to the array
+            eventsArr.push(currentTask);
+        }
+        
 
         console.log(eventsArr);
         //Render the events on the calendar
         $('#calendar').fullCalendar({
             defaultDate: moment(),
+            defaultTimedEventDuration: '00:30:00', 
             header: {
                 left: 'prev,next today',
                 center: 'title',

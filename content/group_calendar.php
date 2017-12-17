@@ -154,7 +154,7 @@
                 </div>
                 <div class="col-sm-4" align="center">
                     <?php
-                            include('../php/taskHandler.php');
+                            load_tasks_small($connection);
                         ?>
                 </div>
                 <script src="../js/task_deleteHandler_calendar.js"></script>
