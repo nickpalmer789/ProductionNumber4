@@ -1,6 +1,9 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <!-- Check if logged in, adjust buttons as needed -->
 <?php
+    include('../php/load_data.php');
+    include('../php/change_data.php');
+    
     session_start();
     if(isset($_SESSION["login_user"])) 
     {
@@ -28,10 +31,13 @@
                     <button type=\"submit\" id=\"settings_button\" class=\"btn btn-outline-danger\" style=\"margin-right:10px;\">Settings</button>          
 		        </form>
         
-                <form action=\"../php/logout.php\" method=\"post\">
-                    <button type=\"submit\" id=\"logout_button\" class=\"btn btn-outline-success my-2 my-sm-0\">Log Out</button>
+                <form action=\"\" method=\"post\">
+                    <button type=\"submit\" name=\"logout_button\" class=\"btn btn-outline-success my-2 my-sm-0\">Log Out</button>
                 </form>
             </div>";
+        if (isset($_POST["logout_button"])) {
+            log_out();
+        }
     }
     else
     {
@@ -49,8 +55,13 @@
         <div class=\"modal fade\" id=\"loginModal\" role=\"dialog\">
             <div class=\"modal-dialog\">
                 <div class=\"modal-content\">
+                        <h5></h5>
+                        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">
+                            <span aria-hidden=\"true\">&times;</span>
+                        </button>
+                    
                     <div class=\"modal-body\">
-                        <form action=\"/php/loginHandler.php\" method=\"post\">
+                        <form action=\"\" method=\"post\">
                             <div class=\"imgcontainer\">
                                 <img src=\"../assets/icons/planiticon.png\" alt=\"Planit\" class=\"img-small\">
                                 <h2>Planit Login</h2>
@@ -62,7 +73,7 @@
                             <label for=\"pwd\"><b>Password</b></label>
 
                             <input type=\"password\" class=\"form-control\" placeholder=\"Enter Password\" name=\"password\" required>
-                            <button id = \"login_button_1\" class=\"btn-success btn-lg btn-block\" type=\"submit\">Login</button>
+                            <button id = \"login_button_1\" class=\"btn-success btn-lg btn-block\" type=\"submit\" name=\"login\">Login</button>
 
 
                             <br>
@@ -73,6 +84,12 @@
             </div>
         </div>
         <!-- End Modal -->";
+        
+        if (isset($_POST["login"])) {
+            log_in($connection);
+        }
     }
+    
+    
 ?>
 </nav>

@@ -5,15 +5,23 @@
     <?php
         //Include the header content
         include('../templates/headercontent.php');
-        include('../php/session.php');
-        include('../templates/navbar.php');
-        include('../php/load_calendar.php'); 
+        //include('../php/session.php');
+        
+        //include('../php/load_calendar.php'); 
         //echo $rangeObj->start;
     ?>
 </head>
 
 <body>
-
+    <?php
+        include('../templates/navbar.php');
+    
+        //magic again, i guess, i dont know
+        if (isset($_POST["create_event"])) {
+            add_event($connection);
+        }
+    ?>
+    
     <div class="container-fluid">
         <h1 align="left">
             <font size="7">My Calendar</font>
@@ -39,7 +47,7 @@
                                 </div>
                                 <div class="modal-body">
                                     <!--Start form for new event-->
-                                    <form class="eventForm" action="../php/new_eventHandler.php" method="post">
+                                    <form class="eventForm" action="" method="post">
                                         <label for="eventType"><b>Type</b></label>
                                         <input type="text" class="form-control" placeholder="&quot;class/work/etc&quot;" name="eventType" required>
                                         <label for="description"><b>Description</b></label>
@@ -72,7 +80,7 @@
                                         <!-- Error message for JS form check -->
                                         <p id="inputError" class="text-center error-msg"></p>
 
-                                        <button disabled id="submitButton" class="btn btn-primary btn-lg btn-block disabled" type="submit" name="createTask">Add Event</button>
+                                        <button disabled id="submitButton" class="btn btn-primary btn-lg btn-block disabled" type="submit" name="create_event">Add Event</button>
                                     </form>
                                 </div>
                             </div>
@@ -146,11 +154,11 @@
             </div>
             <div class="col-sm-4" align="center">
                 <?php
-                    include('../php/taskHandler.php');
+                    load_tasks_small($connection);
                 ?>
             </div>
-            <script src="../js/task_deleteHandler_calendar.js"></script>
-            <script src="../js/task_deleter.js"></script>
+            <script src="../js/calendar_complete_task.js"></script>
+            <script src="../js/calendar_delete_task.js"></script>
         </div>
         <?php
             include('../templates/footerCopy.php');
@@ -184,8 +192,8 @@
 <!-- Add items to the calendar -->
 <script>
     $(document).ready(function() {
-
-        var arrays = <?php echo $calendaerJSON; ?>;
+        //Add event items (like a schedule) to the calendar
+        var arrays = <?php echo load_calendar($connection); ?>;
         var eventsArr = [];
         var currentEvent;
         for (var i = 0; i < arrays.length; i++) {
@@ -203,21 +211,64 @@
 
             //Create the actual object
             currentEvent = {
-                title: arrays[i][2],
+                title: arrays[i][3] + " - " + arrays[i][2],
                 id: arrays[i][0],
                 start: startArr[1],
                 end: endArr[1],
                 dow: dowArr,
                 ranges: rangeArr
             }
+            
+            //console.log(currentEvent);
             //Add the event to the list
             eventsArr.push(currentEvent);
         }
+        
+        //Add tasks (like 1 time things) to the calendar
+        var arrays = <?php echo show_tasks($connection); ?>;
+        var dowArr = [];
+        var currentTask;
+        for (var i = 0; i < arrays.length; i++) {
+            if(arrays[i][6] == 0) {
+                //create a 30 min block of time
+                var endTime = moment.utc(arrays[i][3]).add(30,'m').format("HH:mm:ss");
+
+                //split date and time
+                var deadlineArr = arrays[i][3].split(" ");
+
+                //create arbitrary next day to allow the repeat function to grab the event
+                //FIX, TODO, FIND, whatever, this need to change if the renderer changes
+                //to include the last day like it should
+                var rangeArr = [{
+                    start: moment(deadlineArr[0], "YYYY-MM-DD"),
+                    end: moment(deadlineArr[0], "YYYY-MM-DD").add(1,'d').toDate()
+                }];
+            
+                //Create the actual object, as long as task is not complete
+            
+                currentTask = {
+                    title: arrays[i][2] + " - " + arrays[i][4],
+                    id: arrays[i][0],
+                    start: deadlineArr[1],
+                    end: endTime,
+                    ranges: rangeArr,
+                    backgroundColor: "bisque"
+                }
+                
+                //Add the task to the array
+                eventsArr.push(currentTask);
+            }
+            
+            
+        }
+        
 
         console.log(eventsArr);
         //Render the events on the calendar
         $('#calendar').fullCalendar({
             defaultDate: moment(),
+            defaultTimedEventDuration: '00:30:00', 
+            allDaySlot: false,
             header: {
                 left: 'prev,next today',
                 center: 'title',

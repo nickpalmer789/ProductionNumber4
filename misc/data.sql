@@ -13,7 +13,7 @@ insert into `users` (`username`, `first_name`,`last_name`,`phone_number`, `email
 ('mema0341', 'Melissa', 'Mantey', '2345677865', 'melissa.mantey@colorado.edu', 'spring2017', 0, ''),
 ('mrmeeseeks', 'Mr', 'Meeseeks', '9119996611', 'mrmeeseeks@colorado.edu', 'lookatme!', 0, 'Everyone except Jerry'),
 ('My will to live is as much as Pluto is a', 'Derek', 'Tran', '', 'detr5501@colorado.edu', 'nonexsistent', 0, ''),
-('nick', 'Nick', 'Palmer', '7203569875', 'Nicholas.palmer@colorado.edu', '12', 0, 'What\'s Hitler\'s last name?'),
+('npalmer', 'Nick', 'Palmer', '7203569875', 'Nicholas.palmer@colorado.edu', '12', 0, 'What\'s Hitler\'s last name?'),
 ('PP:))))))', 'Private', 'Parts', '', 'private.parts@thearmy.gov', 'kaelanmademedothis', 0, ''),
 ('scarolac', 'Chris', 'Scarola', '9119991199', 'scarolac@colorado.edu', '12', 0, ''),
 ('sophiel', 'Sophie', 'Loughlin', '7207718134', 'sophia.loughlin@colorado.edu', 'bestpasswordever', 0, ''),
@@ -135,10 +135,10 @@ insert into `groups_join_users` (`group_id`,`username`) values
 (10, 'npalmer'),
 (10, 'mema0341'),
 (10, 'klen'),
-(4, 'npalmer'),
 (13, 'uranus_explorer'),
 (13, 'Derek Tran'),
-(13, 'scarolac');
+(13, 'scarolac'),
+(4, 'npalmer');
 
 insert into `tasks` (`username`,`task_name`,`deadline`,`description`,`ETA`,`complete`) values
 ('scarolac', 'the usual', '2017-11-02 12:01:00', 'open the country, stop having it be closed', 'whenever', 0),
@@ -150,7 +150,7 @@ insert into `tasks` (`username`,`task_name`,`deadline`,`description`,`ETA`,`comp
 ('john1', 'test4', '2017-12-01 12:00:00', 'testing testing 123', 'never', 0),
 ('john1', 'test5', '2017-12-01 12:00:00', 'testing testing 123', 'never', 1),
 ('mema0341', 'automatedtask', '2017-12-02 23:55:00', 'automatedtaskdescription', '3 hours', 0),
-('scarolac', 'Homework', '2017-12-20 17:00:00', 'Build this stupid website', 'Too long', 0),
+('scarolac', 'Homework', '2017-12-20 17:00:00', 'Build this website', 'Too long', 0),
 ('npalmer', 'Do shell lab', '2017-12-11 00:00:00', 'Shell lab ', '10 hours', 1),
 ('mema0341', 'automatedtask', '2017-12-02 23:55:00', 'automatedtaskdescription', '3 hours', 0),
 ('sophiel', 'Finish shell lab', '2017-12-11 09:00:00', 'Finish it!', 'Tomorrow', 0),
@@ -161,8 +161,12 @@ insert into `tasks` (`username`,`task_name`,`deadline`,`description`,`ETA`,`comp
 ('npalmer', 'Watch other presentations', '2017-12-11 16:00:00', 'Watch other Software Development Group Presentations', '1 Hour', 0),
 ('klen', 'Hello', '3123-02-12 12:32:11', 'To be fair, you have to have a very high IQ to understand Planit. The calendar is extremely subtle, and without a solid grasp of javascript ', '21312', 1),
 ('npalmer', 'Be sad', '2017-12-11 15:08:00', 'Nobody knows the Tragedy of Darth Plagius the Wise apparently...', 'Forever', 0),
-('jimloughlin', 'call Subaru dealer', '2017-12-12 11:59:00', 'schedule meeting with Diane', 'Not sure what this is.', 0);
+('jimloughlin', 'call Subaru dealer', '2017-12-12 11:59:00', 'schedule meeting with Diane', 'Not sure what this is.', 0),
+('scarolac', 'Final', '2017-12-19 07:30:00', 'Spanish final, no me gusta hablar espanol', '2.5 hours', 1),
+('scarolac', 'Final', '2017-12-20 13:30:00', 'Statistics final, fml', '2.5 hours', 0);
 
 insert into `group_tasks` (`group_id`,`task_name`, `deadline`,`description`, `optional_location`,`ETA`,`complete`) values
-(4, 'test5', '2017-12-17 12:00:00', 'testing testing 123', 'ART HOLE', 'never', '0');
+(4, 'test5', '2017-12-17 12:00:00', 'testing testing 123', 'ART HOLE', 'never', '1'),
+(4, 'Nick', '2017-12-18 17:00:00', 'Do the needful', 'Home', 'NEVER', '0'),
+(4, 'MANADATORY FRIENDS MEETING', '2017-12-21 17:00:00', 'WE MEET USUALLY', 'ITLL', 'a hour', '0');
 

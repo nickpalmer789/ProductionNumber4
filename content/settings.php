@@ -17,7 +17,7 @@
     </head>
     <body>
         <?php
-            include('../php/session.php');
+            //include('../php/session.php');
             include('../templates/navbar.php');
         
             $connection = mysqli_connect('localhost', 'root', 'password', 'planit');

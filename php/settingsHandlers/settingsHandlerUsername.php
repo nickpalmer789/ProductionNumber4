@@ -1,7 +1,7 @@
 <?php
-include('../session.php');
 
-$db = mysqli_connect("localhost:3306","root","password","planit");  
+session_start();
+$db = mysqli_connect("localhost","root","password","planit");  
             
 if($db === false) 
 {

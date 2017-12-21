@@ -1,0 +1,44 @@
+1. Have a page                                              # did this so hard
+2. Have DB of users/login with MySQL                        # need to handle encryption with bcrypt in php
+3. Profile page (show calendar)                             # turned into dashboard, absorbed goals
+4. My Calendar page (add/remove multiple ways)              # working
+5. My Goals (Manage goals/pomodoro/todo list)               # the dashboard basically
+6. Friends page (Search/view my friends)                    # could be easy, similar to manage groups page
+7. Notification panel (See notifications/friend requests)   # no idea
+8. Settings panel (password change/my profile)              # Working, may need to move elements
+9. Group View (See availability of a whole group)           # tasks are working
+
+Extra:
+- Timezones
+- DST
+- Messaging/chat
+- Integrate with Trendzy (find events nearby to add to calendar
+- Integrate with SkiU (find people to Ski with dirver/passenger type setup)
+- be the best social network (what makes a good one? news, communication about said news, events that all can see, a map that shows them and how people can connect. What makes facebook over bearing? What makes google+ fail? What if both could be solved?)
+
+
+Todo:
+Database - 
+	tasks need color selection maybe 
+
+group_calendar - 
+    looks incredible
+	are privacy settings checked?
+    
+
+logout - 
+	logout works enough
+	this page https://www.sitepoint.com/users-php-sessions-mysql/ is useful
+
+dashboard - 
+	looks good for now, can add/delete tasks
+
+login.php - 
+	working
+	
+calendar.php -
+	working
+    needs tasks to show on it (JS code below to play with)
+	
+Testing -
+	milestone 5 complete

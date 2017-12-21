@@ -1,5 +1,5 @@
 <?php
-	include("session.php");
+	session_start();
 	$db = mysqli_connect("localhost","root","password","planit");
 
  	if(mysqli_connect_errno()){

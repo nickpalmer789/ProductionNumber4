@@ -25,7 +25,7 @@ $(document).ready(function(){
 	$('.button').click(function(){
 		if(confirm("Leave this group?") == true){
 			var clickBtnName = $(this).attr('name');
-			var ajaxurl = '/php/leave_groupHandler.php';
+			var ajaxurl = '/php/leave_group.php';
 			var data = {'name': clickBtnName};
 			//alert(data['name']);
 			$.post(ajaxurl, data, function(response){

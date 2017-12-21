@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <?php
+
+<head>
+    <?php
             include('../templates/headercontent.php');
-            include('../php/session.php');
+            //include('../php/session.php');
         ?>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/randomcolor/0.5.2/randomColor.min.js"></script>
-    </head>
-    <body>
-        <?php
-            include('../templates/navbar.php');
-        ?>
+</head>
+
+<body>
+    <?php
+        include('../templates/navbar.php');
+
+        $group = $_GET['group_name'];            
+    ?>
         <div class="container-fluid">
             <h1 align="left">
-                <font size="7">Group calendar for <?= $group ?></font>
+                <font size="7">Group calendar for
+                    <?= $group ?>
+                </font>
             </h1>
             <div class="dropdown">
                 <button class="btn btn-success dropdown-toggle group-btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -21,17 +27,7 @@
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <?php
-                        //Get the group names
-                        $getGroupNames = "SELECT group_name FROM (SELECT group_id FROM groups_join_users WHERE username = '{$_SESSION['login_user']}') as current_user_groups JOIN groups ON current_user_groups.group_id = groups.group_id";
-                        
-                        $groupNames = mysqli_query($db, $getGroupNames);
-                        
-                        echo "<a class=\"dropdown-item\" name=\"group\" href=\"../content/manage_groups.php\">No Group</a>";
-
-                        //Print out all other group names as links
-                        while($row = mysqli_fetch_array($groupNames, MYSQLI_NUM)) {
-                            echo "<a class=\"dropdown-item\" name = \"group\" href=\"/php/group_calendar_handler.php?group_name=$row[0]\">$row[0]</a>";
-                        }
+                        build_group_dropdown($connection);
                     ?>
                 </div>
             </div>
@@ -42,59 +38,48 @@
                     </div>
                     <br>
                     <div>
-                        <button class="btn btn-block btn-primary" type="button" data-toggle="modal" data-target="#taskModal">Add Event</button>
-                        <!--Start event Modal-->
+                        <button id="new_task_button" class="btn btn-block btn-primary" type="button" data-toggle="modal" data-target="#taskModal">Add Group Task</button>
+                        
+                        <!--Start Group Event Modal-->
                         <div class="modal fade" id="taskModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-lg" role="dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="modalLabel">Create New Task</h5>
+                                        <h5 class="modal-title" id="modalLabel">Create New Group Task</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <!--Start form for new event-->
-                                        <form action="../php/new_eventHandler.php" method="post">
-                                            <label for="eventType"><b>Type</b></label>
-                                            <input type="text" class="form-control" placeholder="&quot;class/work/etc&quot;" name="eventType" required>
+                                        <!--Start form for new task-->
+                                        <form action="" method="post">
+                                            <label for="taskName"><b>Task Name</b></label>
+                                            <input type="text" class="form-control" placeholder="Enter Task Name" name="taskName" required>
+
                                             <label for="description"><b>Description</b></label>
-                                            <input type="text" class="form-control" placeholder="&quot;MATH 1234&quot;" name="description" required>
-                                            <label for="startDate"><b>Start Date</b></label>
-                                            <input id="startDate" type="date" class="form-control" name="startDate" required>
-                                            <label for="repeats>"><b>Select days event repeats</b></label>
-                                            
-                                            <br>
-                                            
-                                            <label class="checks">Sun</label><input type="checkbox" name="repeatDates[]" value="0" />
-                                            <label class="checks">Mon </label><input type="checkbox" name="repeatDates[]" value="1" />
-                                            <label class="checks">Tue</label><input type="checkbox" name="repeatDates[]" value="2" />
-                                            <label class="checks">Wed</label><input type="checkbox" name="repeatDates[]" value="3" />
-                                            <label class="checks">Thur</label><input type="checkbox" name="repeatDates[]" value="4" />
-                                            <label class="checks">Fri</label><input type="checkbox" name="repeatDates[]" value="5" />
-                                            <label class="checks">Sat</label><input type="checkbox" name="repeatDates[]" value="6" />
+                                            <input type="text" class="form-control" placeholder="Enter Task Description" id="describe" name="description" required>
 
-                                            <br>
-                                            
-                                            <label for="endDate"><b>End Date</b></label>
-                                            <input id="endDate" type="date" class="form-control" name="endDate" required>
-                                            <label for="startTime"><b>Start Time</b></label>
-                                            <input type="time" class="form-control" name="startTime" required>
-                                            <label for="endTime"><b>End Time</b></label>
-                                            <input type="time" class="form-control" name="endTime" required>
-                                            <label for="optionalLocation"><b>Location</b></label>
-                                            <input type="text" class="form-control" placeholder="&quot;Humanities Building&quot;" name="optionalLocation" required>
-                                            
-                                            <!-- Error message for JS form check -->
-                                            <p id="inputError" class="text-center error-msg"></p>
+                                            <label for="deadlineDate"><b>Deadline Date</b></label>
+                                            <input type="date" class="form-control" name="deadlineDate" required>
 
-                                            <button disabled id="submitButton" class="btn btn-primary btn-lg btn-block disabled" type="submit" name="createTask">Add Event</button>
+                                            <label for="deadlineTime"><b>Deadline Time</b></label>
+                                            <input type="time" step="1" class="form-control" name="deadlineTime" required>
+
+                                            <label for="eta"><b>ETA</b></label>
+                                            <input type="text" class="form-control" name="eta" required>
+                                            
+                                            <label for="loc"><b>Location (Optional)</b></label>
+                                            <input type="text" class="form-control" name="loc" required>
+
+                                            <button class="btn btn-primary btn-lg btn-block" type="submit" name="createTask">Create Task</button>
                                         </form>
+
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <!--End event Modal-->
+                        
                         <!-- Form checking for new entries -->
                         <script>
                             //Form checker
@@ -162,10 +147,15 @@
                 </div>
                 <div class="col-sm-4" align="center">
                     <?php
-                            include('../php/taskHandler.php');
-                        ?>
+                        if (isset($_POST["createTask"])) {  
+                            add_group_task($connection, $group);
+                        }
+                    
+                        load_group_tasks($connection,$group);   
+                    ?>
                 </div>
-                <script src="../js/task_deleteHandler_calendar.js"></script>
+                <script src="../js/group_complete_task.js"></script>
+                <script src="../js/group_delete_task.js"></script>
             </div>
             <?php
             include('../templates/footerCopy.php');
@@ -186,7 +176,7 @@
                         <h6 id="eventTitleBody">Title: </h6>
                         <h6 id="eventStartTime">Start time: </h6>
                         <h6 id="eventEndTime">End time: </h6>
-                    </div>   
+                    </div>
                 </div>
             </div>
         </div>
@@ -194,89 +184,130 @@
         <?php
             include('../templates/footerScripts.php');
         ?>
-    </body>
+</body>
 
-    <!-- Add items to the calendar -->
-    <script>
-        $(document).ready(function() {
-            var queryArr = <?php echo $queryJSON; ?>;
+<!-- Add items to the calendar -->
+<script>
+    $(document).ready(function() {
+        var queryArr = <?php echo group_handler($connection, $group); ?>;
 
-            var eventsArr = [];
-            var currentEvent;
+        var eventsArr = [];
+        var currentEvent;
 
-            var userMap = new Map();
+        var userMap = new Map();
 
-            for (var i = 0; i < queryArr.length; i++) {
-                var startArr = queryArr[i][5].split(" ");
-                var endArr = queryArr[i][6].split(" ");
+        for (var i = 0; i < queryArr.length; i++) {
+            var startArr = queryArr[i][5].split(" ");
+            var endArr = queryArr[i][6].split(" ");
 
-                //Generate the dow array from the string
-                var dowArr = queryArr[i][8].split(" ").map(Number);
-                console.log(startArr[0]);
-                //Generate the ranges array
+            //Generate the dow array from the string
+            var dowArr = queryArr[i][8].split(" ").map(Number);
+            console.log(startArr[0]);
+            //Generate the ranges array
+            var rangeArr = [{
+                start: moment(startArr[0], "YYYY-MM-DD"),
+                end: moment(endArr[0], "YYYY-MM-DD")
+            }];
+
+            //Generate a color for the event
+            var currentColor = "";
+            var userColorValue = userMap.get(queryArr[i][0]);
+            if (typeof userColorValue === 'undefined') {
+                //Generate a new color for the user
+                currentColor = randomColor();
+                userMap.set(queryArr[i][0], currentColor);
+            } else {
+                currentColor = userColorValue;
+            }
+
+            //Create the actual object
+            currentEvent = {
+                title: queryArr[i][0] + "->" + queryArr[i][3],
+                id: queryArr[i][1],
+                start: startArr[1],
+                end: endArr[1],
+                dow: dowArr,
+                backgroundColor: currentColor,
+                ranges: rangeArr
+            }
+            //Add the event to the list
+            eventsArr.push(currentEvent);
+        }
+
+
+        //Add tasks (like 1 time things) to the calendar
+        var arrays = <?php echo show_group_tasks($connection, $group); ?>;
+        var dowArr = [];
+        var currentTask;
+        for (var i = 0; i < arrays.length; i++) {
+            if (arrays[i][7] == 0) {
+                //create a 30 min block of time
+                var endTime = moment.utc(arrays[i][3]).add(30, 'm').format("HH:mm:ss");
+
+                //split date and time
+                var deadlineArr = arrays[i][3].split(" ");
+
+                //create arbitrary next day to allow the repeat function to grab the event
+                //FIX, TODO, FIND, whatever, this need to change if the renderer changes
+                //to include the last day like it should
                 var rangeArr = [{
-                    start: moment(startArr[0], "YYYY-MM-DD"),
-                    end: moment(endArr[0], "YYYY-MM-DD")
+                    start: moment(deadlineArr[0], "YYYY-MM-DD"),
+                    end: moment(deadlineArr[0], "YYYY-MM-DD").add(1, 'd').toDate()
                 }];
 
-                //Generate a color for the event
-                var currentColor = "";
-                var userColorValue = userMap.get(queryArr[i][0]);
-                if(typeof userColorValue === 'undefined') {
-                    //Generate a new color for the user
-                    currentColor = randomColor();
-                    userMap.set(queryArr[i][0], currentColor);
-                } else {
-                    currentColor = userColorValue;
-                }
+                //Create the actual object, as long as task is not complete
 
-                //Create the actual object
-                currentEvent = {
-                    title: queryArr[i][0] + "->" + queryArr[i][3],
-                    id: queryArr[i][1],
-                    start: startArr[1],
-                    end: endArr[1],
-                    dow: dowArr,
-                    backgroundColor: currentColor,
-                    ranges: rangeArr
+                currentTask = {
+                    title: arrays[i][2] + " - " + arrays[i][4],
+                    id: arrays[i][0],
+                    start: deadlineArr[1],
+                    end: endTime,
+                    ranges: rangeArr,
+                    backgroundColor: "bisque"
                 }
-                //Add the event to the list
-                eventsArr.push(currentEvent);
+                //Add the task to the array
+                eventsArr.push(currentTask);
             }
-            console.log(eventsArr);
-            //Render the events on the calendar
-            $('#calendar').fullCalendar({
-                defaultDate: moment(),
-                header: {
-                    left: 'prev,next today',
-                    center: 'title',
-                    right: 'month,agendaWeek,agendaDay,list'
-                },
-                defaultView: 'agendaWeek',
-                eventRender: function(event, element, view) {
-                    //Check which dates should be rendered
-                    return (event.ranges.filter(function(range) {
-                        //Return true if the event should be rendered at the current date
-                        return (event.start.isBefore(range.end) && event.end.isAfter(range.start));
 
-                    }).length) > 0;
-                },
-                //Create a function that triggers when an event is clicked
-                eventClick: function(calEvent, jsEvent, view) {
-                    //Fill the text in the event information modal
-                    $("#eventTitle").text(calEvent.title);
-                    $("#eventTitleBody").text("Title: " + calEvent.title);
-                    $("#eventStartTime").text("Start: " + calEvent.start.format("h:mm:ss"));
-                    $("#eventEndTime").text("End: " + calEvent.end.format("h:mm:ss"));
-                    //Show the modal programatically
-                    $("#eventModal").modal("show");
-                },
-                //The generated events list
-                events: eventsArr
-            });
 
+        }
+
+
+        console.log(eventsArr);
+        //Render the events on the calendar
+        $('#calendar').fullCalendar({
+            defaultDate: moment(),
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'month,agendaWeek,agendaDay,list'
+            },
+            defaultView: 'agendaWeek',
+            eventRender: function(event, element, view) {
+                //Check which dates should be rendered
+                return (event.ranges.filter(function(range) {
+                    //Return true if the event should be rendered at the current date
+                    return (event.start.isBefore(range.end) && event.end.isAfter(range.start));
+
+                }).length) > 0;
+            },
+            //Create a function that triggers when an event is clicked
+            eventClick: function(calEvent, jsEvent, view) {
+                //Fill the text in the event information modal
+                $("#eventTitle").text(calEvent.title);
+                $("#eventTitleBody").text("Title: " + calEvent.title);
+                $("#eventStartTime").text("Start: " + calEvent.start.format("h:mm:ss"));
+                $("#eventEndTime").text("End: " + calEvent.end.format("h:mm:ss"));
+                //Show the modal programatically
+                $("#eventModal").modal("show");
+            },
+            //The generated events list
+            events: eventsArr
         });
-    </script>
-    <!-- end item addition section -->
+
+    });
+
+</script>
+<!-- end item addition section -->
 
 </html>

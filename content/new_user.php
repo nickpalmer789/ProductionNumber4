@@ -12,6 +12,17 @@
     <?php
         //Include the navbar content
         include('../templates/navbar.php');
+    
+        //if a user is created, handle it, then go to dashboard, magic i think
+        if (isset($_POST["new_user"])) {
+            create_user($connection);
+        }
+    
+        //if logged in already, go to dashboard
+        if(isset($_SESSION["login_user"])) 
+        {
+            header("location: /content/dashboard.php");
+        }
     ?>
 
         <div class="container">
@@ -22,7 +33,7 @@
             </div>
             <div class="row featurette">
                 <div class="col-md-12">
-                    <form action="../php/new_accountHandler.php" method="post">
+                    <form action="" method="post">
                         <label for="usr"><b>First Name</b></label>
                         <input type="text" class="form-control" placeholder="Enter First Name" name="firstname" required>
 
@@ -40,8 +51,9 @@
 
                         <label for="pwd"><b>Re-enter Password</b></label>
                         <input type="password" class="form-control" placeholder="Confirm Password" name="confirmpassword" required>
-                        <button class="btn btn-primary btn-lg btn-block" type="submit" name="login">Create Account</button>
+                        <button class="btn btn-primary btn-lg btn-block" type="submit" name="new_user">Create Account</button>
                     </form>
+                    
                 </div>
             </div>
 

@@ -30,6 +30,11 @@
                         <li><a href="https://askalice.me/">AskAlice</a></li>
                         <li><a href="https://github.com/AskAlice">Github</a></li>
                     </ul>
+                    <label><b>Created by:</b></label>
+                    <ul>
+                        <li><a style="color:inherit;" href="https://github.com/nickpalmer789/ProductionNumber4"><u>Production Number 4</u></a><br>
+                        Nicholas Palmer, Melissa Mantey, Sophia Loughlin, Kaelan Patel, Chris Scarola</li>
+                    </ul>
                 </div>
             </div>
         </div>
