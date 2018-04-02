@@ -30,14 +30,14 @@
             </div>
             <div class="row featurette">
                 <div class="col-md-12" col>
-                    <form action="../php/loginHandler.php" method="post">
+                    <form action="" method="post">
                         <label for="usr"><b>Username</b></label>
                         <input type="text" class="form-control" placeholder="Enter Username" name="username" required>
 
                         <label for="pwd"><b>Password</b></label>
                         <input type="password" class="form-control" placeholder="Enter Password" name="password" required>
                         <input type="checkbox" checked="checked"> Remember me
-                        <button class="btn-success btn-lg btn-block" type="submit">Login</button>
+                        <button class="btn-success btn-lg btn-block" type="submit" name="login">Login</button>
 
                         <br>
                     </form>
@@ -45,6 +45,12 @@
                     <form action="../index.php">
                         <button type="submit" class="btn-danger btn-lg btn-block">Cancel</button>                       
                     </form>
+                    
+                    <?php
+                        if (isset($_POST["login"])) {
+                            log_in($connection);
+                        }
+                    ?>
                 </div>
             </div>
 
